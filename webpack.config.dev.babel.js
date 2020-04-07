@@ -16,10 +16,6 @@ module.exports = {
     resolve: {
         modules: [path.resolve(__dirname, 'src'), 'node_modules'],
         extensions: ['.ts', '.tsx', '.js', 'jsx'],
-        alias: {
-            'react-spring$': 'react-spring/web.cjs',
-            'react-spring/renderprops$': 'react-spring/renderprops.cjs'
-        }
     },
     devServer: {
         contentBase: path.join(__dirname, 'build'),
@@ -65,10 +61,10 @@ module.exports = {
             {
                 test: /\.(css|scss)$/,
                 use: [
-                    'style-loader', // creates style nodes from JS strings
-                    'css-loader', // translates CSS into CommonJS
-                    'sass-loader', // compiles Sass to CSS, using Node Sass by default
-                    'postcss-loader'
+                    'style-loader',
+                    'css-loader'
+                    /*   'sass-loader', // compiles Sass to CSS, using Node Sass by default
+                    'postcss-loader' */
                 ],
                 sideEffects: true
             },

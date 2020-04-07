@@ -3,7 +3,6 @@ import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
-import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 module.exports = {
     entry: path.join(__dirname, 'src', 'index.tsx'),
@@ -12,14 +11,10 @@ module.exports = {
         filename: 'bundle.js'
     },
     mode: 'production',
-    devtool: 'source-map',
+    devtool: false,
     resolve: {
         modules: [path.resolve(__dirname, 'src'), 'node_modules'],
         extensions: ['.ts', '.tsx', '.js', 'jsx'],
-        alias: {
-            'react-spring$': 'react-spring/web.cjs',
-            'react-spring/renderprops$': 'react-spring/renderprops.cjs'
-        }
     },
     module: {
         rules: [
@@ -31,10 +26,10 @@ module.exports = {
             {
                 test: /\.(css|scss)$/,
                 use: [
-                    'style-loader', // creates style nodes from JS strings
-                    'css-loader', // translates CSS into CommonJS
-                    'sass-loader', // compiles Sass to CSS, using Node Sass by default
-                    'postcss-loader'
+                    'style-loader',
+                    'css-loader'
+                    /* 'sass-loader', 
+                    'postcss-loader' */
                 ],
                 sideEffects: true
             },
@@ -70,7 +65,6 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'public', 'index.html')
         }),
-        new CleanWebpackPlugin(),
-        new BundleAnalyzerPlugin()
+        new CleanWebpackPlugin()
     ]
 };

@@ -3,8 +3,8 @@ import { Provider } from 'react-redux';
 
 import { CssBaseline } from '@material-ui/core';
 
-import AppRoutes from './Routes';
-import { store } from './store';
+import AppRoutes from './routes/Routes';
+import { store } from './store/store';
 
 const App = () => {
     return (
