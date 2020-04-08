@@ -20,6 +20,6 @@
 **/obj
 **/secrets.dev.yaml
 **/values.dev.yaml
-/_tests_
-/coverage
+**/_tests_
+**/coverage
 README.md

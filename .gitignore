@@ -1,4 +1,4 @@
-node_modules
-build
-.vscode
-stats.json
+/node_modules
+build/
+.vscode/
+/stats.json
