@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HelloWorld should render correctly 1`] = `
+<StyledComponents__StyledBtn
+  onClick={[Function]}
+>
+  Hello World 
+</StyledComponents__StyledBtn>
+`;
