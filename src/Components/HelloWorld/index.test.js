@@ -13,15 +13,13 @@ describe('HelloWorld', () => {
 
     test('should handle the click event', () => {
         window.alert = jest.fn();
-        const output = shallow(<HelloWorld username='friend' />);
+        const output = shallow(<HelloWorld />);
         output.simulate('click');
         expect(window.alert).toHaveBeenCalledWith('Click!');
     });
 
-    it('should handle state changes', () => {
+    it('testing props', () => {
         const output = shallow(<HelloWorld username='Peter' width={100} />);
-
-        expect(output.prop('username').toBe('Peter'));
-        expect(output.find(StyledBtn).prop('width').toBe(100));
+        expect(output.find(StyledBtn).prop('width')).toBe(100);
     });
 });
