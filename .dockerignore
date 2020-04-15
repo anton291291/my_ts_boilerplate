@@ -20,6 +20,9 @@
 **/obj
 **/secrets.dev.yaml
 **/values.dev.yaml
-/_tests_
-/coverage
+**/.loki
+**/.storybook
+**/coverage
+**/build
+
 README.md
