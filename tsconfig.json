@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "allowSyntheticDefaultImports": true,
+        "lib": ["DOM", "DOM.Iterable", "ESNext"],
+        "jsx": "react",
+        "module": "esnext",
+        "allowJs": true,
+        "skipLibCheck": true,
+        "noEmit": true,
+        "noImplicitAny": false,
+        "outDir": "./dist/",
+        "preserveConstEnums": true,
+        "removeComments": true,
+        "sourceMap": true,
+        "target": "es6",
+        "moduleResolution": "node",
+        "strict": true,
+        "alwaysStrict": true,
+        "strictNullChecks": false,
+        "downlevelIteration": true,
+        "diagnostics": true
+    },
+    "include": ["./src/"],
+    "exclude": ["node_modules", "build"]
+}
