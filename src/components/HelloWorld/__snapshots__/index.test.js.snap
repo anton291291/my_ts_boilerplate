@@ -1,9 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`HelloWorld should render correctly 1`] = `
-<StyledComponents__StyledBtn
+<styled.div
   onClick={[Function]}
+  width={100}
 >
   Hello World 
-</StyledComponents__StyledBtn>
+</styled.div>
 `;

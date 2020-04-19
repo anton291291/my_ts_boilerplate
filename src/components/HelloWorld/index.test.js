@@ -19,7 +19,7 @@ describe('HelloWorld', () => {
     });
 
     it('testing props', () => {
-        const output = shallow(<HelloWorld username='Peter' width={100} />);
+        const output = shallow(<HelloWorld username='Peter' />);
         expect(output.find(StyledBtn).prop('width')).toBe(100);
     });
 });
