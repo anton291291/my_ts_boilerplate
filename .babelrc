@@ -12,14 +12,6 @@
     ],
     "plugins": [
         "@babel/plugin-proposal-class-properties",
-        "@babel/plugin-transform-classes",
-        [
-            "@babel/plugin-transform-block-scoping",
-            {
-                "throwIfClosureRequired": true
-            }
-        ],
-        ["babel-plugin-styled-components"],
         [
             "babel-plugin-import",
             {

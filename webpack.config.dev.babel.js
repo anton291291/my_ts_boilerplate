@@ -8,17 +8,17 @@ module.exports = {
     entry: path.join(__dirname, 'src', 'index.tsx'),
     output: {
         path: path.join(__dirname, 'build'),
-        filename: 'bundle.js',
-        sourceMapFilename: 'bandle.js.map'
+        filename: 'index.bundle.js',
+        sourceMapFilename: 'index.js.map'
     },
-    mode: 'development',
-    devtool: 'inline-source-map',
+    mode: process.env.NODE_ENV || 'development',
+    devtool: 'cheap-source-map',
     resolve: {
         modules: [path.resolve(__dirname, 'src'), 'node_modules'],
         extensions: ['.ts', '.tsx', '.js', 'jsx'],
     },
     devServer: {
-        contentBase: path.join(__dirname, 'build'),
+        contentBase: path.join(__dirname, 'dist'),
         compress: true,
         port: 3000,
         open: true,
@@ -41,22 +41,13 @@ module.exports = {
             publicPath: false
         }
     },
-
     module: {
         rules: [
             {
-                enforce: 'pre',
                 test: /\.(js|jsx|ts|tsx)$/,
+                // we do not want anything from node_modules to be compiled
                 exclude: /node_modules/,
-                loader: 'eslint-loader',
-                options: {
-                    cache: true
-                }
-            },
-            {
-                test: /\.(js|jsx|ts|tsx)$/,
-                exclude: /node_modules/,
-                loader: 'babel-loader'
+                use: ['babel-loader', 'eslint-loader']
             },
             {
                 test: /\.(css|scss)$/,
@@ -82,3 +73,4 @@ module.exports = {
         new CleanWebpackPlugin()
     ]
 };
+    
