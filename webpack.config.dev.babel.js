@@ -15,7 +15,7 @@ module.exports = {
     devtool: 'cheap-source-map',
     resolve: {
         modules: [path.resolve(__dirname, 'src'), 'node_modules'],
-        extensions: ['.ts', '.tsx', '.js', 'jsx'],
+        extensions: ['.ts', '.tsx', '.js', 'jsx']
     },
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
@@ -45,7 +45,6 @@ module.exports = {
         rules: [
             {
                 test: /\.(js|jsx|ts|tsx)$/,
-                // we do not want anything from node_modules to be compiled
                 exclude: /node_modules/,
                 use: ['babel-loader', 'eslint-loader']
             },
@@ -65,22 +64,6 @@ module.exports = {
             }
         ]
     },
-    optimization: {
-        splitChunks: {
-            cacheGroups: {
-                vendor: {
-                    name: 'vendors',
-                    test: /node_modules/,
-                    chunks: 'all',
-                    enforce: true
-                }
-            }
-        },
-        mangleWasmImports: true,
-        mergeDuplicateChunks: true,
-        minimize: true,
-        nodeEnv: 'production'
-    },
     plugins: [
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'public', 'index.html')
@@ -89,4 +72,3 @@ module.exports = {
         new CleanWebpackPlugin()
     ]
 };
-    
