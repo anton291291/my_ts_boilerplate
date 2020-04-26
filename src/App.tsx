@@ -1,16 +1,18 @@
 import React from 'react';
 
-import { CssBaseline } from '@material-ui/core';
-
 import AppRoutes from './routes/Routes';
 import store from './store/store';
+import { GlobalStyle } from './global/GlobalStyle';
+import { Provider } from 'react-redux';
 
 const App = () => {
     return (
-        <div className='App'>
-            <CssBaseline />
-            <AppRoutes/>
-        </div>
+        <Provider store={store}>
+            <div className='App'>
+                <GlobalStyle />
+                <AppRoutes />
+            </div>
+        </Provider>
     );
 };
 
