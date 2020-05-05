@@ -16,6 +16,7 @@
         "react-hooks/exhaustive-deps": "warn",
         "react/prop-types": "off",
         "@typescript-eslint/camelcase": "off",
-        "react/display-name": "warn"
+        "react/display-name": "warn",
+        "@typescript-eslint/no-empty-function": "off"
     }
 }

@@ -3,7 +3,6 @@ import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 
 import HelloWorld from './index';
-import { StyledBtn } from '../StyledComponents';
 
 describe('HelloWorld', () => {
     test('should render correctly', () => {
@@ -20,6 +19,6 @@ describe('HelloWorld', () => {
 
     it('testing props', () => {
         const output = shallow(<HelloWorld username='Peter' />);
-        expect(output.find(StyledBtn).prop('width')).toBe(100);
+        expect(output.find("StyledBtn").prop('width')).toBe(100);
     });
 });

@@ -5,6 +5,7 @@
     "main": "index.tsx",
     "scripts": {
         "test": "jest",
+        "update-test": "npm run test -- -u",
         "build": "npx webpack --config ./webpack.config.prod.babel.js",
         "start": "npx webpack-dev-server --config ./webpack.config.dev.babel.js",
         "analyze": "npx webpack --config ./webpack.config.analyze.babel.js --profile --json > stats.json",
@@ -26,6 +27,7 @@
         "@babel/preset-react": "^7.9.4",
         "@babel/preset-typescript": "^7.7.2",
         "@storybook/addon-actions": "^5.3.18",
+        "@storybook/addon-backgrounds": "^5.3.18",
         "@storybook/addon-console": "^1.2.1",
         "@storybook/addon-knobs": "^5.3.18",
         "@storybook/addon-links": "^5.3.18",
@@ -34,6 +36,7 @@
         "@storybook/addons": "^5.3.18",
         "@storybook/preset-typescript": "^3.0.0",
         "@storybook/react": "^5.3.18",
+        "@types/jest": "^25.2.1",
         "@types/react": "^16.9.11",
         "@types/react-animate-on-scroll": "^2.1.2",
         "@types/react-dom": "^16.9.4",
@@ -45,7 +48,9 @@
         "@typescript-eslint/parser": "^2.8.0",
         "autoprefixer": "^9.7.1",
         "babel-eslint": "^10.0.3",
+        "babel-jest": "^26.0.0",
         "babel-loader": "^8.1.0",
+        "babel-plugin-dynamic-import-node": "^2.3.3",
         "babel-plugin-import": "^1.13.0",
         "babel-plugin-styled-components": "^1.10.7",
         "clean-webpack-plugin": "^3.0.0",
@@ -66,6 +71,7 @@
         "jest": "^25.1.0",
         "jest-styled-components": "^7.0.2",
         "loki": "^0.20.3",
+        "npm": "^6.14.5",
         "path": "^0.12.7",
         "postcss-loader": "^3.0.0",
         "prettier": "2.0.4",
@@ -87,7 +93,6 @@
     "dependencies": {
         "@material-ui/core": "^4.6.0",
         "@material-ui/icons": "^4.5.1",
-        "@storybook/addon-backgrounds": "^5.3.18",
         "axios": "^0.19.0",
         "react": "^16.8.6",
         "react-dom": "^16.8.6",
@@ -104,7 +109,14 @@
         "collectCoverage": true,
         "setupFilesAfterEnv": [
             "<rootDir>/jest.setup.js"
-        ]
+        ],
+        "transformIgnorePatterns": [
+            "/node_modules/(?!@material-ui)",
+            "/node_modules/(?!@babel)"
+        ],
+        "transform": {
+            "^.+\\.[t|j]sx?$": "babel-jest"
+        }
     },
     "browserslist": [
         "> 1%",
