@@ -9,7 +9,10 @@ export const StyledCell = styled.div<{ isClicked: boolean }>`
     padding: 2px;
     width: 20px;
     height: 20px;
-    font-size: 1rem;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: white;
     text-align: center;
     cursor: pointer;

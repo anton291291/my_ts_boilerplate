@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 
 import styled from 'styled-components';
 import { Cell } from '../Cell';
+import { GridContext } from '../../hooks/contextHooks';
 
 export const Container = styled.div<{ width: number; height: number }>`
     display: flex;
     flex-wrap: wrap;
+    transition: all 0.01s;
     width: ${({ width }) => `${26 * width}px`};
     height: ${({ height }) => `${26 * height}px`};
     margin: auto;
@@ -18,17 +20,13 @@ type Props = {};
 export const Grid: React.FC<Props> = (props) => {
     const {} = props;
 
-    const [isHorizontalLength, setIsHorizontalLength] = useState(10);
-    const [isVerticalLength, setIsVerticalLength] = useState(10);
+    const { state, setState } = useContext(GridContext);
 
     return (
-        <Container width={isHorizontalLength} height={isHorizontalLength}>
-            {Array.from(
-                { length: isHorizontalLength * isVerticalLength },
-                (item, index) => (
-                    <Cell key={index} index={index} />
-                )
-            )}
+        <Container width={state.x} height={state.y}>
+            {Array.from({ length: state.x * state.y }, (item, index) => (
+                <Cell key={index} index={index} />
+            ))}
         </Container>
     );
 };

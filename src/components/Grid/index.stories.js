@@ -1,6 +1,7 @@
 import React from 'react';
 import { Grid } from './index';
-import { withKnobs, text, number, boolean } from '@storybook/addon-knobs';
+import { withKnobs} from '@storybook/addon-knobs';
+import { GridProvider } from '../../hooks/contextHooks';
 
 export default {
     title: '/Grid',
@@ -8,4 +9,8 @@ export default {
     decorators: [withKnobs]
 };
 
-export const FullGrid = () => <Grid />;
+export const FullGrid = () => (
+    <GridProvider>
+        <Grid />;
+    </GridProvider>
+);
