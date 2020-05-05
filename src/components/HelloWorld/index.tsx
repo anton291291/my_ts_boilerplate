@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyledBtn } from '../StyledComponents';
 
-type Props = { username: string; width?: number };
+type Props = { username?: string; width?: number };
 
 const HelloWorld: React.FC<Props> = (props) => {
     const { username, width = 100 } = props;
