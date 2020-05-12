@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Slider } from '@material-ui/core';
+import { Slider, TextField } from '@material-ui/core';
 
 export const StyledBtn = styled.div<{ width?: number }>`
     display: flex;
@@ -41,6 +41,36 @@ export const StyledSlider = styled(Slider)`
             :active,
             :focus {
                 box-shadow: inherit;
+            }
+        }
+    }
+`;
+
+export const StyledInput = styled(TextField)`
+    && {
+        .MuiOutlinedInput-input {
+            color: white;
+        }
+
+        .Mui-focused {
+            fieldset {
+                border-color: #52af77;
+            }
+        }
+
+        .MuiOutlinedInput-notchedOutline {
+            border-color: white;
+        }
+
+        &:hover fieldset {
+            border-color: #52af77;
+        }
+
+        label {
+            color: white;
+
+            &.Mui-focused {
+                color: #52af77;
             }
         }
     }
