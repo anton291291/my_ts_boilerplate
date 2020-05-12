@@ -7,7 +7,7 @@ exports[`DashboardBtn should render correctly 1`] = `
       onClick={[Function]}
     >
       <div
-        className="Btn-sc-1wy4hl4-0 dMzjHc"
+        className="Btn-sc-1wy4hl4-0 lDuDf"
         onClick={[Function]}
       >
         <ForwardRef
@@ -71,13 +71,13 @@ exports[`DashboardBtn should render correctly 1`] = `
     >
       <WithStyles(ForwardRef(Drawer))
         anchor="bottom"
-        className="StyledDrawer-sc-1wy4hl4-1 fChXEI"
+        className="StyledDrawer-sc-1wy4hl4-1 eapwcL"
         onClose={[Function]}
         open={false}
       >
         <ForwardRef(Drawer)
           anchor="bottom"
-          className="StyledDrawer-sc-1wy4hl4-1 fChXEI"
+          className="StyledDrawer-sc-1wy4hl4-1 eapwcL"
           classes={
             Object {
               "docked": "MuiDrawer-docked",
@@ -421,7 +421,7 @@ exports[`DashboardBtn should render correctly 1`] = `
                 },
               }
             }
-            className="MuiDrawer-root MuiDrawer-modal StyledDrawer-sc-1wy4hl4-1 fChXEI"
+            className="MuiDrawer-root MuiDrawer-modal StyledDrawer-sc-1wy4hl4-1 eapwcL"
             onClose={[Function]}
             open={false}
           />

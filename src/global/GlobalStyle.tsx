@@ -8,6 +8,10 @@ export const GlobalStyle = createGlobalStyle`
   color: white;
 }
 
+:focus{
+  outline: none;
+}
+
 .MuiTypography-root {
     margin: 0;
     color: white;

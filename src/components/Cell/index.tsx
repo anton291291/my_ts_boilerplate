@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import styled from 'styled-components';
 
@@ -19,22 +19,18 @@ export const StyledCell = styled.div<{ isClicked: boolean }>`
     transition: all 0.5s;
 `;
 
-type Props = { index: number };
+type Props = {
+    index: number;
+    onClick: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
+    isClicked: boolean;
+};
 
 export const Cell: React.FC<Props> = (props) => {
-    const { index } = props;
-
-    const [isClicked, setIsClicked] = useState(false);
-    const [isIndexValue, setIsIndexValue] = useState<number>();
-
-    const handleClick = () => {
-        setIsClicked(true);
-        setIsIndexValue(index);
-    };
+    const { index, onClick, isClicked } = props;
 
     return (
-        <StyledCell isClicked={isClicked} onClick={handleClick}>
-            {isIndexValue}
+        <StyledCell onClick={onClick} isClicked={isClicked}>
+            {index}
         </StyledCell>
     );
 };

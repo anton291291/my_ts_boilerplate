@@ -27,13 +27,22 @@ describe('DashboardBtn', () => {
         expect(output.find('StyledDrawer').prop('open')).toBe(false);
     });
 
-    test('X coordinate slider onChange function prop should change value ', () => {
+    test('X coordinate slider onChange function  should change value with smaller argument then default value ', () => {
         output.find('SizeSlider').at(1).invoke('onChange')({}, 20);
         expect(output.find('SizeSlider').at(1).prop('value')).toBe(20);
     });
 
-    test('Y coordinate slider onChange function prop should change value ', () => {
+    test('X coordinate slider onChange function should change value with bigger argument then default value', () => {
+        output.find('SizeSlider').at(1).invoke('onChange')({}, 100);
+        expect(output.find('SizeSlider').at(1).prop('value')).toBe(100);
+    });
+
+    test('Y coordinate slider onChange functionp should change value with smaller argument then default value', () => {
         output.find('SizeSlider').at(0).invoke('onChange')({}, 20);
         expect(output.find('SizeSlider').at(0).prop('value')).toBe(20);
+    });
+    test('Y coordinate slider onChange function  should change value with bigger argument then default value', () => {
+        output.find('SizeSlider').at(0).invoke('onChange')({}, 10);
+        expect(output.find('SizeSlider').at(0).prop('value')).toBe(10);
     });
 });
