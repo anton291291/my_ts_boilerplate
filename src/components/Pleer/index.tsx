@@ -114,7 +114,7 @@ export const Pleer: React.FC<Props> = (props) => {
             arr[index + state.axis.x].isClicked === true && count++;
             arr[index + state.axis.x + 1].isClicked === true && count++;
 
-            if (obj.isClicked === false && count >= 3) {
+            if (obj.isClicked === false && count == 3) {
                 return { ...obj, isClicked: true };
             } else if (obj.isClicked === true && (count == 2 || count == 3)) {
                 return obj;
@@ -131,7 +131,7 @@ export const Pleer: React.FC<Props> = (props) => {
             arr[index - state.axis.x - 1].isClicked === true && count++;
             arr[index - state.axis.x + 1].isClicked === true && count++;
 
-            if (obj.isClicked === false && count >= 3) {
+            if (obj.isClicked === false && count == 3) {
                 return { ...obj, isClicked: true };
             } else if (obj.isClicked === true && (count == 2 || count == 3)) {
                 return obj;
@@ -148,7 +148,7 @@ export const Pleer: React.FC<Props> = (props) => {
             arr[index + state.axis.x - 1].isClicked === true && count++;
             arr[index + state.axis.x + 1].isClicked === true && count++;
 
-            if (obj.isClicked === false && count >= 3) {
+            if (obj.isClicked === false && count == 3) {
                 return { ...obj, isClicked: true };
             } else if (obj.isClicked === true && (count == 2 || count == 3)) {
                 return obj;
@@ -198,7 +198,7 @@ export const Pleer: React.FC<Props> = (props) => {
                 arr[index + state.axis.x].isClicked === true && count++;
                 arr[index + state.axis.x + 1].isClicked === true && count++;
 
-                if (obj.isClicked === false && count >= 3) {
+                if (obj.isClicked === false && count == 3) {
                     return { ...obj, isClicked: true };
                 } else if (
                     obj.isClicked === true &&
@@ -253,7 +253,7 @@ export const Pleer: React.FC<Props> = (props) => {
                 arr[index + state.axis.x].isClicked === true && count++;
                 arr[index + state.axis.x - 1].isClicked === true && count++;
 
-                if (obj.isClicked === false && count >= 3) {
+                if (obj.isClicked === false && count == 3) {
                     return { ...obj, isClicked: true };
                 } else if (
                     (obj.isClicked === true && count == 2) ||
@@ -280,12 +280,12 @@ export const Pleer: React.FC<Props> = (props) => {
             }
         };
 
-      /*   startInterval = setInterval(() => { */
-            setState((state) => ({
-                ...state,
-                cells: [...state.cells].map(simulateLife)
-            }));
-     /*    }, 0); */
+          startInterval = setInterval(() => {
+        setState((state) => ({
+            ...state,
+            cells: [...state.cells].map(simulateLife)
+        }));
+           }, 0);
     };
 
     const handlePause = () => {
