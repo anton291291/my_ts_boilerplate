@@ -29,15 +29,18 @@ export const Grid: React.FC<Props> = (props) => {
         setState((state) => ({
             ...state,
             cells: [...state.cells].map((obj) => {
-                if (obj.index === index) return { ...obj, isClicked: true };
+                if (obj.index === index)
+                    return { ...obj, isClicked: !obj.isClicked };
                 return obj;
             })
         }));
     };
 
+   /*  console.log(state.cells) */
+
     return (
         <Container width={x} height={y}>
-            {state.cells &&
+             {state.cells &&
                 state.cells.map((item) => (
                     <Cell
                         isClicked={item.isClicked}

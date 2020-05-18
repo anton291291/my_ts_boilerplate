@@ -16,7 +16,9 @@ export const StyledCell = styled.div<{ isClicked: boolean }>`
     color: white;
     text-align: center;
     cursor: pointer;
-    transition: all 0.5s;
+    transition: all 0.1s;
+    user-select: none;
+    
 `;
 
 type Props = {
@@ -28,9 +30,5 @@ type Props = {
 export const Cell: React.FC<Props> = (props) => {
     const { index, onClick, isClicked } = props;
 
-    return (
-        <StyledCell onClick={onClick} isClicked={isClicked}>
-            {index}
-        </StyledCell>
-    );
+    return <StyledCell onClick={onClick} isClicked={isClicked}></StyledCell>;
 };
