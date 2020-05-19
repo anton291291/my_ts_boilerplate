@@ -55,14 +55,11 @@ export const Pleer: React.FC<Props> = (props) => {
 
     const { state, setState } = useContext(GridContext);
 
-  
-
     useEffect(() => {
         state.cells.every((obj) => obj.isClicked === false) &&
             (clearInterval(startInterval),
             setState((state) => ({ ...state, isPlay: false })));
     }, [state.cells]);
-  
 
     const handleReset = () => {
         clearInterval(state.intervalID);
@@ -76,7 +73,6 @@ export const Pleer: React.FC<Props> = (props) => {
 
         setState((state) => ({ ...state, isPlay: false }));
     };
-
 
     const firstElems = [];
     const lastElems = [];
@@ -112,7 +108,6 @@ export const Pleer: React.FC<Props> = (props) => {
             bottomRow.push(index);
         }
     };
-
 
     const handlePlay = () => {
         setState((state) => ({ ...state, isPlay: true }));
@@ -300,7 +295,7 @@ export const Pleer: React.FC<Props> = (props) => {
                 ...state,
                 cells: [...state.cells].map(simulateLife)
             }));
-        }, 100);
+        }, state.speed * 100);
 
         setState((state) => ({
             ...state,

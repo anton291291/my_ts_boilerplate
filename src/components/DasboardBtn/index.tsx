@@ -92,34 +92,63 @@ export const DasboardBtn: React.FC<Props> = (props) => {
         }
     };
 
+    const handleChangeSpeed = (
+        event: React.SyntheticEvent,
+        newValue: number
+    ) => {
+        setState((state) => ({
+            ...state,
+            speed: newValue
+        }));
+    };
+
     return (
         <>
             <Btn onClick={handleOpen}>
                 <DashboardIcon style={{ color: 'white' }} />
             </Btn>
             <StyledDrawer anchor='bottom' open={isOpen} onClose={handleClose}>
-                <Box pl='20px' display='flex' flexDirection='column'>
-                    <Box display='flex' alignItems='center' height='110px'>
-                        <Typography>Ширина по оси Y:</Typography>
-                        <SizeSlider
-                            min={5}
-                            max={Math.floor(
-                                document.documentElement.clientHeight / 26 - 2
-                            )}
-                            value={y}
-                            onChange={handleChangeY}
-                        />
+                <Box display='flex'>
+                    <Box pl='20px' display='flex' flexDirection='column'>
+                        <Box display='flex' alignItems='center' height='110px'>
+                            <Typography>Ширина по оси Y:</Typography>
+                            <SizeSlider
+                                min={5}
+                                max={Math.floor(
+                                    document.documentElement.clientHeight / 26 -
+                                        2
+                                )}
+                                value={y}
+                                onChange={handleChangeY}
+                            />
+                        </Box>
+                        <Box display='flex' alignItems='center'>
+                            <Typography>Ширина по оси X:</Typography>
+                            <SizeSlider
+                                min={5}
+                                max={Math.floor(
+                                    document.documentElement.clientWidth / 26
+                                )}
+                                value={x}
+                                onChange={handleChangeX}
+                            />
+                        </Box>
                     </Box>
-                    <Box display='flex' alignItems='center'>
-                        <Typography>Ширина по оси X:</Typography>
-                        <SizeSlider
-                            min={5}
-                            max={Math.floor(
-                                document.documentElement.clientWidth / 26
-                            )}
-                            value={x}
-                            onChange={handleChangeX}
-                        />
+                    <Box
+                        pl='20px'
+                        display='flex'
+                        flexDirection='column'
+                        width='50%'
+                    >
+                        <Box display='flex' alignItems='center' height='110px'>
+                            <Typography>Скорость</Typography>
+                            <SizeSlider
+                                min={1}
+                                max={30}
+                                value={state.speed}
+                                onChange={handleChangeSpeed}
+                            />
+                        </Box>
                     </Box>
                 </Box>
             </StyledDrawer>
