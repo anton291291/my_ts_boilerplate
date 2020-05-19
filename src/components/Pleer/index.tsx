@@ -5,10 +5,19 @@ import styled from 'styled-components';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import StopIcon from '@material-ui/icons/Stop';
 import PauseIcon from '@material-ui/icons/Pause';
+import ShuffleIcon from '@material-ui/icons/Shuffle';
 import { Box } from '@material-ui/core';
 import { GridContext } from '../../hooks/contextHooks';
 
 const Stop = styled(StopIcon)`
+    color: white;
+    transition: all 1s;
+    &:hover {
+        transform: scale(1.2);
+    }
+`;
+
+const Random = styled(ShuffleIcon)`
     color: white;
     transition: all 1s;
     &:hover {
@@ -48,33 +57,12 @@ export const Pleer: React.FC<Props> = (props) => {
 
     const [isPlay, setIsPlay] = useState(false);
 
-    useEffect(() => {
-        state.cells &&
-            state.cells.every((obj) => obj.isClicked === false) &&
-            (clearInterval(startInterval), setIsPlay(false));
-    }, [state.cells]);
+    const firstElems = [];
+    const lastElems = [];
+    const upRow = [];
+    const bottomRow = [];
 
-    const handleReset = () => {
-        clearInterval(startInterval);
-
-        setState((state) => ({
-            ...state,
-            cells: [...state.cells].map((obj) => {
-                return { ...obj, isClicked: false };
-            })
-        }));
-
-        setIsPlay(false);
-    };
-
-    const handlePlay = () => {
-        setIsPlay(true);
-
-        const firstElems = [];
-        const lastElems = [];
-        const upRow = [];
-        const bottomRow = [];
-
+    const splitCells = () => {
         for (
             let index = 0;
             index < state.cells.length;
@@ -102,6 +90,33 @@ export const Pleer: React.FC<Props> = (props) => {
         ) {
             bottomRow.push(index);
         }
+    };
+
+    useEffect(() => {
+        state.cells &&
+            state.cells.every((obj) => obj.isClicked === false) &&
+            (clearInterval(startInterval), setIsPlay(false));
+    }, [state.cells]);
+
+    useEffect(() => {
+        state.cells && splitCells();
+    }, [state.cells]);
+
+    const handleReset = () => {
+        clearInterval(startInterval);
+
+        setState((state) => ({
+            ...state,
+            cells: [...state.cells].map((obj) => {
+                return { ...obj, isClicked: false };
+            })
+        }));
+
+        setIsPlay(false);
+    };
+
+    const handlePlay = () => {
+        setIsPlay(true);
 
         const checkRestElems = (obj, index, arr) => {
             let count = 0;
@@ -204,7 +219,6 @@ export const Pleer: React.FC<Props> = (props) => {
                     obj.isClicked === true &&
                     (count == 2 || count == 3)
                 ) {
-                    console.log('fucker', count);
                     return obj;
                 } else {
                     return { ...obj, isClicked: false };
@@ -280,12 +294,28 @@ export const Pleer: React.FC<Props> = (props) => {
             }
         };
 
-          startInterval = setInterval(() => {
-        setState((state) => ({
-            ...state,
-            cells: [...state.cells].map(simulateLife)
-        }));
-           }, 0);
+        startInterval = setInterval(() => {
+            setState((state) => ({
+                ...state,
+                cells: [...state.cells].map(simulateLife)
+            }));
+        }, 100);
+    };
+
+    const handleRandom = () => {
+        handleReset();
+       
+            setState((state) => ({
+                ...state,
+                cells: [...state.cells].map((obj, index, arr) => {
+                    if (
+                       Math.random() > 0.7
+                    )
+                        return { ...obj, isClicked: true };
+                    return obj;
+                })
+            }));
+      
     };
 
     const handlePause = () => {
@@ -303,6 +333,7 @@ export const Pleer: React.FC<Props> = (props) => {
             <IconContainer>
                 <Stop onClick={handleReset} />
             </IconContainer>
+            <Random onClick={handleRandom} />
         </Box>
     );
 };

@@ -16,7 +16,11 @@ type CellType = {
     }>;
 };
 
-type StateType = AxisType & CellType;
+type IntervalIDType = {
+    intervalID: number;
+};
+
+type StateType = AxisType & CellType & IntervalIDType;
 
 type GridContextType = {
     state: StateType;
@@ -25,7 +29,8 @@ type GridContextType = {
 
 export const GridProvider = ({ children }) => {
     const [state, setState] = useState({
-        axis: { x: 50, y: 15 }
+        axis: { x: 50, y: 15 },
+        intervalID: null
     });
 
     const y = state.axis.y;

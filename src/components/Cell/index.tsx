@@ -16,9 +16,8 @@ export const StyledCell = styled.div<{ isClicked: boolean }>`
     color: white;
     text-align: center;
     cursor: pointer;
-    transition: all 0.1s;
+    transition: all 0.2s;
     user-select: none;
-    
 `;
 
 type Props = {

@@ -36,11 +36,9 @@ export const Grid: React.FC<Props> = (props) => {
         }));
     };
 
-   /*  console.log(state.cells) */
-
     return (
         <Container width={x} height={y}>
-             {state.cells &&
+            {state.cells &&
                 state.cells.map((item) => (
                     <Cell
                         isClicked={item.isClicked}

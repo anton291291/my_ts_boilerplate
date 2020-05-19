@@ -31,16 +31,16 @@ export const DasboardBtn: React.FC<Props> = (props) => {
     const {} = props;
 
     const [isOpen, setIsOpen] = useState(false);
+    const { state, setState } = useContext(GridContext);
 
     const handleOpen = () => {
+       /*  clearInterval(state.intervalID); */
         setIsOpen(!isOpen);
     };
 
     const handleClose = () => {
         setIsOpen(false);
     };
-
-    const { state, setState } = useContext(GridContext);
 
     const y = state.axis.y;
     const x = state.axis.x;
