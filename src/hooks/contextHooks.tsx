@@ -23,7 +23,7 @@ type IntervalIDType = {
 type isPlayType = {
     isPlay: boolean;
     speed: number;
-}
+};
 
 type StateType = AxisType & CellType & IntervalIDType & isPlayType;
 
@@ -39,7 +39,6 @@ export const GridProvider = ({ children }) => {
         intervalID: null,
         isPlay: false,
         speed: 1
-        
     });
 
     const y = state.axis.y;
