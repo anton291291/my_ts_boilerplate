@@ -10,13 +10,21 @@ type AxisType = {
 };
 
 type CellType = {
-    cells?: Array<{
-        index: number | null;
-        isClicked: boolean;
+    cells: Array<{
+        index?: number | null;
+        isClicked?: boolean;
     }>;
 };
 
-type StateType = AxisType & CellType;
+type IntervalIDType = {
+    intervalID: number;
+};
+
+type isPlayType = {
+    isPlay: boolean;
+}
+
+type StateType = AxisType & CellType & IntervalIDType & isPlayType;
 
 type GridContextType = {
     state: StateType;
@@ -25,7 +33,10 @@ type GridContextType = {
 
 export const GridProvider = ({ children }) => {
     const [state, setState] = useState({
-        axis: { x: 50, y: 15 }
+        axis: { x: 50, y: 15 },
+        cells: [],
+        intervalID: null,
+        isPlay: false
     });
 
     const y = state.axis.y;

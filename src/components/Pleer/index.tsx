@@ -5,10 +5,19 @@ import styled from 'styled-components';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import StopIcon from '@material-ui/icons/Stop';
 import PauseIcon from '@material-ui/icons/Pause';
+import ShuffleIcon from '@material-ui/icons/Shuffle';
 import { Box } from '@material-ui/core';
 import { GridContext } from '../../hooks/contextHooks';
 
 const Stop = styled(StopIcon)`
+    color: white;
+    transition: all 1s;
+    &:hover {
+        transform: scale(1.2);
+    }
+`;
+
+const Random = styled(ShuffleIcon)`
     color: white;
     transition: all 1s;
     &:hover {
@@ -37,7 +46,7 @@ const IconContainer = styled.div`
     height: 23px;
 `;
 
-let startInterval;
+let startInterval: number;
 
 type Props = {};
 
@@ -46,16 +55,17 @@ export const Pleer: React.FC<Props> = (props) => {
 
     const { state, setState } = useContext(GridContext);
 
-    const [isPlay, setIsPlay] = useState(false);
+  
 
     useEffect(() => {
-        state.cells &&
-            state.cells.every((obj) => obj.isClicked === false) &&
-            (clearInterval(startInterval), setIsPlay(false));
+        state.cells.every((obj) => obj.isClicked === false) &&
+            (clearInterval(startInterval),
+            setState((state) => ({ ...state, isPlay: false })));
     }, [state.cells]);
+  
 
     const handleReset = () => {
-        clearInterval(startInterval);
+        clearInterval(state.intervalID);
 
         setState((state) => ({
             ...state,
@@ -64,17 +74,16 @@ export const Pleer: React.FC<Props> = (props) => {
             })
         }));
 
-        setIsPlay(false);
+        setState((state) => ({ ...state, isPlay: false }));
     };
 
-    const handlePlay = () => {
-        setIsPlay(true);
 
-        const firstElems = [];
-        const lastElems = [];
-        const upRow = [];
-        const bottomRow = [];
+    const firstElems = [];
+    const lastElems = [];
+    const upRow = [];
+    const bottomRow = [];
 
+    const splitCells = () => {
         for (
             let index = 0;
             index < state.cells.length;
@@ -102,6 +111,13 @@ export const Pleer: React.FC<Props> = (props) => {
         ) {
             bottomRow.push(index);
         }
+    };
+
+
+    const handlePlay = () => {
+        setState((state) => ({ ...state, isPlay: true }));
+
+        splitCells();
 
         const checkRestElems = (obj, index, arr) => {
             let count = 0;
@@ -204,7 +220,6 @@ export const Pleer: React.FC<Props> = (props) => {
                     obj.isClicked === true &&
                     (count == 2 || count == 3)
                 ) {
-                    console.log('fucker', count);
                     return obj;
                 } else {
                     return { ...obj, isClicked: false };
@@ -280,22 +295,40 @@ export const Pleer: React.FC<Props> = (props) => {
             }
         };
 
-          startInterval = setInterval(() => {
+        startInterval = setInterval(() => {
+            setState((state) => ({
+                ...state,
+                cells: [...state.cells].map(simulateLife)
+            }));
+        }, 100);
+
         setState((state) => ({
             ...state,
-            cells: [...state.cells].map(simulateLife)
+            intervalID: startInterval
         }));
-           }, 0);
+    };
+
+    const handleRandom = () => {
+        handleReset();
+        setState((state) => ({
+            ...state,
+            cells: [...state.cells].map((obj) => {
+                if (Math.random() > 0.7) {
+                    return { ...obj, isClicked: true };
+                }
+                return obj;
+            })
+        }));
     };
 
     const handlePause = () => {
-        setIsPlay(false);
-        clearInterval(startInterval);
+        setState((state) => ({ ...state, isPlay: false }));
+        clearInterval(state.intervalID);
     };
 
     return (
         <Box display='flex'>
-            {isPlay ? (
+            {state.isPlay ? (
                 <Pause onClick={handlePause} />
             ) : (
                 <Play onClick={handlePlay} />
@@ -303,6 +336,7 @@ export const Pleer: React.FC<Props> = (props) => {
             <IconContainer>
                 <Stop onClick={handleReset} />
             </IconContainer>
+            <Random onClick={handleRandom} />
         </Box>
     );
 };
