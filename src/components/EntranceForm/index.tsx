@@ -1,10 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 
 import styled from 'styled-components';
 
 import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 import { Modal, Grow } from '@material-ui/core';
 import { StyledInput } from '../StyledComponents';
+
+import {
+    splitCells,
+    checkLastElems,
+    checkFirstElems,
+    checkBottomRow,
+    checkRestElems,
+    checkUpRow
+} from '@/utills/algorithm';
+import { GridContext } from '@/hooks/contextHooks';
+import { simulateLife } from '@/utills/algorithm';
 
 const EntranceBtn = styled(PersonOutlineIcon)`
     color: white;
@@ -54,13 +65,71 @@ export const EntranceForm: React.FC<Props> = (props) => {
     const {} = props;
 
     const [open, setOpen] = useState(false);
+    const { state, setState } = useContext(GridContext);
 
     const handleOpen = () => {
         setOpen(true);
+        clearInterval(state.intervalID);
+        setState((state) => ({
+            ...state,
+            name: ''
+        }));
     };
 
     const handleClose = () => {
         setOpen(false);
+    };
+
+    const handlePlay = () => {
+        setState((state) => ({ ...state, isPlay: true }));
+
+        setState((state) => ({
+            ...state,
+            cells: [...state.cells].map((obj) => {
+                return { ...obj, isClicked: false };
+            })
+        }));
+
+        setState((state) => ({ ...state, gen: 1 }));
+
+        setState((state) => ({
+            ...state,
+            cells: [...state.cells].map((obj) => {
+                if (Math.random() > 0.7) {
+                    return { ...obj, isClicked: true };
+                }
+                return obj;
+            })
+        }));
+
+        let startInterval = setInterval(() => {
+            setState((state) => ({
+                ...state,
+                gen: state.gen + 1
+            }));
+
+            setState((state) => ({
+                ...state,
+                cells: [...state.cells].map((obj, index, arr) =>
+                    simulateLife(obj, index, arr, state)
+                )
+            }));
+        }, state.speed * 100);
+
+        setState((state) => ({
+            ...state,
+            intervalID: startInterval
+        }));
+
+        handleClose();
+    };
+
+    const handleForm = (e: React.ChangeEvent<HTMLInputElement>) => {
+        e.persist();
+        setState((state) => ({
+            ...state,
+            name: (e.target as HTMLInputElement).value
+        }));
     };
 
     return (
@@ -74,8 +143,12 @@ export const EntranceForm: React.FC<Props> = (props) => {
             >
                 <Grow timeout={500} in={open}>
                     <FormContainer>
-                        <StyledInput label='Введите имя' variant='outlined' />
-                        <StartBtn>Старт</StartBtn>
+                        <StyledInput
+                            label='Name'
+                            variant='outlined'
+                            onChange={handleForm}
+                        />
+                        <StartBtn onClick={handlePlay}>Старт</StartBtn>
                     </FormContainer>
                 </Grow>
             </Modal>

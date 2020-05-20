@@ -14,6 +14,7 @@ type CellType = {
         index?: number | null;
         isClicked?: boolean;
     }>;
+    gen: number;
 };
 
 type IntervalIDType = {
@@ -25,7 +26,12 @@ type isPlayType = {
     speed: number;
 };
 
-type StateType = AxisType & CellType & IntervalIDType & isPlayType;
+
+type FormType = {
+    name: string;
+}
+
+type StateType = AxisType & CellType & IntervalIDType & isPlayType & FormType;
 
 type GridContextType = {
     state: StateType;
@@ -34,8 +40,10 @@ type GridContextType = {
 
 export const GridProvider = ({ children }) => {
     const [state, setState] = useState({
-        axis: { x: 50, y: 15 },
+        axis: { x: 30, y: 15 },
         cells: [],
+        gen: 1,
+        name: '',
         intervalID: null,
         isPlay: false,
         speed: 1

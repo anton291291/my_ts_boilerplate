@@ -31,7 +31,7 @@ export const DasboardBtn: React.FC<Props> = (props) => {
     const {} = props;
 
     const [isOpen, setIsOpen] = useState(false);
-  
+
     const { state, setState } = useContext(GridContext);
 
     const handleOpen = () => {
@@ -135,7 +135,7 @@ export const DasboardBtn: React.FC<Props> = (props) => {
                         </Box>
                     </Box>
                     <Box
-                        pl='20px'
+                        pr='20px'
                         display='flex'
                         flexDirection='column'
                         width='50%'

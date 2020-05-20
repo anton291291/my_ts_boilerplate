@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 
 import styled from 'styled-components';
 
@@ -6,8 +6,12 @@ import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import StopIcon from '@material-ui/icons/Stop';
 import PauseIcon from '@material-ui/icons/Pause';
 import ShuffleIcon from '@material-ui/icons/Shuffle';
-import { Box } from '@material-ui/core';
+import { Box, Typography } from '@material-ui/core';
 import { GridContext } from '../../hooks/contextHooks';
+
+import {
+    simulateLife
+} from '@/utills/algorithm';
 
 const Stop = styled(StopIcon)`
     color: white;
@@ -20,6 +24,7 @@ const Stop = styled(StopIcon)`
 const Random = styled(ShuffleIcon)`
     color: white;
     transition: all 1s;
+    margin-right: 20px;
     &:hover {
         transform: scale(1.2);
     }
@@ -28,6 +33,7 @@ const Random = styled(ShuffleIcon)`
 const Play = styled(PlayArrowIcon)`
     color: white;
     transition: all 1s;
+    margin-left: 20px;
     &:hover {
         transform: scale(1.2);
     }
@@ -36,6 +42,7 @@ const Play = styled(PlayArrowIcon)`
 const Pause = styled(PauseIcon)`
     color: white;
     transition: all 1s;
+    margin-left: 20px;
     &:hover {
         transform: scale(1.2);
     }
@@ -46,7 +53,10 @@ const IconContainer = styled.div`
     height: 23px;
 `;
 
-let startInterval: number;
+const GenField = styled(Typography)`
+    width: 120px;
+`;
+const NameField = styled(Typography)``;
 
 type Props = {};
 
@@ -57,7 +67,7 @@ export const Pleer: React.FC<Props> = (props) => {
 
     useEffect(() => {
         state.cells.every((obj) => obj.isClicked === false) &&
-            (clearInterval(startInterval),
+            (clearInterval(state.intervalID),
             setState((state) => ({ ...state, isPlay: false })));
     }, [state.cells]);
 
@@ -72,228 +82,23 @@ export const Pleer: React.FC<Props> = (props) => {
         }));
 
         setState((state) => ({ ...state, isPlay: false }));
-    };
-
-    const firstElems = [];
-    const lastElems = [];
-    const upRow = [];
-    const bottomRow = [];
-
-    const splitCells = () => {
-        for (
-            let index = 0;
-            index < state.cells.length;
-            index = index + state.axis.x
-        ) {
-            firstElems.push(index);
-        }
-
-        for (
-            let index = state.axis.x - 1;
-            index < state.cells.length;
-            index = index + state.axis.x
-        ) {
-            lastElems.push(index);
-        }
-
-        for (let index = 1; index < state.axis.x - 1; index++) {
-            upRow.push(index);
-        }
-
-        for (
-            let index = state.cells.length - state.axis.x + 1;
-            index < state.cells.length - 1;
-            index++
-        ) {
-            bottomRow.push(index);
-        }
+        setState((state) => ({ ...state, gen: 1 }));
     };
 
     const handlePlay = () => {
         setState((state) => ({ ...state, isPlay: true }));
 
-        splitCells();
-
-        const checkRestElems = (obj, index, arr) => {
-            let count = 0;
-            arr[index - state.axis.x - 1].isClicked === true && count++;
-            arr[index - state.axis.x].isClicked === true && count++;
-            arr[index - state.axis.x + 1].isClicked === true && count++;
-            arr[index - 1].isClicked === true && count++;
-            arr[index + 1].isClicked === true && count++;
-            arr[index + state.axis.x - 1].isClicked === true && count++;
-            arr[index + state.axis.x].isClicked === true && count++;
-            arr[index + state.axis.x + 1].isClicked === true && count++;
-
-            if (obj.isClicked === false && count == 3) {
-                return { ...obj, isClicked: true };
-            } else if (obj.isClicked === true && (count == 2 || count == 3)) {
-                return obj;
-            } else {
-                return { ...obj, isClicked: false };
-            }
-        };
-
-        const checkBottomRow = (obj, index, arr) => {
-            let count = 0;
-            arr[index - 1].isClicked === true && count++;
-            arr[index + 1].isClicked === true && count++;
-            arr[index - state.axis.x].isClicked === true && count++;
-            arr[index - state.axis.x - 1].isClicked === true && count++;
-            arr[index - state.axis.x + 1].isClicked === true && count++;
-
-            if (obj.isClicked === false && count == 3) {
-                return { ...obj, isClicked: true };
-            } else if (obj.isClicked === true && (count == 2 || count == 3)) {
-                return obj;
-            } else {
-                return { ...obj, isClicked: false };
-            }
-        };
-
-        const checkUpRow = (obj, index, arr) => {
-            let count = 0;
-            arr[index - 1].isClicked === true && count++;
-            arr[index + 1].isClicked === true && count++;
-            arr[index + state.axis.x].isClicked === true && count++;
-            arr[index + state.axis.x - 1].isClicked === true && count++;
-            arr[index + state.axis.x + 1].isClicked === true && count++;
-
-            if (obj.isClicked === false && count == 3) {
-                return { ...obj, isClicked: true };
-            } else if (obj.isClicked === true && (count == 2 || count == 3)) {
-                return obj;
-            } else {
-                return { ...obj, isClicked: false };
-            }
-        };
-
-        const checkFirstElems = (obj, index, arr) => {
-            if (obj.index === firstElems[0]) {
-                let count = 0;
-                arr[index + 1].isClicked === true && count++;
-                arr[index + state.axis.x].isClicked === true && count++;
-                arr[index + state.axis.x + 1].isClicked === true && count++;
-
-                if (obj.isClicked === false && count === 3) {
-                    return { ...obj, isClicked: true };
-                } else if (
-                    obj.isClicked === true &&
-                    (count == 2 || count == 3)
-                ) {
-                    return obj;
-                } else {
-                    return { ...obj, isClicked: false };
-                }
-            } else if (obj.index === firstElems[firstElems.length - 1]) {
-                let count = 0;
-                arr[index + 1].isClicked === true && count++;
-                arr[index - state.axis.x].isClicked === true && count++;
-                arr[index - state.axis.x + 1].isClicked === true && count++;
-
-                if (obj.isClicked === false && count === 3) {
-                    return { ...obj, isClicked: true };
-                } else if (
-                    obj.isClicked === true &&
-                    (count == 2 || count == 3)
-                ) {
-                    return obj;
-                } else {
-                    return { ...obj, isClicked: false };
-                }
-            } else {
-                let count = 0;
-                arr[index - state.axis.x].isClicked === true && count++;
-                arr[index - state.axis.x + 1].isClicked === true && count++;
-                arr[index + 1].isClicked === true && count++;
-                arr[index + state.axis.x].isClicked === true && count++;
-                arr[index + state.axis.x + 1].isClicked === true && count++;
-
-                if (obj.isClicked === false && count == 3) {
-                    return { ...obj, isClicked: true };
-                } else if (
-                    obj.isClicked === true &&
-                    (count == 2 || count == 3)
-                ) {
-                    return obj;
-                } else {
-                    return { ...obj, isClicked: false };
-                }
-            }
-        };
-
-        const checkLastElems = (obj, index, arr) => {
-            if (obj.index === lastElems[0]) {
-                let count = 0;
-                arr[index - 1].isClicked === true && count++;
-                arr[index + state.axis.x].isClicked === true && count++;
-                arr[index + state.axis.x - 1].isClicked === true && count++;
-
-                if (obj.isClicked === false && count === 3) {
-                    return { ...obj, isClicked: true };
-                } else if (
-                    obj.isClicked === true &&
-                    (count == 2 || count == 3)
-                ) {
-                    return obj;
-                } else {
-                    return { ...obj, isClicked: false };
-                }
-            } else if (obj.index === lastElems[lastElems.length - 1]) {
-                let count = 0;
-                arr[index - 1].isClicked === true && count++;
-                arr[index - state.axis.x].isClicked === true && count++;
-                arr[index - state.axis.x - 1].isClicked === true && count++;
-
-                if (obj.isClicked === false && count === 3) {
-                    return { ...obj, isClicked: true };
-                } else if (
-                    (obj.isClicked === true && count == 2) ||
-                    count == 3
-                ) {
-                    return obj;
-                } else {
-                    return { ...obj, isClicked: false };
-                }
-            } else {
-                let count = 0;
-                arr[index - state.axis.x].isClicked === true && count++;
-                arr[index - state.axis.x - 1].isClicked === true && count++;
-                arr[index - 1].isClicked === true && count++;
-                arr[index + state.axis.x].isClicked === true && count++;
-                arr[index + state.axis.x - 1].isClicked === true && count++;
-
-                if (obj.isClicked === false && count == 3) {
-                    return { ...obj, isClicked: true };
-                } else if (
-                    (obj.isClicked === true && count == 2) ||
-                    count == 3
-                ) {
-                    return obj;
-                } else {
-                    return { ...obj, isClicked: false };
-                }
-            }
-        };
-
-        const simulateLife = (obj, index, arr) => {
-            if (lastElems.includes(obj.index)) {
-                return checkLastElems(obj, index, arr);
-            } else if (firstElems.includes(obj.index)) {
-                return checkFirstElems(obj, index, arr);
-            } else if (upRow.includes(obj.index)) {
-                return checkUpRow(obj, index, arr);
-            } else if (bottomRow.includes(obj.index)) {
-                return checkBottomRow(obj, index, arr);
-            } else {
-                return checkRestElems(obj, index, arr);
-            }
-        };
-
-        startInterval = setInterval(() => {
+        let startInterval = setInterval(() => {
             setState((state) => ({
                 ...state,
-                cells: [...state.cells].map(simulateLife)
+                gen: state.gen + 1
+            }));
+
+            setState((state) => ({
+                ...state,
+                cells: [...state.cells].map((obj, index, arr) =>
+                    simulateLife(obj, index, arr, state)
+                )
             }));
         }, state.speed * 100);
 
@@ -323,6 +128,7 @@ export const Pleer: React.FC<Props> = (props) => {
 
     return (
         <Box display='flex'>
+            <GenField>Generation: {state.gen}</GenField>
             {state.isPlay ? (
                 <Pause onClick={handlePause} />
             ) : (
@@ -332,6 +138,7 @@ export const Pleer: React.FC<Props> = (props) => {
                 <Stop onClick={handleReset} />
             </IconContainer>
             <Random onClick={handleRandom} />
+            <NameField>{state.name}</NameField>
         </Box>
     );
 };
