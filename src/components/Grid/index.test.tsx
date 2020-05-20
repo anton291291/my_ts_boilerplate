@@ -18,12 +18,12 @@ describe('Grid', () => {
     });
 
     test('by default width prop should be 50 and height should be 15', () => {
-        expect(output.find(Grid).children().prop('width')).toBe(50);
+        expect(output.find(Grid).children().prop('width')).toBe(30);
         expect(output.find(Grid).children().prop('height')).toBe(15);
     });
 
     test('by default it should have 750 children', () => {
-        expect(output.find('Container').prop('children')).toHaveLength(750);
+        expect(output.find('Container').prop('children')).toHaveLength(450);
     });
 
     test('by default Cell components isClicked prop should be false', () => {

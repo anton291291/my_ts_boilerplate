@@ -1,21 +1,38 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import 'jest-styled-components';
 import { GridProvider } from '../../hooks/contextHooks';
+import { Pleer } from '.';
+import { shallowToJson, mountToJson } from 'enzyme-to-json';
 
 describe('Pleer', () => {
     const output = mount(
         <GridProvider>
-            <div />
+            <Pleer />
         </GridProvider>
     );
 
     test('should render correctly', () => {
-        expect(toJson(output)).toMatchSnapshot();
+        expect(mountToJson(output)).toMatchSnapshot();
     });
 
-    test('', () => {
-        console.log(toJson(output));
+    test('Checking generation default state', () => {
+        expect(output.find('GenField').text()).toEqual('Generation: 1');
     });
+
+    test('Checking Pleer  Play/Pause btns', () => {
+        output.find('Play').simulate('click');
+        expect(output.find('Pause').exists()).toBeTruthy;
+        output.find('Pause').simulate('click');
+        expect(output.find('Play').exists()).toBeTruthy;
+    });
+    /* test('Checking generation  state', () => {
+        output.find('Random').simulate('click');
+        output.find('Play').simulate('click');
+        output.find('Pause').simulate('click');
+        jest.useFakeTimers();
+        jest.advanceTimersByTime(1000);
+        expect(output.find('GenField').text()).toEqual('Generation: 2');
+    }); */
 });

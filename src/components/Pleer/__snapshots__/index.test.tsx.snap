@@ -2,6 +2,247 @@
 
 exports[`Pleer should render correctly 1`] = `
 <GridProvider>
-  <div />
+  <Pleer>
+    <Styled(MuiBox)
+      display="flex"
+    >
+      <div
+        className="MuiBox-root MuiBox-root-2"
+      >
+        <GenField>
+          <WithStyles(ForwardRef(Typography))
+            className="GenField-sc-9snjga-5 jDxALd"
+          >
+            <ForwardRef(Typography)
+              className="GenField-sc-9snjga-5 jDxALd"
+              classes={
+                Object {
+                  "alignCenter": "MuiTypography-alignCenter",
+                  "alignJustify": "MuiTypography-alignJustify",
+                  "alignLeft": "MuiTypography-alignLeft",
+                  "alignRight": "MuiTypography-alignRight",
+                  "body1": "MuiTypography-body1",
+                  "body2": "MuiTypography-body2",
+                  "button": "MuiTypography-button",
+                  "caption": "MuiTypography-caption",
+                  "colorError": "MuiTypography-colorError",
+                  "colorInherit": "MuiTypography-colorInherit",
+                  "colorPrimary": "MuiTypography-colorPrimary",
+                  "colorSecondary": "MuiTypography-colorSecondary",
+                  "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                  "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                  "displayBlock": "MuiTypography-displayBlock",
+                  "displayInline": "MuiTypography-displayInline",
+                  "gutterBottom": "MuiTypography-gutterBottom",
+                  "h1": "MuiTypography-h1",
+                  "h2": "MuiTypography-h2",
+                  "h3": "MuiTypography-h3",
+                  "h4": "MuiTypography-h4",
+                  "h5": "MuiTypography-h5",
+                  "h6": "MuiTypography-h6",
+                  "noWrap": "MuiTypography-noWrap",
+                  "overline": "MuiTypography-overline",
+                  "paragraph": "MuiTypography-paragraph",
+                  "root": "MuiTypography-root",
+                  "srOnly": "MuiTypography-srOnly",
+                  "subtitle1": "MuiTypography-subtitle1",
+                  "subtitle2": "MuiTypography-subtitle2",
+                }
+              }
+            >
+              <p
+                className="MuiTypography-root GenField-sc-9snjga-5 jDxALd MuiTypography-body1"
+              >
+                Generation: 
+                1
+              </p>
+            </ForwardRef(Typography)>
+          </WithStyles(ForwardRef(Typography))>
+        </GenField>
+        <Play
+          onClick={[Function]}
+        >
+          <ForwardRef
+            className="Play-sc-9snjga-2 iXLphk"
+            onClick={[Function]}
+          >
+            <WithStyles(ForwardRef(SvgIcon))
+              className="Play-sc-9snjga-2 iXLphk"
+              onClick={[Function]}
+            >
+              <ForwardRef(SvgIcon)
+                className="Play-sc-9snjga-2 iXLphk"
+                classes={
+                  Object {
+                    "colorAction": "MuiSvgIcon-colorAction",
+                    "colorDisabled": "MuiSvgIcon-colorDisabled",
+                    "colorError": "MuiSvgIcon-colorError",
+                    "colorPrimary": "MuiSvgIcon-colorPrimary",
+                    "colorSecondary": "MuiSvgIcon-colorSecondary",
+                    "fontSizeInherit": "MuiSvgIcon-fontSizeInherit",
+                    "fontSizeLarge": "MuiSvgIcon-fontSizeLarge",
+                    "fontSizeSmall": "MuiSvgIcon-fontSizeSmall",
+                    "root": "MuiSvgIcon-root",
+                  }
+                }
+                onClick={[Function]}
+              >
+                <svg
+                  aria-hidden="true"
+                  className="MuiSvgIcon-root Play-sc-9snjga-2 iXLphk"
+                  focusable="false"
+                  onClick={[Function]}
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M8 5v14l11-7z"
+                  />
+                </svg>
+              </ForwardRef(SvgIcon)>
+            </WithStyles(ForwardRef(SvgIcon))>
+          </ForwardRef>
+        </Play>
+        <IconContainer>
+          <div
+            className="IconContainer-sc-9snjga-4 TBJdr"
+          >
+            <Stop
+              onClick={[Function]}
+            >
+              <ForwardRef
+                className="Stop-sc-9snjga-0 bggHgt"
+                onClick={[Function]}
+              >
+                <WithStyles(ForwardRef(SvgIcon))
+                  className="Stop-sc-9snjga-0 bggHgt"
+                  onClick={[Function]}
+                >
+                  <ForwardRef(SvgIcon)
+                    className="Stop-sc-9snjga-0 bggHgt"
+                    classes={
+                      Object {
+                        "colorAction": "MuiSvgIcon-colorAction",
+                        "colorDisabled": "MuiSvgIcon-colorDisabled",
+                        "colorError": "MuiSvgIcon-colorError",
+                        "colorPrimary": "MuiSvgIcon-colorPrimary",
+                        "colorSecondary": "MuiSvgIcon-colorSecondary",
+                        "fontSizeInherit": "MuiSvgIcon-fontSizeInherit",
+                        "fontSizeLarge": "MuiSvgIcon-fontSizeLarge",
+                        "fontSizeSmall": "MuiSvgIcon-fontSizeSmall",
+                        "root": "MuiSvgIcon-root",
+                      }
+                    }
+                    onClick={[Function]}
+                  >
+                    <svg
+                      aria-hidden="true"
+                      className="MuiSvgIcon-root Stop-sc-9snjga-0 bggHgt"
+                      focusable="false"
+                      onClick={[Function]}
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M6 6h12v12H6z"
+                      />
+                    </svg>
+                  </ForwardRef(SvgIcon)>
+                </WithStyles(ForwardRef(SvgIcon))>
+              </ForwardRef>
+            </Stop>
+          </div>
+        </IconContainer>
+        <Random
+          onClick={[Function]}
+        >
+          <ForwardRef
+            className="Random-sc-9snjga-1 kNTVjD"
+            onClick={[Function]}
+          >
+            <WithStyles(ForwardRef(SvgIcon))
+              className="Random-sc-9snjga-1 kNTVjD"
+              onClick={[Function]}
+            >
+              <ForwardRef(SvgIcon)
+                className="Random-sc-9snjga-1 kNTVjD"
+                classes={
+                  Object {
+                    "colorAction": "MuiSvgIcon-colorAction",
+                    "colorDisabled": "MuiSvgIcon-colorDisabled",
+                    "colorError": "MuiSvgIcon-colorError",
+                    "colorPrimary": "MuiSvgIcon-colorPrimary",
+                    "colorSecondary": "MuiSvgIcon-colorSecondary",
+                    "fontSizeInherit": "MuiSvgIcon-fontSizeInherit",
+                    "fontSizeLarge": "MuiSvgIcon-fontSizeLarge",
+                    "fontSizeSmall": "MuiSvgIcon-fontSizeSmall",
+                    "root": "MuiSvgIcon-root",
+                  }
+                }
+                onClick={[Function]}
+              >
+                <svg
+                  aria-hidden="true"
+                  className="MuiSvgIcon-root Random-sc-9snjga-1 kNTVjD"
+                  focusable="false"
+                  onClick={[Function]}
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M10.59 9.17L5.41 4 4 5.41l5.17 5.17 1.42-1.41zM14.5 4l2.04 2.04L4 18.59 5.41 20 17.96 7.46 20 9.5V4h-5.5zm.33 9.41l-1.41 1.41 3.13 3.13L14.5 20H20v-5.5l-2.04 2.04-3.13-3.13z"
+                  />
+                </svg>
+              </ForwardRef(SvgIcon)>
+            </WithStyles(ForwardRef(SvgIcon))>
+          </ForwardRef>
+        </Random>
+        <NameField>
+          <WithStyles(ForwardRef(Typography))
+            className="NameField-sc-9snjga-6 gkgXIB"
+          >
+            <ForwardRef(Typography)
+              className="NameField-sc-9snjga-6 gkgXIB"
+              classes={
+                Object {
+                  "alignCenter": "MuiTypography-alignCenter",
+                  "alignJustify": "MuiTypography-alignJustify",
+                  "alignLeft": "MuiTypography-alignLeft",
+                  "alignRight": "MuiTypography-alignRight",
+                  "body1": "MuiTypography-body1",
+                  "body2": "MuiTypography-body2",
+                  "button": "MuiTypography-button",
+                  "caption": "MuiTypography-caption",
+                  "colorError": "MuiTypography-colorError",
+                  "colorInherit": "MuiTypography-colorInherit",
+                  "colorPrimary": "MuiTypography-colorPrimary",
+                  "colorSecondary": "MuiTypography-colorSecondary",
+                  "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                  "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                  "displayBlock": "MuiTypography-displayBlock",
+                  "displayInline": "MuiTypography-displayInline",
+                  "gutterBottom": "MuiTypography-gutterBottom",
+                  "h1": "MuiTypography-h1",
+                  "h2": "MuiTypography-h2",
+                  "h3": "MuiTypography-h3",
+                  "h4": "MuiTypography-h4",
+                  "h5": "MuiTypography-h5",
+                  "h6": "MuiTypography-h6",
+                  "noWrap": "MuiTypography-noWrap",
+                  "overline": "MuiTypography-overline",
+                  "paragraph": "MuiTypography-paragraph",
+                  "root": "MuiTypography-root",
+                  "srOnly": "MuiTypography-srOnly",
+                  "subtitle1": "MuiTypography-subtitle1",
+                  "subtitle2": "MuiTypography-subtitle2",
+                }
+              }
+            >
+              <p
+                className="MuiTypography-root NameField-sc-9snjga-6 gkgXIB MuiTypography-body1"
+              />
+            </ForwardRef(Typography)>
+          </WithStyles(ForwardRef(Typography))>
+        </NameField>
+      </div>
+    </Styled(MuiBox)>
+  </Pleer>
 </GridProvider>
 `;

@@ -45,4 +45,8 @@ describe('DashboardBtn', () => {
         output.find('SizeSlider').at(0).invoke('onChange')({}, 10);
         expect(output.find('SizeSlider').at(0).prop('value')).toBe(10);
     });
+    test('Speed slider onChange function  should change value with bigger argument then default value', () => {
+        output.find('SizeSlider').at(2).invoke('onChange')({}, 30);
+        expect(output.find('SizeSlider').at(2).prop('value')).toBe(30);
+    });
 });
