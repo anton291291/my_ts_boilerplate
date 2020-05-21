@@ -9,9 +9,7 @@ import ShuffleIcon from '@material-ui/icons/Shuffle';
 import { Box, Typography } from '@material-ui/core';
 import { GridContext } from '../../hooks/contextHooks';
 
-import {
-    simulateLife
-} from '@/utills/algorithm';
+import { simulateLife } from '@/utills/algorithm';
 
 const Stop = styled(StopIcon)`
     color: white;
@@ -113,7 +111,7 @@ export const Pleer: React.FC<Props> = (props) => {
         setState((state) => ({
             ...state,
             cells: [...state.cells].map((obj) => {
-                if (Math.random() > 0.7) {
+                if (Math.random() > state.randomIndex) {
                     return { ...obj, isClicked: true };
                 }
                 return obj;

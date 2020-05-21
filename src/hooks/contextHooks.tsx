@@ -24,6 +24,7 @@ type IntervalIDType = {
 type isPlayType = {
     isPlay: boolean;
     speed: number;
+    randomIndex: number;
 };
 
 
@@ -46,7 +47,8 @@ export const GridProvider = ({ children }) => {
         name: '',
         intervalID: null,
         isPlay: false,
-        speed: 1
+        speed: 1,
+        randomIndex: 0.7
     });
 
     const y = state.axis.y;

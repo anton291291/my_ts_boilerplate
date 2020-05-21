@@ -33,7 +33,6 @@ export const DasboardBtn: React.FC<Props> = (props) => {
     const [isOpen, setIsOpen] = useState(false);
     const { state, setState } = useContext(GridContext);
 
-
     const handleOpen = () => {
         clearInterval(state.intervalID);
         setState((state) => ({ ...state, isPlay: false }));
@@ -102,6 +101,16 @@ export const DasboardBtn: React.FC<Props> = (props) => {
         }));
     };
 
+    const handleChangeRandomIndex = (
+        event: React.SyntheticEvent,
+        newValue: number
+    ) => {
+        setState((state) => ({
+            ...state,
+            randomIndex: newValue
+        }));
+    };
+
     return (
         <>
             <Btn onClick={handleOpen}>
@@ -111,7 +120,7 @@ export const DasboardBtn: React.FC<Props> = (props) => {
                 <Box display='flex'>
                     <Box pl='20px' display='flex' flexDirection='column'>
                         <Box display='flex' alignItems='center' height='110px'>
-                            <Typography>Ширина по оси Y:</Typography>
+                            <Typography>Y-axis</Typography>
                             <SizeSlider
                                 min={5}
                                 max={Math.floor(
@@ -122,8 +131,8 @@ export const DasboardBtn: React.FC<Props> = (props) => {
                                 onChange={handleChangeY}
                             />
                         </Box>
-                        <Box display='flex' alignItems='center'>
-                            <Typography>Ширина по оси X:</Typography>
+                        <Box display='flex' alignItems='center' height='110px'>
+                            <Typography>X-axis</Typography>
                             <SizeSlider
                                 min={5}
                                 max={Math.floor(
@@ -141,12 +150,22 @@ export const DasboardBtn: React.FC<Props> = (props) => {
                         width='50%'
                     >
                         <Box display='flex' alignItems='center' height='110px'>
-                            <Typography>Скорость</Typography>
+                            <Typography>Speed</Typography>
                             <SizeSlider
                                 min={1}
                                 max={30}
                                 value={state.speed}
                                 onChange={handleChangeSpeed}
+                            />
+                        </Box>
+                        <Box display='flex' alignItems='center' height='110px'>
+                            <Typography>Random Index</Typography>
+                            <SizeSlider
+                                step={0.1}
+                                min={0.1}
+                                max={0.9}
+                                value={state.randomIndex}
+                                onChange={handleChangeRandomIndex}
                             />
                         </Box>
                     </Box>
