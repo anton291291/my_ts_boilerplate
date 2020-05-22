@@ -74,13 +74,12 @@ export const Pleer: React.FC<Props> = (props) => {
 
         setState((state) => ({
             ...state,
-            cells: [...state.cells].map((obj) => {
+            cells: state.cells.map((obj) => {
                 return { ...obj, isClicked: false };
-            })
+            }),
+            isPlay: false,
+            gen: 1
         }));
-
-        setState((state) => ({ ...state, isPlay: false }));
-        setState((state) => ({ ...state, gen: 1 }));
     };
 
     const handlePlay = () => {
@@ -89,14 +88,10 @@ export const Pleer: React.FC<Props> = (props) => {
         let startInterval = setInterval(() => {
             setState((state) => ({
                 ...state,
-                gen: state.gen + 1
-            }));
-
-            setState((state) => ({
-                ...state,
-                cells: [...state.cells].map((obj, index, arr) =>
+                cells: state.cells.map((obj, index, arr) =>
                     simulateLife(obj, index, arr, state)
-                )
+                ),
+                gen: state.gen + 1
             }));
         }, state.speed * 100);
 

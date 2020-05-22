@@ -28,7 +28,7 @@ export const Grid: React.FC<Props> = (props) => {
     const handleClick = (index: number) => {
         setState((state) => ({
             ...state,
-            cells: [...state.cells].map((obj) => {
+            cells: state.cells.map((obj) => {
                 if (obj.index === index)
                     return { ...obj, isClicked: !obj.isClicked };
                 return obj;

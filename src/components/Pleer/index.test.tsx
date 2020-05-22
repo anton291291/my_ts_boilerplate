@@ -22,17 +22,11 @@ describe('Pleer', () => {
     });
 
     test('Checking Pleer  Play/Pause btns', () => {
+        output.find('Random').simulate('click');
         output.find('Play').simulate('click');
         expect(output.find('Pause').exists()).toBeTruthy;
         output.find('Pause').simulate('click');
         expect(output.find('Play').exists()).toBeTruthy;
     });
-    /* test('Checking generation  state', () => {
-        output.find('Random').simulate('click');
-        output.find('Play').simulate('click');
-        output.find('Pause').simulate('click');
-        jest.useFakeTimers();
-        jest.advanceTimersByTime(1000);
-        expect(output.find('GenField').text()).toEqual('Generation: 2');
-    }); */
+  
 });
