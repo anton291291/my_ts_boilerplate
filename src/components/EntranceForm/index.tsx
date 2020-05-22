@@ -5,15 +5,6 @@ import styled from 'styled-components';
 import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 import { Modal, Grow } from '@material-ui/core';
 import { StyledInput } from '../StyledComponents';
-
-import {
-    splitCells,
-    checkLastElems,
-    checkFirstElems,
-    checkBottomRow,
-    checkRestElems,
-    checkUpRow
-} from '@/utills/algorithm';
 import { GridContext } from '@/hooks/contextHooks';
 import { simulateLife } from '@/utills/algorithm';
 
@@ -81,20 +72,18 @@ export const EntranceForm: React.FC<Props> = (props) => {
     };
 
     const handlePlay = () => {
-        setState((state) => ({ ...state, isPlay: true }));
-
         setState((state) => ({
             ...state,
-            cells: [...state.cells].map((obj) => {
+            cells: state.cells.map((obj) => {
                 return { ...obj, isClicked: false };
-            })
+            }),
+            isPlay: true,
+            gen: 1
         }));
 
-        setState((state) => ({ ...state, gen: 1 }));
-
         setState((state) => ({
             ...state,
-            cells: [...state.cells].map((obj) => {
+            cells: state.cells.map((obj) => {
                 if (Math.random() > 0.7) {
                     return { ...obj, isClicked: true };
                 }
@@ -105,14 +94,10 @@ export const EntranceForm: React.FC<Props> = (props) => {
         let startInterval = setInterval(() => {
             setState((state) => ({
                 ...state,
-                gen: state.gen + 1
-            }));
-
-            setState((state) => ({
-                ...state,
-                cells: [...state.cells].map((obj, index, arr) =>
+                cells: state.cells.map((obj, index, arr) =>
                     simulateLife(obj, index, arr, state)
-                )
+                ),
+                gen: state.gen + 1
             }));
         }, state.speed * 100);
 
@@ -146,6 +131,7 @@ export const EntranceForm: React.FC<Props> = (props) => {
                         <StyledInput
                             label='Name'
                             variant='outlined'
+                            value={state.name}
                             onChange={handleForm}
                         />
                         <StartBtn onClick={handlePlay}>Старт</StartBtn>

@@ -9,9 +9,7 @@ import ShuffleIcon from '@material-ui/icons/Shuffle';
 import { Box, Typography } from '@material-ui/core';
 import { GridContext } from '../../hooks/contextHooks';
 
-import {
-    simulateLife
-} from '@/utills/algorithm';
+import { simulateLife } from '@/utills/algorithm';
 
 const Stop = styled(StopIcon)`
     color: white;
@@ -76,13 +74,12 @@ export const Pleer: React.FC<Props> = (props) => {
 
         setState((state) => ({
             ...state,
-            cells: [...state.cells].map((obj) => {
+            cells: state.cells.map((obj) => {
                 return { ...obj, isClicked: false };
-            })
+            }),
+            isPlay: false,
+            gen: 1
         }));
-
-        setState((state) => ({ ...state, isPlay: false }));
-        setState((state) => ({ ...state, gen: 1 }));
     };
 
     const handlePlay = () => {
@@ -91,14 +88,10 @@ export const Pleer: React.FC<Props> = (props) => {
         let startInterval = setInterval(() => {
             setState((state) => ({
                 ...state,
-                gen: state.gen + 1
-            }));
-
-            setState((state) => ({
-                ...state,
-                cells: [...state.cells].map((obj, index, arr) =>
+                cells: state.cells.map((obj, index, arr) =>
                     simulateLife(obj, index, arr, state)
-                )
+                ),
+                gen: state.gen + 1
             }));
         }, state.speed * 100);
 
@@ -112,7 +105,7 @@ export const Pleer: React.FC<Props> = (props) => {
         handleReset();
         setState((state) => ({
             ...state,
-            cells: [...state.cells].map((obj) => {
+            cells: state.cells.map((obj) => {
                 if (Math.random() > 0.7) {
                     return { ...obj, isClicked: true };
                 }

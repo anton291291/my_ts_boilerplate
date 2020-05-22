@@ -33,7 +33,6 @@ export const DasboardBtn: React.FC<Props> = (props) => {
     const [isOpen, setIsOpen] = useState(false);
     const { state, setState } = useContext(GridContext);
 
-
     const handleOpen = () => {
         clearInterval(state.intervalID);
         setState((state) => ({ ...state, isPlay: false }));
@@ -65,7 +64,7 @@ export const DasboardBtn: React.FC<Props> = (props) => {
             setState((state) => ({
                 ...state,
                 axis: { ...state.axis, y: newValue },
-                cells: [...state.cells].slice(0, newValue * x)
+                cells: state.cells.slice(0, newValue * x)
             }));
         }
     };
@@ -87,7 +86,7 @@ export const DasboardBtn: React.FC<Props> = (props) => {
             setState((state) => ({
                 ...state,
                 axis: { ...state.axis, x: newValue },
-                cells: [...state.cells].slice(0, newValue * y)
+                cells: state.cells.slice(0, newValue * y)
             }));
         }
     };

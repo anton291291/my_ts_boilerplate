@@ -1,15 +1,26 @@
-export const splitCells = (state) => {
-    const firstElems = [];
-    const lastElems = [];
-    const upRow = [];
-    const bottomRow = [];
+import { StateType, GlobalState } from '../../hooks/contextHooks';
+
+type ArgsType = (
+    obj: GlobalState.CellItemType,
+    index: number,
+    arr: Array<GlobalState.CellItemType>,
+    state: StateType,
+    rightColumn?: Array<number>,
+    leftColumn?: Array<number>
+) => GlobalState.CellItemType;
+
+export const splitCells = (state: StateType): Array<Array<number>> => {
+    const leftColumn: Array<number> = [];
+    const rightColumn: Array<number> = [];
+    const upRow: Array<number> = [];
+    const bottomRow: Array<number> = [];
 
     for (
         let index = 0;
         index < state.cells.length;
         index = index + state.axis.x
     ) {
-        firstElems.push(index);
+        leftColumn.push(index);
     }
 
     for (
@@ -17,7 +28,7 @@ export const splitCells = (state) => {
         index < state.cells.length;
         index = index + state.axis.x
     ) {
-        lastElems.push(index);
+        rightColumn.push(index);
     }
 
     for (let index = 1; index < state.axis.x - 1; index++) {
@@ -32,11 +43,17 @@ export const splitCells = (state) => {
         bottomRow.push(index);
     }
 
-    return [firstElems, lastElems, upRow, bottomRow];
+    return [leftColumn, rightColumn, upRow, bottomRow];
 };
 
-export const checkLastElems = (obj, index, arr, lastElems, state) => {
-    if (obj.index === lastElems[0]) {
+export const checkRulesForRightColumn: ArgsType = (
+    obj,
+    index,
+    arr,
+    state,
+    rightColumn
+) => {
+    if (obj.index === rightColumn[0]) {
         let count = 0;
         arr[index - 1].isClicked === true && count++;
         arr[index + state.axis.x].isClicked === true && count++;
@@ -49,7 +66,7 @@ export const checkLastElems = (obj, index, arr, lastElems, state) => {
         } else {
             return { ...obj, isClicked: false };
         }
-    } else if (obj.index === lastElems[lastElems.length - 1]) {
+    } else if (obj.index === rightColumn[rightColumn.length - 1]) {
         let count = 0;
         arr[index - 1].isClicked === true && count++;
         arr[index - state.axis.x].isClicked === true && count++;
@@ -80,8 +97,14 @@ export const checkLastElems = (obj, index, arr, lastElems, state) => {
     }
 };
 
-export const checkFirstElems = (obj, index, arr, firstElems, state) => {
-    if (obj.index === firstElems[0]) {
+export const checkRulesForLeftColumn: ArgsType = (
+    obj,
+    index,
+    arr,
+    state,
+    leftColumn
+) => {
+    if (obj.index === leftColumn[0]) {
         let count = 0;
         arr[index + 1].isClicked === true && count++;
         arr[index + state.axis.x].isClicked === true && count++;
@@ -94,7 +117,7 @@ export const checkFirstElems = (obj, index, arr, firstElems, state) => {
         } else {
             return { ...obj, isClicked: false };
         }
-    } else if (obj.index === firstElems[firstElems.length - 1]) {
+    } else if (obj.index === leftColumn[leftColumn.length - 1]) {
         let count = 0;
         arr[index + 1].isClicked === true && count++;
         arr[index - state.axis.x].isClicked === true && count++;
@@ -125,7 +148,7 @@ export const checkFirstElems = (obj, index, arr, firstElems, state) => {
     }
 };
 
-export const checkBottomRow = (obj, index, arr, state) => {
+export const checkBottomRow: ArgsType = (obj, index, arr, state) => {
     let count = 0;
     arr[index - 1].isClicked === true && count++;
     arr[index + 1].isClicked === true && count++;
@@ -142,7 +165,7 @@ export const checkBottomRow = (obj, index, arr, state) => {
     }
 };
 
-export const checkUpRow = (obj, index, arr, state) => {
+export const checkUpRow: ArgsType = (obj, index, arr, state) => {
     let count = 0;
     arr[index - 1].isClicked === true && count++;
     arr[index + 1].isClicked === true && count++;
@@ -159,7 +182,7 @@ export const checkUpRow = (obj, index, arr, state) => {
     }
 };
 
-export const checkRestElems = (obj, index, arr, state) => {
+export const checkRestElems: ArgsType = (obj, index, arr, state) => {
     let count = 0;
     arr[index - state.axis.x - 1].isClicked === true && count++;
     arr[index - state.axis.x].isClicked === true && count++;
@@ -179,14 +202,13 @@ export const checkRestElems = (obj, index, arr, state) => {
     }
 };
 
+export const simulateLife: ArgsType = (obj, index, arr, state) => {
+    const [leftColumn, rightColumn, upRow, bottomRow] = splitCells(state);
 
-export const simulateLife = (obj, index, arr,state) => {
-    const [firstElems, lastElems, upRow, bottomRow] = splitCells(state);
-
-    if (lastElems.includes(obj.index)) {
-        return checkLastElems(obj, index, arr, lastElems, state);
-    } else if (firstElems.includes(obj.index)) {
-        return checkFirstElems(obj, index, arr, firstElems, state);
+    if (rightColumn.includes(obj.index)) {
+        return checkRulesForRightColumn(obj, index, arr, state, rightColumn);
+    } else if (leftColumn.includes(obj.index)) {
+        return checkRulesForLeftColumn(obj, index, arr, state, leftColumn);
     } else if (upRow.includes(obj.index)) {
         return checkUpRow(obj, index, arr, state);
     } else if (bottomRow.includes(obj.index)) {
