@@ -8,6 +8,8 @@ import { GridContext } from '../../hooks/contextHooks';
 
 export const Btn = styled.div`
     cursor: pointer;
+    position: absolute;
+    left: 2px;
     transition: transform 0.8s;
     &:hover {
         transform: rotate(360deg);
@@ -17,7 +19,8 @@ export const Btn = styled.div`
 export const StyledDrawer = styled(Drawer)`
     && {
         .MuiDrawer-paper {
-            background: rgba(255, 255, 255, 0.25);
+            background-color: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.4);
         }
     }
 `;
@@ -28,8 +31,11 @@ export const DasboardBtn: React.FC<Props> = (props) => {
     const {} = props;
 
     const [isOpen, setIsOpen] = useState(false);
+    const { state, setState } = useContext(GridContext);
 
     const handleOpen = () => {
+        clearInterval(state.intervalID);
+        setState((state) => ({ ...state, isPlay: false }));
         setIsOpen(!isOpen);
     };
 
@@ -37,14 +43,62 @@ export const DasboardBtn: React.FC<Props> = (props) => {
         setIsOpen(false);
     };
 
-    const {state, setState} = useContext(GridContext);
+    const y = state.axis.y;
+    const x = state.axis.x;
+    let length = x * y - 1;
 
     const handleChangeY = (event: React.SyntheticEvent, newValue: number) => {
-        setState((state) => ({ ...state, y: newValue }));
+        if (newValue * x > x * y) {
+            setState((state) => ({
+                ...state,
+                axis: { ...state.axis, y: newValue },
+                cells: [
+                    ...state.cells,
+                    ...Array.from({ length: newValue * x - x * y }, (item) => ({
+                        index: ++length,
+                        isClicked: false
+                    }))
+                ]
+            }));
+        } else if (newValue * x < x * y) {
+            setState((state) => ({
+                ...state,
+                axis: { ...state.axis, y: newValue },
+                cells: state.cells.slice(0, newValue * x)
+            }));
+        }
     };
 
     const handleChangeX = (event: React.SyntheticEvent, newValue: number) => {
-        setState((state) => ({ ...state, x: newValue }));
+        if (newValue * y > x * y) {
+            setState((state) => ({
+                ...state,
+                axis: { ...state.axis, x: newValue },
+                cells: [
+                    ...state.cells,
+                    ...Array.from({ length: newValue * y - x * y }, (item) => ({
+                        index: ++length,
+                        isClicked: false
+                    }))
+                ]
+            }));
+        } else if (newValue * y < x * y) {
+            setState((state) => ({
+                ...state,
+                axis: { ...state.axis, x: newValue },
+                cells: state.cells.slice(0, newValue * y)
+            }));
+        }
+    };
+
+    const handleChangeSpeed = (
+        event: React.SyntheticEvent,
+        newValue: number
+    ) => {
+        setState((state) => ({
+            ...state,
+            speed: newValue
+        }));
     };
 
     return (
@@ -53,26 +107,47 @@ export const DasboardBtn: React.FC<Props> = (props) => {
                 <DashboardIcon style={{ color: 'white' }} />
             </Btn>
             <StyledDrawer anchor='bottom' open={isOpen} onClose={handleClose}>
-                <Box pl='20px' display='flex' flexDirection='column'>
-                    <Box display='flex' alignItems='center' height='110px'>
-                        <Typography>Ширина по оси Y:</Typography>
-                        <SizeSlider
-                            max={Math.floor(
-                                document.documentElement.clientHeight / 26 - 2
-                            )}
-                            value={state.y}
-                            onChange={handleChangeY}
-                        />
+                <Box display='flex'>
+                    <Box pl='20px' display='flex' flexDirection='column'>
+                        <Box display='flex' alignItems='center' height='110px'>
+                            <Typography>Ширина по оси Y:</Typography>
+                            <SizeSlider
+                                min={5}
+                                max={Math.floor(
+                                    document.documentElement.clientHeight / 26 -
+                                        2
+                                )}
+                                value={y}
+                                onChange={handleChangeY}
+                            />
+                        </Box>
+                        <Box display='flex' alignItems='center'>
+                            <Typography>Ширина по оси X:</Typography>
+                            <SizeSlider
+                                min={5}
+                                max={Math.floor(
+                                    document.documentElement.clientWidth / 26
+                                )}
+                                value={x}
+                                onChange={handleChangeX}
+                            />
+                        </Box>
                     </Box>
-                    <Box display='flex' alignItems='center'>
-                        <Typography>Ширина по оси X:</Typography>
-                        <SizeSlider
-                            max={Math.floor(
-                                document.documentElement.clientWidth / 26
-                            )}
-                            value={state.x}
-                            onChange={handleChangeX}
-                        />
+                    <Box
+                        pr='20px'
+                        display='flex'
+                        flexDirection='column'
+                        width='50%'
+                    >
+                        <Box display='flex' alignItems='center' height='110px'>
+                            <Typography>Скорость</Typography>
+                            <SizeSlider
+                                min={1}
+                                max={30}
+                                value={state.speed}
+                                onChange={handleChangeSpeed}
+                            />
+                        </Box>
                     </Box>
                 </Box>
             </StyledDrawer>

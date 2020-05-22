@@ -1,8 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Cell should render correctly 1`] = `
-<StyledCell
-  isClicked={false}
-  onClick={[Function]}
-/>
-`;
+exports[`Cell should render correctly 1`] = `<StyledCell />`;

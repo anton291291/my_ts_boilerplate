@@ -6,7 +6,7 @@
     "scripts": {
         "test": "jest",
         "update-test": "npm run test -- -u",
-        "build": "npx webpack --config ./webpack.config.prod.babel.js",
+        "build": "npx webpack   --config ./webpack.config.prod.babel.js",
         "start": "npx webpack-dev-server --config ./webpack.config.dev.babel.js",
         "analyze": "npx webpack --config ./webpack.config.analyze.babel.js --profile --json > stats.json",
         "storybook": "start-storybook -p 6006",
@@ -36,6 +36,7 @@
         "@storybook/addons": "^5.3.18",
         "@storybook/preset-typescript": "^3.0.0",
         "@storybook/react": "^5.3.18",
+        "@svgr/webpack": "^5.4.0",
         "@types/jest": "^25.2.1",
         "@types/react": "^16.9.11",
         "@types/react-animate-on-scroll": "^2.1.2",
@@ -57,6 +58,7 @@
         "core-js": "^3.6.4",
         "css-loader": "^3.2.0",
         "cssnano": "^4.1.10",
+        "dotenv-webpack": "^1.8.0",
         "enzyme": "^3.11.0",
         "enzyme-adapter-react-16": "^1.15.2",
         "enzyme-to-json": "^3.4.4",
@@ -88,7 +90,8 @@
         "webpack": "^4.42.1",
         "webpack-bundle-analyzer": "^3.6.1",
         "webpack-cli": "^3.3.9",
-        "webpack-dev-server": "^3.9.0"
+        "webpack-dev-server": "^3.9.0",
+        "webpack-merge": "^4.2.2"
     },
     "dependencies": {
         "@material-ui/core": "^4.6.0",
@@ -116,6 +119,10 @@
         ],
         "transform": {
             "^.+\\.[t|j]sx?$": "babel-jest"
+        },
+        "moduleNameMapper": {
+            "@/(.*)": "<rootDir>/src/$1",
+            "database": "<rootDir>/src/lib/database"
         }
     },
     "browserslist": [

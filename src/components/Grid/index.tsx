@@ -22,10 +22,29 @@ export const Grid: React.FC<Props> = (props) => {
 
     const { state, setState } = useContext(GridContext);
 
+    const x = state.axis.x;
+    const y = state.axis.y;
+
+    const handleClick = (index: number) => {
+        setState((state) => ({
+            ...state,
+            cells: state.cells.map((obj) => {
+                if (obj.index === index)
+                    return { ...obj, isClicked: !obj.isClicked };
+                return obj;
+            })
+        }));
+    };
+
     return (
-        <Container width={state.x} height={state.y}>
-            {Array.from({ length: state.x * state.y }, (item, index) => (
-                <Cell key={index} index={index} />
+        <Container width={x} height={y}>
+            {state.cells.map((item) => (
+                <Cell
+                    isClicked={item.isClicked}
+                    key={item.index}
+                    index={item.index}
+                    onClick={() => handleClick(item.index)}
+                />
             ))}
         </Container>
     );
