@@ -49,4 +49,8 @@ describe('DashboardBtn', () => {
         output.find('SizeSlider').at(2).invoke('onChange')({}, 30);
         expect(output.find('SizeSlider').at(2).prop('value')).toBe(30);
     });
+    test('Random Index slider onChange function  should change value ', () => {
+        output.find('SizeSlider').at(3).invoke('onChange')({}, 0.5);
+        expect(output.find('SizeSlider').at(3).prop('value')).toBe(0.5);
+    });
 });
