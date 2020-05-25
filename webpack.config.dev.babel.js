@@ -13,12 +13,12 @@ const DevConfig = merge(CommonConfig, {
     devServer: {
         historyApiFallback: true,
         contentBase: path.join(__dirname, 'dist'),
+        hot: true,
         compress: true,
         port: 3000,
         open: true,
         watchContentBase: true,
         progress: true,
-        hot: true,
         stats: {
             colors: true,
             hash: false,

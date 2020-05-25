@@ -1,3 +1,4 @@
+import { hot } from 'react-hot-loader/root';
 import React from 'react';
 
 import AppRoutes from './routes/Routes';
@@ -21,4 +22,4 @@ const App = () => {
     );
 };
 
-export default App;
+export default hot(App);

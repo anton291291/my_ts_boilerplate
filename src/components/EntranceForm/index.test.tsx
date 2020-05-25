@@ -4,15 +4,13 @@ import { mountToJson, shallowToJson } from 'enzyme-to-json';
 import 'jest-styled-components';
 import { EntranceForm } from '.';
 import { GridContext } from '../../hooks/contextHooks';
-import { BrowserRouter } from 'react-router-dom';
-
+import { Router } from 'react-router-dom';
+import { createMemoryHistory } from "history";
 describe('EntranceForm', () => {
     const y = 15;
     const x = 30;
 
     const setState = jest.fn();
-    /* const useStateSpy = jest.spyOn(React, 'useState');
-    useStateSpy.mockImplementation((state) => [state, setState]); */
 
     const value = {
         state: {
@@ -31,11 +29,13 @@ describe('EntranceForm', () => {
         setState: setState
     };
 
+    const history = createMemoryHistory();
+
     const output = mount(
         <GridContext.Provider value={value}>
-            <BrowserRouter>
+            <Router history={history}>
                 <EntranceForm />
-            </BrowserRouter>
+            </Router>
         </GridContext.Provider>
     );
 
@@ -50,9 +50,11 @@ describe('EntranceForm', () => {
         expect(localStorage.setItem).toHaveBeenCalledWith('name', 'Anton');
     });
 
-    test('test handleStart', () => {
-        
-        output.find('StyledBtn').invoke('onClick');
+
+    test('test handleStart', () => {     
+        output.find('StyledBtn').simulate('click');
         expect(setState).toHaveBeenCalled();
+        expect(setState).toHaveBeenCalledTimes(3);
+
     });
 });

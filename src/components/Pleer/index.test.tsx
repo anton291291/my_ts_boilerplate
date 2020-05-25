@@ -1,10 +1,9 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
+import { mount } from 'enzyme';
 import 'jest-styled-components';
 import { GridProvider } from '../../hooks/contextHooks';
 import { Pleer } from '.';
-import { shallowToJson, mountToJson } from 'enzyme-to-json';
+import { mountToJson } from 'enzyme-to-json';
 
 describe('Pleer', () => {
     const output = mount(
@@ -28,5 +27,4 @@ describe('Pleer', () => {
         output.find('Pause').simulate('click');
         expect(output.find('Play').exists()).toBeTruthy;
     });
-  
 });
