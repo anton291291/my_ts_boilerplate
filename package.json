@@ -37,6 +37,7 @@
         "@storybook/preset-typescript": "^3.0.0",
         "@storybook/react": "^5.3.18",
         "@svgr/webpack": "^5.4.0",
+        "@testing-library/react": "^10.0.4",
         "@types/jest": "^25.2.1",
         "@types/react": "^16.9.11",
         "@types/react-animate-on-scroll": "^2.1.2",
@@ -71,12 +72,14 @@
         "file-loader": "^6.0.0",
         "html-webpack-plugin": "^4.2.0",
         "jest": "^25.1.0",
+        "jest-localstorage-mock": "^2.4.2",
         "jest-styled-components": "^7.0.2",
         "loki": "^0.20.3",
         "npm": "^6.14.5",
         "path": "^0.12.7",
         "postcss-loader": "^3.0.0",
         "prettier": "2.0.4",
+        "react-hot-loader": "^4.12.21",
         "sass-loader": "^8.0.0",
         "source-map-loader": "^0.2.4",
         "storybook-addon-material-ui": "^0.9.0-alpha.21",
@@ -111,7 +114,8 @@
     "jest": {
         "collectCoverage": true,
         "setupFilesAfterEnv": [
-            "<rootDir>/jest.setup.js"
+            "<rootDir>/jest.setup.js",
+            "jest-localstorage-mock"
         ],
         "transformIgnorePatterns": [
             "/node_modules/(?!@material-ui)",

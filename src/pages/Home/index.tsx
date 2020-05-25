@@ -1,18 +1,23 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 
-import styled from 'styled-components';
-import { Grid, DasboardBtn, Pleer, EntranceForm } from '../../components';
-import { Box } from '@material-ui/core';
-
-import { GridProvider } from '../../hooks/contextHooks';
+import { Grid, DasboardBtn, Pleer, LogoutBtn } from '../../components';
+import { Box, Fade } from '@material-ui/core';
+import { useHistory } from 'react-router';
 
 type Props = {};
 
 export const Home: React.FC<Props> = (props) => {
     const {} = props;
 
+    let history = useHistory();
+
+    useEffect(() => {
+        !localStorage.getItem('name') && history.push('/');
+    });
+
     return (
-        <GridProvider>
+        <Fade timeout={300} in={true}>
+            <div>
             <Box
                 display='flex'
                 width='100%'
@@ -25,11 +30,12 @@ export const Home: React.FC<Props> = (props) => {
             >
                 <DasboardBtn />
                 <Pleer />
-                <EntranceForm/>
+                <LogoutBtn />
             </Box>
             <Box display='flex' flexDirection='column'>
                 <Grid />
             </Box>
-        </GridProvider>
+            </div>
+        </Fade>
     );
 };

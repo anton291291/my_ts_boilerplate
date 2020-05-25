@@ -2,20 +2,20 @@ import styled from 'styled-components';
 import { Slider, TextField } from '@material-ui/core';
 
 export const StyledBtn = styled.div<{ width?: number }>`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: limegreen;
-    color: white;
+    background-color: #52af77;
     border-radius: 10px;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-    padding: 4px;
-    width: ${({ width }) => `${width}px` || '100px;'};
-    transition: all 0.4s;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+    box-shadow: 0 0 20px 0px rgba(255, 255, 255, 0.3);
+    transition: all 0.5s;
+    cursor: pointer;
+    text-transform: uppercase;
+    user-select:none;
 
     &:hover {
-        transform: scale(1.05);
-        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+        transform: translateY(3px);
+        box-shadow: 0 3px 40px 0px rgba(255, 255, 255, 0.5);
     }
 `;
 

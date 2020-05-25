@@ -1,4 +1,9 @@
-import React, { useContext, useEffect } from 'react';
+import React, {
+    useContext,
+    useEffect,
+    useCallback,
+    useLayoutEffect
+} from 'react';
 
 import styled from 'styled-components';
 
@@ -63,13 +68,18 @@ export const Pleer: React.FC<Props> = (props) => {
 
     const { state, setState } = useContext(GridContext);
 
+    useLayoutEffect(() => {
+        localStorage.getItem('name');
+        setState((state) => ({ ...state, name: localStorage.getItem('name') }));
+    }, []);
+
     useEffect(() => {
         state.cells.every((obj) => obj.isClicked === false) &&
             (clearInterval(state.intervalID),
             setState((state) => ({ ...state, isPlay: false })));
     }, [state.cells]);
 
-    const handleReset = () => {
+    const handleReset = useCallback(() => {
         clearInterval(state.intervalID);
 
         setState((state) => ({
@@ -80,9 +90,9 @@ export const Pleer: React.FC<Props> = (props) => {
             isPlay: false,
             gen: 1
         }));
-    };
+    }, [setState, state.intervalID]);
 
-    const handlePlay = () => {
+    const handlePlay = useCallback(() => {
         setState((state) => ({ ...state, isPlay: true }));
 
         let startInterval = setInterval(() => {
@@ -99,9 +109,9 @@ export const Pleer: React.FC<Props> = (props) => {
             ...state,
             intervalID: startInterval
         }));
-    };
+    }, [setState, state.speed]);
 
-    const handleRandom = () => {
+    const handleRandom = useCallback(() => {
         handleReset();
         setState((state) => ({
             ...state,
@@ -114,12 +124,12 @@ export const Pleer: React.FC<Props> = (props) => {
                 return obj;
             })
         }));
-    };
+    }, [setState, handleReset]);
 
-    const handlePause = () => {
+    const handlePause = useCallback(() => {
         setState((state) => ({ ...state, isPlay: false }));
         clearInterval(state.intervalID);
-    };
+    }, [setState, state.intervalID]);
 
     return (
         <Box display='flex'>

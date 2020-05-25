@@ -1,25 +1,16 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useCallback, useEffect } from 'react';
 
 import styled from 'styled-components';
 
-import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
-import { Modal, Grow } from '@material-ui/core';
 import { StyledInput } from '../StyledComponents';
 import { GridContext } from '@/hooks/contextHooks';
 import { simulateLife } from '@/utills/algorithm';
-
-const EntranceBtn = styled(PersonOutlineIcon)`
-    color: white;
-    position: absolute;
-    right: 5px;
-    transition: all 0.5s;
-    &:hover {
-        transform: scale(1.2);
-    }
-`;
+import { Fade, Typography } from '@material-ui/core';
+import { StyledBtn } from '../StyledComponents/index';
+import { useHistory } from 'react-router';
 
 const FormContainer = styled.div`
-    width: 300px;
+    width: 600px;
     margin-top: 10%;
     margin-left: auto;
     margin-right: auto;
@@ -33,20 +24,9 @@ const FormContainer = styled.div`
     flex-direction: column;
 `;
 
-const StartBtn = styled.div`
-    background-color: #52af77;
-    border-radius: 10px;
-    color: white;
-    padding: 10px;
-    margin-top: 20px;
-    box-shadow: 0 0 20px 0px rgba(255, 255, 255, 0.3);
-    transition: all 0.5s;
-    cursor: pointer;
-    text-transform: uppercase;
-
-    &:hover {
-        transform: translateY(3px);
-        box-shadow: 0 3px 40px 0px rgba(255, 255, 255, 0.5);
+const Header = styled(Typography)`
+    && {
+        margin-bottom: 30px;
     }
 `;
 
@@ -55,32 +35,25 @@ type Props = {};
 export const EntranceForm: React.FC<Props> = (props) => {
     const {} = props;
 
-    const [open, setOpen] = useState(false);
     const { state, setState } = useContext(GridContext);
 
-    const handleOpen = () => {
-        setOpen(true);
+    let history = useHistory();
+
+    const handleReset = useCallback(() => {
         clearInterval(state.intervalID);
-        setState((state) => ({
-            ...state,
-            name: ''
-        }));
-    };
 
-    const handleClose = () => {
-        setOpen(false);
-    };
-
-    const handlePlay = () => {
         setState((state) => ({
             ...state,
             cells: state.cells.map((obj) => {
                 return { ...obj, isClicked: false };
             }),
-            isPlay: true,
+            isPlay: false,
             gen: 1
         }));
+    }, [setState, state.intervalID]);
 
+    const handleStart = () => {
+        handleReset();
         setState((state) => ({
             ...state,
             cells: state.cells.map((obj) => {
@@ -88,7 +61,8 @@ export const EntranceForm: React.FC<Props> = (props) => {
                     return { ...obj, isClicked: true };
                 }
                 return obj;
-            })
+            }),
+            isPlay: true
         }));
 
         let startInterval = setInterval(() => {
@@ -106,38 +80,29 @@ export const EntranceForm: React.FC<Props> = (props) => {
             intervalID: startInterval
         }));
 
-        handleClose();
+        history.push('/game');
     };
 
     const handleForm = (e: React.ChangeEvent<HTMLInputElement>) => {
-        e.persist();
-        setState((state) => ({
-            ...state,
-            name: (e.target as HTMLInputElement).value
-        }));
+        localStorage.setItem('name', e.target.value);
     };
 
     return (
         <>
-            <EntranceBtn onClick={handleOpen} />
-            <Modal
-                open={open}
-                onClose={handleClose}
-                aria-labelledby='simple-modal-title'
-                aria-describedby='simple-modal-description'
-            >
-                <Grow timeout={500} in={open}>
-                    <FormContainer>
-                        <StyledInput
-                            label='Name'
-                            variant='outlined'
-                            value={state.name}
-                            onChange={handleForm}
-                        />
-                        <StartBtn onClick={handlePlay}>Старт</StartBtn>
-                    </FormContainer>
-                </Grow>
-            </Modal>
+            <Fade timeout={500} in={true}>
+                <FormContainer>
+                    <Header variant='h4'>
+                        Welcome to Conway`s Game of Life
+                    </Header>
+                    <StyledInput
+                        required
+                        label='Enter your name'
+                        variant='outlined'
+                        onChange={handleForm}
+                    />
+                    <StyledBtn onClick={handleStart}>Start</StyledBtn>
+                </FormContainer>
+            </Fade>
         </>
     );
 };
