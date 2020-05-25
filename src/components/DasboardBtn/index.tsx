@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useCallback } from 'react';
 
 import styled from 'styled-components';
 import { Drawer, Typography, Box } from '@material-ui/core';
@@ -68,7 +68,6 @@ export const DasboardBtn: React.FC<Props> = (props) => {
             }));
         }
     };
-
     const handleChangeX = (event: React.SyntheticEvent, newValue: number) => {
         if (newValue * y > x * y) {
             setState((state) => ({
@@ -91,15 +90,25 @@ export const DasboardBtn: React.FC<Props> = (props) => {
         }
     };
 
-    const handleChangeSpeed = (
-        event: React.SyntheticEvent,
-        newValue: number
-    ) => {
-        setState((state) => ({
-            ...state,
-            speed: newValue
-        }));
-    };
+    const handleChangeSpeed = useCallback(
+        (event: React.SyntheticEvent, newValue: number) => {
+            setState((state) => ({
+                ...state,
+                speed: newValue
+            }));
+        },
+        [setState]
+    );
+
+    const handleChangeRandomIndex = useCallback(
+        (event: React.SyntheticEvent, newValue: number) => {
+            setState((state) => ({
+                ...state,
+                randomIndex: newValue
+            }));
+        },
+        [setState]
+    );
 
     return (
         <>
@@ -109,45 +118,47 @@ export const DasboardBtn: React.FC<Props> = (props) => {
             <StyledDrawer anchor='bottom' open={isOpen} onClose={handleClose}>
                 <Box display='flex'>
                     <Box pl='20px' display='flex' flexDirection='column'>
-                        <Box display='flex' alignItems='center' height='110px'>
-                            <Typography>Ширина по оси Y:</Typography>
-                            <SizeSlider
-                                min={5}
-                                max={Math.floor(
-                                    document.documentElement.clientHeight / 26 -
-                                        2
-                                )}
-                                value={y}
-                                onChange={handleChangeY}
-                            />
-                        </Box>
-                        <Box display='flex' alignItems='center'>
-                            <Typography>Ширина по оси X:</Typography>
-                            <SizeSlider
-                                min={5}
-                                max={Math.floor(
-                                    document.documentElement.clientWidth / 26
-                                )}
-                                value={x}
-                                onChange={handleChangeX}
-                            />
-                        </Box>
+                        <SizeSlider
+                            label='Y-axis'
+                            min={5}
+                            max={Math.floor(
+                                document.documentElement.clientHeight / 26 - 2
+                            )}
+                            value={y}
+                            onChange={handleChangeY}
+                        />
+                        <SizeSlider
+                            label='X-axis'
+                            min={5}
+                            max={Math.floor(
+                                document.documentElement.clientWidth / 26
+                            )}
+                            value={x}
+                            onChange={handleChangeX}
+                        />
                     </Box>
                     <Box
+                        borderLeft='1px solid rgb(255 255 255 /0.1)'
                         pr='20px'
                         display='flex'
                         flexDirection='column'
                         width='50%'
                     >
-                        <Box display='flex' alignItems='center' height='110px'>
-                            <Typography>Скорость</Typography>
-                            <SizeSlider
-                                min={1}
-                                max={30}
-                                value={state.speed}
-                                onChange={handleChangeSpeed}
-                            />
-                        </Box>
+                        <SizeSlider
+                            label='Speed'
+                            min={1}
+                            max={30}
+                            value={state.speed}
+                            onChange={handleChangeSpeed}
+                        />
+                        <SizeSlider
+                            label='Random Index'
+                            step={0.1}
+                            min={0.1}
+                            max={0.9}
+                            value={state.randomIndex}
+                            onChange={handleChangeRandomIndex}
+                        />
                     </Box>
                 </Box>
             </StyledDrawer>
