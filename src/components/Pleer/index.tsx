@@ -105,8 +105,10 @@ export const Pleer: React.FC<Props> = (props) => {
         handleReset();
         setState((state) => ({
             ...state,
+
             cells: [...state.cells].map((obj) => {
                 if (Math.random() > state.randomIndex) {
+
                     return { ...obj, isClicked: true };
                 }
                 return obj;

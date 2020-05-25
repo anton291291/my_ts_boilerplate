@@ -25,6 +25,7 @@ type isPlayType = {
     randomIndex: number;
 };
 
+
     type FormType = {
         name: string;
     };
