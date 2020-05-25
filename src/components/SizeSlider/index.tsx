@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { memo } from 'react';
+import styled from 'styled-components';
 import { StyledSlider } from '../StyledComponents';
-import { Box } from '@material-ui/core';
+import { Box, Typography } from '@material-ui/core';
 
 type Props = {
+    label: string;
     onChange: (e, value) => void;
     value: number;
     min?: number;
@@ -10,19 +12,29 @@ type Props = {
     step?: number;
 };
 
-export const SizeSlider: React.FC<Props> = (props) => {
-    const { onChange, value, min, max, step } = props;
+const Label = styled(Typography)`
+    width: 60px;
+    padding-left: 20px;
+`;
+
+export const SizeSlider: React.FC<Props> = memo(function SizeSlider(props) {
+    const { label, onChange, value, min, max, step } = props;
 
     return (
-        <Box width='300px' m={3}>
-            <StyledSlider
-                step={step}
-                min={min}
-                max={max}
-                onChange={onChange}
-                value={value}
-                valueLabelDisplay='auto'
-            />
+        <Box display='flex' alignItems='center' height='110px'>
+            <Label>{label}</Label>
+            <Box width='300px' m={3}>
+                <StyledSlider
+                    step={step}
+                    min={min}
+                    max={max}
+                    onChange={onChange}
+                    value={value}
+                    valueLabelDisplay='auto'
+                />
+            </Box>
         </Box>
     );
-};
+});
+
+SizeSlider.displayName = 'SizeSlider';
