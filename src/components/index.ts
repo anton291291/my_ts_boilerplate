@@ -5,3 +5,4 @@ export { DasboardBtn } from './DasboardBtn';
 export { default as HelloWorld } from './HelloWorld';
 export { Pleer } from './Pleer';
 export { EntranceForm } from './EntranceForm';
+export { LogoutBtn } from './LogoutBtn';
