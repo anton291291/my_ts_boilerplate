@@ -19,11 +19,11 @@ export declare namespace GlobalState {
         intervalID: number;
     };
 
-type isPlayType = {
-    isPlay: boolean;
-    speed: number;
-    randomIndex: number;
-};
+    type isPlayType = {
+        isPlay: boolean;
+        speed: number;
+        randomIndex: number;
+    };
 
     type FormType = {
         name: string;
@@ -57,7 +57,7 @@ export const GridProvider = ({ children }) => {
             isClicked: false
         })),
         gen: 1,
-        name: '',
+        name: null,
         intervalID: null,
         isPlay: false,
         speed: 1,

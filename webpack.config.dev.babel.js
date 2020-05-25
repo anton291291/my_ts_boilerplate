@@ -9,8 +9,9 @@ const CommonConfig = require('./webpack.config.common.babel');
 
 const DevConfig = merge(CommonConfig, {
     mode: 'development',
-    devtool: 'cheap-source-map',
+    devtool: 'inline-source-map',
     devServer: {
+        historyApiFallback: true,
         contentBase: path.join(__dirname, 'dist'),
         compress: true,
         port: 3000,
@@ -34,13 +35,7 @@ const DevConfig = merge(CommonConfig, {
             publicPath: false
         }
     },
-    plugins: [
-        new ErrorOverlayPlugin(),
-
-        new SourceMapDevToolPlugin({
-            filename: '[name].js.map'
-        })
-    ]
+    plugins: [new ErrorOverlayPlugin()]
 });
 
 module.exports = new Promise((resolve, reject) => {

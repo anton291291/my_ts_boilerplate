@@ -4,12 +4,15 @@ import { mountToJson, shallowToJson } from 'enzyme-to-json';
 import 'jest-styled-components';
 import { EntranceForm } from '.';
 import { GridContext } from '../../hooks/contextHooks';
+import { BrowserRouter } from 'react-router-dom';
 
 describe('EntranceForm', () => {
     const y = 15;
     const x = 30;
 
     const setState = jest.fn();
+    /* const useStateSpy = jest.spyOn(React, 'useState');
+    useStateSpy.mockImplementation((state) => [state, setState]); */
 
     const value = {
         state: {
@@ -22,40 +25,34 @@ describe('EntranceForm', () => {
             name: '',
             intervalID: null,
             isPlay: false,
-            speed: 1
+            speed: 1,
+            randomIndex: null
         },
         setState: setState
     };
 
     const output = mount(
         <GridContext.Provider value={value}>
-            <EntranceForm />
+            <BrowserRouter>
+                <EntranceForm />
+            </BrowserRouter>
         </GridContext.Provider>
     );
 
     test('should render correctly', () => {
-        expect(shallowToJson(output)).toMatchSnapshot();
+        expect(mountToJson(output)).toMatchSnapshot();
     });
 
-    test('EntranceBtn onClick func  should open Modal', () => {
-        output.find('EntranceBtn').simulate('click');
-        expect(output.find('ForwardRef(Modal)').prop('open')).toBeTruthy();
+    test('test handleForm should save to localStorage', () => {
+        output.find('StyledInput').invoke('onChange')({
+            target: { value: 'Anton' }
+        });
+        expect(localStorage.setItem).toHaveBeenCalledWith('name', 'Anton');
     });
 
-    test('Modal onClose prop should close it', () => {
-        output.find('ForwardRef(Modal)').invoke('onClose')();
-        expect(output.find('ForwardRef(Modal)').prop('open')).toBeFalsy();
-    });
-
-    test('test handleForm', () => {
-        const mockPersist = jest.fn();
-        output.find('StyledInput').invoke('onChange')({ persist: mockPersist });
-        expect(setState).toHaveBeenCalled();
-        expect(mockPersist).toHaveBeenCalled();
-    });
-
-    test('test handlePlay', () => {
-        output.find('StartBtn').invoke('onClick');
+    test('test handleStart', () => {
+        
+        output.find('StyledBtn').invoke('onClick');
         expect(setState).toHaveBeenCalled();
     });
 });
