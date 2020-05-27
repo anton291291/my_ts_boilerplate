@@ -19,7 +19,8 @@
         "downlevelIteration": true,
         "diagnostics": true,
         "baseUrl": "src",
-        "paths": { "@/*": ["*"] }
+        "paths": { "@/*": ["*"] },
+        "noErrorTruncation": true
     },
     "include": ["./src/"],
     "exclude": ["node_modules", "build"]

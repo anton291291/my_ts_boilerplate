@@ -8,14 +8,4 @@ export default {
     decorators: [withKnobs]
 };
 
-export const HelloUser = () => (
-    <HelloWorld
-        width={number('Width', 100, {
-            range: true,
-            min: 50,
-            max: 500,
-            step: 1
-        })}
-        username={text('username', '')}
-    />
-);
+export const HelloUser = () => <HelloWorld username={text('username', '')} />;

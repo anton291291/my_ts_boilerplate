@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import { Grid, DasboardBtn, Pleer, LogoutBtn } from '../../components';
+import { Grid, DasboardBtn, Player, LogoutBtn } from '../../components';
 import { Box, Fade } from '@material-ui/core';
 import { useHistory } from 'react-router';
 
@@ -29,7 +29,7 @@ export const Home: React.FC<Props> = (props) => {
                 justifyContent='center'
             >
                 <DasboardBtn />
-                <Pleer />
+                <Player />
                 <LogoutBtn />
             </Box>
             <Box display='flex' flexDirection='column'>

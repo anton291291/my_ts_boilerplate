@@ -15,6 +15,8 @@ import { Box, Typography } from '@material-ui/core';
 import { GridContext } from '../../hooks/contextHooks';
 
 import { simulateLife } from '@/utills/algorithm';
+import { useDispatch } from 'react-redux';
+import { PlayerActions } from '../../store/actions/index';
 
 const Stop = styled(StopIcon)`
     color: white;
@@ -63,10 +65,12 @@ const NameField = styled(Typography)``;
 
 type Props = {};
 
-export const Pleer: React.FC<Props> = (props) => {
+export const Player: React.FC<Props> = (props) => {
     const {} = props;
 
     const { state, setState } = useContext(GridContext);
+
+    const dispatch = useDispatch();
 
     useLayoutEffect(() => {
         localStorage.getItem('name');
@@ -93,6 +97,8 @@ export const Pleer: React.FC<Props> = (props) => {
     }, [setState, state.intervalID]);
 
     const handlePlay = useCallback(() => {
+
+
         setState((state) => ({ ...state, isPlay: true }));
 
         let startInterval = setInterval(() => {

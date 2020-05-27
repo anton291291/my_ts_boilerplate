@@ -2,13 +2,13 @@ import React from 'react';
 import { mount } from 'enzyme';
 import 'jest-styled-components';
 import { GridProvider } from '../../hooks/contextHooks';
-import { Pleer } from '.';
+import { Player } from '.';
 import { mountToJson } from 'enzyme-to-json';
 
-describe('Pleer', () => {
+describe('Player', () => {
     const output = mount(
         <GridProvider>
-            <Pleer />
+            <Player />
         </GridProvider>
     );
 
@@ -20,7 +20,7 @@ describe('Pleer', () => {
         expect(output.find('GenField').text()).toEqual('Generation: 1');
     });
 
-    test('Checking Pleer  Play/Pause btns', () => {
+    test('Checking Player  Play/Pause btns', () => {
         output.find('Random').simulate('click');
         output.find('Play').simulate('click');
         expect(output.find('Pause').exists()).toBeTruthy;

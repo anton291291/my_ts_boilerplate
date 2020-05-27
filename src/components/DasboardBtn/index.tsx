@@ -5,6 +5,7 @@ import { Drawer, Typography, Box } from '@material-ui/core';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import { SizeSlider } from '../SizeSlider';
 import { GridContext } from '../../hooks/contextHooks';
+import { checkGridMaxHeight, checkGridMaxWidth } from '../../utills/helper/index';
 
 export const Btn = styled.div`
     cursor: pointer;
@@ -110,6 +111,9 @@ export const DasboardBtn: React.FC<Props> = (props) => {
         [setState]
     );
 
+        const maxHeight = checkGridMaxHeight();
+        const maxWidth = checkGridMaxWidth();
+
     return (
         <>
             <Btn onClick={handleOpen}>
@@ -121,18 +125,14 @@ export const DasboardBtn: React.FC<Props> = (props) => {
                         <SizeSlider
                             label='Y-axis'
                             min={5}
-                            max={Math.floor(
-                                document.documentElement.clientHeight / 26 - 2
-                            )}
+                            max={maxHeight}
                             value={y}
                             onChange={handleChangeY}
                         />
                         <SizeSlider
                             label='X-axis'
                             min={5}
-                            max={Math.floor(
-                                document.documentElement.clientWidth / 26
-                            )}
+                            max={maxWidth}
                             value={x}
                             onChange={handleChangeX}
                         />

@@ -1,4 +1,4 @@
-import React, { useState, useContext, useCallback, useEffect } from 'react';
+import React, { useContext, useCallback } from 'react';
 
 import styled from 'styled-components';
 
