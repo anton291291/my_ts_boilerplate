@@ -1,13 +1,15 @@
-import React, { useContext, useCallback } from 'react';
+import React, { useCallback } from 'react';
 
 import styled from 'styled-components';
 
 import { StyledInput } from '../StyledComponents';
-import { GridContext } from '@/hooks/contextHooks';
-import { simulateLife } from '@/utills/algorithm';
 import { Fade, Typography } from '@material-ui/core';
 import { StyledBtn } from '../StyledComponents/index';
 import { useHistory } from 'react-router';
+import { RootState } from '@/store/rootReducer';
+import { useSelector, useDispatch } from 'react-redux';
+import { PlayerActions, IntervalIDAction } from '@/store/actions';
+import { GreetingFormActions, CellsActions } from '../../store/actions/index';
 
 const FormContainer = styled.div`
     width: 600px;
@@ -35,50 +37,26 @@ type Props = {};
 export const EntranceForm: React.FC<Props> = (props) => {
     const {} = props;
 
-    const { state, setState } = useContext(GridContext);
+    const state = useSelector((state: RootState) => state.grid);
+    const dispatch = useDispatch();
 
     let history = useHistory();
 
     const handleReset = useCallback(() => {
         clearInterval(state.intervalID);
 
-        setState((state) => ({
-            ...state,
-            cells: state.cells.map((obj) => {
-                return { ...obj, isClicked: false };
-            }),
-            isPlay: false,
-            gen: 1
-        }));
-    }, [setState, state.intervalID]);
+        dispatch(PlayerActions.setIsPlay());
+    }, [dispatch, state.intervalID]);
 
     const handleStart = () => {
         handleReset();
-        setState((state) => ({
-            ...state,
-            cells: state.cells.map((obj) => {
-                if (Math.random() > 0.7) {
-                    return { ...obj, isClicked: true };
-                }
-                return obj;
-            }),
-            isPlay: true
-        }));
+        dispatch(GreetingFormActions.setStart());
 
         let startInterval = setInterval(() => {
-            setState((state) => ({
-                ...state,
-                cells: state.cells.map((obj, index, arr) =>
-                    simulateLife(obj, index, arr, state)
-                ),
-                gen: state.gen + 1
-            }));
+            dispatch(CellsActions.simulateLife());
         }, state.speed * 100);
 
-        setState((state) => ({
-            ...state,
-            intervalID: startInterval
-        }));
+        dispatch(IntervalIDAction.setIntervalID(startInterval));
 
         history.push('/game');
     };

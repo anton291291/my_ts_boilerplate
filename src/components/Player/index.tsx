@@ -1,9 +1,4 @@
-import React, {
-    useContext,
-    useEffect,
-    useCallback,
-    useLayoutEffect
-} from 'react';
+import React, { useEffect, useCallback, useLayoutEffect } from 'react';
 
 import styled from 'styled-components';
 
@@ -12,11 +7,15 @@ import StopIcon from '@material-ui/icons/Stop';
 import PauseIcon from '@material-ui/icons/Pause';
 import ShuffleIcon from '@material-ui/icons/Shuffle';
 import { Box, Typography } from '@material-ui/core';
-import { GridContext } from '../../hooks/contextHooks';
 
-import { simulateLife } from '@/utills/algorithm';
-import { useDispatch } from 'react-redux';
-import { PlayerActions } from '../../store/actions/index';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '@/store/rootReducer';
+import {
+    PlayerActions,
+    GreetingFormActions,
+    CellsActions,
+    IntervalIDAction
+} from '@/store/actions';
 
 const Stop = styled(StopIcon)`
     color: white;
@@ -68,72 +67,55 @@ type Props = {};
 export const Player: React.FC<Props> = (props) => {
     const {} = props;
 
-    const { state, setState } = useContext(GridContext);
+    const state = useSelector((state: RootState) => state.grid);
 
     const dispatch = useDispatch();
 
     useLayoutEffect(() => {
         localStorage.getItem('name');
-        setState((state) => ({ ...state, name: localStorage.getItem('name') }));
+        dispatch(GreetingFormActions.setName());
     }, []);
 
     useEffect(() => {
         state.cells.every((obj) => obj.isClicked === false) &&
             (clearInterval(state.intervalID),
-            setState((state) => ({ ...state, isPlay: false })));
+            dispatch(PlayerActions.setIsStop()),
+            dispatch(PlayerActions.setGen(1))
+            );
     }, [state.cells]);
+
+
+
 
     const handleReset = useCallback(() => {
         clearInterval(state.intervalID);
 
-        setState((state) => ({
-            ...state,
-            cells: state.cells.map((obj) => {
-                return { ...obj, isClicked: false };
-            }),
-            isPlay: false,
-            gen: 1
-        }));
-    }, [setState, state.intervalID]);
+        dispatch(PlayerActions.setReset());
+    }, [dispatch, state.intervalID]);
+
+
 
     const handlePlay = useCallback(() => {
-
-
-        setState((state) => ({ ...state, isPlay: true }));
+        dispatch(PlayerActions.setIsPlay());
 
         let startInterval = setInterval(() => {
-            setState((state) => ({
-                ...state,
-                cells: state.cells.map((obj, index, arr) =>
-                    simulateLife(obj, index, arr, state)
-                ),
-                gen: state.gen + 1
-            }));
+            dispatch(CellsActions.simulateLife());
         }, state.speed * 100);
 
-        setState((state) => ({
-            ...state,
-            intervalID: startInterval
-        }));
-    }, [setState, state.speed]);
+        dispatch(IntervalIDAction.setIntervalID(startInterval));
+    }, [dispatch, state.speed]);
+
+
 
     const handleRandom = useCallback(() => {
         handleReset();
-        setState((state) => ({
-            ...state,
-            cells: [...state.cells].map((obj) => {
-                if (Math.random() > state.randomIndex) {
-                    return { ...obj, isClicked: true };
-                }
-                return obj;
-            })
-        }));
-    }, [setState, handleReset]);
+        dispatch(CellsActions.randomCells());
+    }, [dispatch, handleReset]);
 
     const handlePause = useCallback(() => {
-        setState((state) => ({ ...state, isPlay: false }));
+        dispatch(PlayerActions.setIsStop());
         clearInterval(state.intervalID);
-    }, [setState, state.intervalID]);
+    }, [dispatch, state.intervalID]);
 
     return (
         <Box display='flex'>

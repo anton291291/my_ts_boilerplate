@@ -1,11 +1,16 @@
-import React, { useState, useContext, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 
 import styled from 'styled-components';
-import { Drawer, Typography, Box } from '@material-ui/core';
+import { Drawer, Box } from '@material-ui/core';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import { SizeSlider } from '../SizeSlider';
-import { GridContext } from '../../hooks/contextHooks';
-import { checkGridMaxHeight, checkGridMaxWidth } from '../../utills/helper/index';
+import {
+    checkGridMaxHeight,
+    checkGridMaxWidth
+} from '../../utills/helper/index';
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from '@/store/rootReducer';
+import { PlayerActions, AxisActions } from '@/store/actions';
 
 export const Btn = styled.div`
     cursor: pointer;
@@ -32,11 +37,17 @@ export const DasboardBtn: React.FC<Props> = (props) => {
     const {} = props;
 
     const [isOpen, setIsOpen] = useState(false);
-    const { state, setState } = useContext(GridContext);
+
+    const dispatch = useDispatch();
+    const state = useSelector((state: RootState) => state.grid);
+    const y = useSelector((state: RootState) => state.grid.axis.y);
+    const x = useSelector((state: RootState) => state.grid.axis.x);
+
+    let length = x * y;
 
     const handleOpen = () => {
         clearInterval(state.intervalID);
-        setState((state) => ({ ...state, isPlay: false }));
+        dispatch(PlayerActions.setIsStop());
         setIsOpen(!isOpen);
     };
 
@@ -44,75 +55,39 @@ export const DasboardBtn: React.FC<Props> = (props) => {
         setIsOpen(false);
     };
 
-    const y = state.axis.y;
-    const x = state.axis.x;
-    let length = x * y - 1;
-
     const handleChangeY = (event: React.SyntheticEvent, newValue: number) => {
-        if (newValue * x > x * y) {
-            setState((state) => ({
-                ...state,
-                axis: { ...state.axis, y: newValue },
-                cells: [
-                    ...state.cells,
-                    ...Array.from({ length: newValue * x - x * y }, (item) => ({
-                        index: ++length,
-                        isClicked: false
-                    }))
-                ]
-            }));
-        } else if (newValue * x < x * y) {
-            setState((state) => ({
-                ...state,
-                axis: { ...state.axis, y: newValue },
-                cells: state.cells.slice(0, newValue * x)
-            }));
+        if (newValue * x > length) {
+            dispatch(AxisActions.increaseYaxis(newValue));
+        } else if (newValue * x < length) {
+            dispatch(AxisActions.decreaseYaxis(newValue));
         }
     };
     const handleChangeX = (event: React.SyntheticEvent, newValue: number) => {
-        if (newValue * y > x * y) {
-            setState((state) => ({
-                ...state,
-                axis: { ...state.axis, x: newValue },
-                cells: [
-                    ...state.cells,
-                    ...Array.from({ length: newValue * y - x * y }, (item) => ({
-                        index: ++length,
-                        isClicked: false
-                    }))
-                ]
-            }));
-        } else if (newValue * y < x * y) {
-            setState((state) => ({
-                ...state,
-                axis: { ...state.axis, x: newValue },
-                cells: state.cells.slice(0, newValue * y)
-            }));
+        if (newValue * y > length) {
+            dispatch(AxisActions.increaseXaxis(newValue));
+        } else if (newValue * y < length) {
+            dispatch(AxisActions.decreaseXaxis(newValue));
         }
     };
 
     const handleChangeSpeed = useCallback(
         (event: React.SyntheticEvent, newValue: number) => {
-            setState((state) => ({
-                ...state,
-                speed: newValue
-            }));
+            dispatch(PlayerActions.setSpeed(newValue));
         },
-        [setState]
+        [dispatch, state.speed]
     );
 
     const handleChangeRandomIndex = useCallback(
         (event: React.SyntheticEvent, newValue: number) => {
-            setState((state) => ({
-                ...state,
-                randomIndex: newValue
-            }));
+            dispatch(PlayerActions.setRandomIndex(newValue));
         },
-        [setState]
+        [dispatch]
     );
 
-        const maxHeight = checkGridMaxHeight();
-        const maxWidth = checkGridMaxWidth();
+        console.log('rerender2')
+
+    const maxHeight = checkGridMaxHeight();
+    const maxWidth = checkGridMaxWidth();
 
     return (
         <>

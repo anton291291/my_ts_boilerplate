@@ -20,6 +20,9 @@ const Label = styled(Typography)`
 export const SizeSlider: React.FC<Props> = memo(function SizeSlider(props) {
     const { label, onChange, value, min, max, step } = props;
 
+
+console.log('rerender')
+
     return (
         <Box display='flex' alignItems='center' height='110px'>
             <Label>{label}</Label>
