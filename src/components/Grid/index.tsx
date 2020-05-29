@@ -3,8 +3,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Cell } from '../Cell';
 import { RootState } from '@/store/rootReducer';
-import { useSelector, useDispatch } from 'react-redux';
-import { CellsActions } from '../../store/actions/index';
+import { useSelector} from 'react-redux';
+
 
 export const Container = styled.div<{ width: number; height: number }>`
     display: flex;
@@ -22,23 +22,18 @@ type Props = {};
 export const Grid: React.FC<Props> = (props) => {
     const {} = props;
 
-    const dispatch = useDispatch();
-    const state = useSelector((state: RootState) => state.grid);
+    const cells = useSelector((state: RootState) => state.grid.cells);
     const y = useSelector((state: RootState) => state.grid.axis.y);
     const x = useSelector((state: RootState) => state.grid.axis.x);
 
-    const handleClick = (index: number) => {
-      dispatch(CellsActions.clickCell(index))
-    };
 
     return (
         <Container width={x} height={y}>
-            {state.cells.map((item) => (
+            {cells.map((item) => (
                 <Cell
                     isClicked={item.isClicked}
                     key={item.index}
                     index={item.index}
-                    onClick={() => handleClick(item.index)}
                 />
             ))}
         </Container>

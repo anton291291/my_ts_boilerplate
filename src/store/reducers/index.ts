@@ -12,7 +12,7 @@ const initialState: StateType = {
         isClicked: false
     })),
     gen: 1,
-    name: null,
+    name: localStorage.getItem('name') || null,
     intervalID: null,
     isPlay: false,
     speed: 1,

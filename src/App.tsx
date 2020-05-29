@@ -7,7 +7,6 @@ import { GlobalStyle } from './global/GlobalStyle';
 import { Provider } from 'react-redux';
 
 const App = () => {
-    console.log(process.env.REACT_APP_EXAMPLE);
 
     return (
         <Provider store={store}>

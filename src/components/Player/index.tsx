@@ -67,45 +67,41 @@ type Props = {};
 export const Player: React.FC<Props> = (props) => {
     const {} = props;
 
-    const state = useSelector((state: RootState) => state.grid);
+    const cells = useSelector((state: RootState) => state.grid.cells);
+    const intervalID = useSelector((state: RootState) => state.grid.intervalID);
+    const speed = useSelector((state: RootState) => state.grid.speed);
+    const name = useSelector((state: RootState) => state.grid.name);
+    const isPlay = useSelector((state: RootState) => state.grid.isPlay);
+    const gen = useSelector((state: RootState) => state.grid.gen);
 
     const dispatch = useDispatch();
 
     useLayoutEffect(() => {
-        localStorage.getItem('name');
-        dispatch(GreetingFormActions.setName());
+        localStorage.getItem('name') && dispatch(GreetingFormActions.setName());
     }, []);
 
     useEffect(() => {
-        state.cells.every((obj) => obj.isClicked === false) &&
-            (clearInterval(state.intervalID),
+        cells.every((obj) => obj.isClicked === false) &&
+            (clearInterval(intervalID),
             dispatch(PlayerActions.setIsStop()),
-            dispatch(PlayerActions.setGen(1))
-            );
-    }, [state.cells]);
-
-
-
+            dispatch(PlayerActions.setGen(1)));
+    }, [cells]);
 
     const handleReset = useCallback(() => {
-        clearInterval(state.intervalID);
+        clearInterval(intervalID);
 
         dispatch(PlayerActions.setReset());
-    }, [dispatch, state.intervalID]);
-
-
+    }, [dispatch, intervalID]);
 
     const handlePlay = useCallback(() => {
         dispatch(PlayerActions.setIsPlay());
 
         let startInterval = setInterval(() => {
             dispatch(CellsActions.simulateLife());
-        }, state.speed * 100);
+        }, speed * 100);
 
         dispatch(IntervalIDAction.setIntervalID(startInterval));
-    }, [dispatch, state.speed]);
-
-
+    }, [dispatch, speed]);
 
     const handleRandom = useCallback(() => {
         handleReset();
@@ -114,13 +110,13 @@ export const Player: React.FC<Props> = (props) => {
 
     const handlePause = useCallback(() => {
         dispatch(PlayerActions.setIsStop());
-        clearInterval(state.intervalID);
-    }, [dispatch, state.intervalID]);
+        clearInterval(intervalID);
+    }, [dispatch, intervalID]);
 
     return (
         <Box display='flex'>
-            <GenField>Generation: {state.gen}</GenField>
-            {state.isPlay ? (
+            <GenField>Generation: {gen}</GenField>
+            {isPlay ? (
                 <Pause onClick={handlePause} />
             ) : (
                 <Play onClick={handlePlay} />
@@ -129,7 +125,7 @@ export const Player: React.FC<Props> = (props) => {
                 <Stop onClick={handleReset} />
             </IconContainer>
             <Random onClick={handleRandom} />
-            <NameField>{state.name}</NameField>
+            <NameField>{name}</NameField>
         </Box>
     );
 };

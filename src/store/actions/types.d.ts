@@ -7,6 +7,10 @@ import {
     IntervalIDAction
 } from './index';
 
+
+
+type id  = typeof PlayerActions['setGen']
+
 type PlayerActionsType =
     | ReturnType<typeof PlayerActions['setIsPlay']>
     | ReturnType<typeof PlayerActions['setIsStop']>
