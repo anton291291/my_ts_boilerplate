@@ -10,6 +10,7 @@ import { RootState } from '@/store/rootReducer';
 import { useSelector, useDispatch } from 'react-redux';
 import { PlayerActions, IntervalIDAction } from '@/store/actions';
 import { GreetingFormActions, CellsActions } from '../../store/actions/index';
+import { setLogIn } from '@/utills/helper';
 
 const FormContainer = styled.div`
     width: 600px;
@@ -62,7 +63,7 @@ export const EntranceForm: React.FC<Props> = (props) => {
     };
 
     const handleForm = (e: React.ChangeEvent<HTMLInputElement>) => {
-        localStorage.setItem('name', e.target.value);
+        setLogIn(e.target.value)
     };
 
     return (

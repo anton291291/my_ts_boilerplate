@@ -32,14 +32,14 @@ export const PlayerActions = {
         ({
             type: 'PLAYER:SET_GENERATION',
             payload: value
+        } as const),
+    getName: () =>
+        ({
+            type: 'PLAYER:GET_NAME'
         } as const)
 };
 
 export const GreetingFormActions = {
-    setName: () =>
-        ({
-            type: 'GREETINGFORM:SET_NAME'
-        } as const),
     setStart: () =>
         ({
             type: 'GREETINGFORM:START'

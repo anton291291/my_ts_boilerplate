@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import { useHistory } from 'react-router';
+import { logOut } from '@/utills/helper';
 
 const Logout = styled(ExitToAppIcon)`
     position: absolute;
@@ -22,8 +23,8 @@ export const LogoutBtn: React.FC<Props> = (props) => {
     let history = useHistory();
 
     const handleLogout = () => {
-        localStorage.removeItem('name');
-        history.push('/')
+        logOut();
+        history.push('/');
     };
 
     return (

@@ -19,3 +19,21 @@ export const randomCells = (
     }
     return obj;
 };
+
+export const setLogIn = (name: string) => {
+    localStorage.setItem('name', name);
+};
+
+export const logOut = () => {
+    localStorage.removeItem('name');
+};
+
+export const getLogIn = () => {
+    return localStorage.getItem('name');
+};
+
+export const isLoggedIn = () => {
+    const checkIsLoggedIn = localStorage.getItem('name');
+
+    return !!checkIsLoggedIn;
+};

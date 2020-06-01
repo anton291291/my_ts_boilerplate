@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 
 import { EntranceForm } from '@/components';
 import { useHistory } from 'react-router';
+import { isLoggedIn } from '@/utills/helper';
 
 type Props = {};
 
@@ -11,13 +12,8 @@ export const Greetings: React.FC<Props> = (props) => {
     let history = useHistory();
 
     useEffect(() => {
-        localStorage.getItem('name') && history.push('/game');
+        isLoggedIn() && history.push('/game');
     }, []);
 
-
-    return (
-     
-            <EntranceForm />
-       
-    );
+    return <EntranceForm />;
 };

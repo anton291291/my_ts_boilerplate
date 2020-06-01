@@ -7,9 +7,7 @@ import {
     IntervalIDAction
 } from './index';
 
-
-
-type id  = typeof PlayerActions['setGen']
+type id = typeof PlayerActions['setGen'];
 
 type PlayerActionsType =
     | ReturnType<typeof PlayerActions['setIsPlay']>
@@ -17,7 +15,8 @@ type PlayerActionsType =
     | ReturnType<typeof PlayerActions['setReset']>
     | ReturnType<typeof PlayerActions['setGen']>
     | ReturnType<typeof PlayerActions['setRandomIndex']>
-    | ReturnType<typeof PlayerActions['setSpeed']>;
+    | ReturnType<typeof PlayerActions['setSpeed']>
+    | ReturnType<typeof PlayerActions['getName']>;
 
 type AxisActionsType =
     | ReturnType<typeof AxisActions['increaseXaxis']>
@@ -31,8 +30,7 @@ type CellsActionsType =
     | ReturnType<typeof CellsActions['simulateLife']>;
 
 type GreetingFormActionsType = ReturnType<
-    | typeof GreetingFormActions['setName']
-    | typeof GreetingFormActions['setStart']
+    typeof GreetingFormActions['setStart']
 >;
 
 type IntervalIDActionType = ReturnType<

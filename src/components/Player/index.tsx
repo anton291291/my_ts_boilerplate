@@ -10,12 +10,8 @@ import { Box, Typography } from '@material-ui/core';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/store/rootReducer';
-import {
-    PlayerActions,
-    GreetingFormActions,
-    CellsActions,
-    IntervalIDAction
-} from '@/store/actions';
+import { isLoggedIn } from '../../utills/helper/index';
+import { PlayerActions, CellsActions, IntervalIDAction } from '@/store/actions';
 
 const Stop = styled(StopIcon)`
     color: white;
@@ -77,7 +73,7 @@ export const Player: React.FC<Props> = (props) => {
     const dispatch = useDispatch();
 
     useLayoutEffect(() => {
-        localStorage.getItem('name') && dispatch(GreetingFormActions.setName());
+        isLoggedIn() && dispatch(PlayerActions.getName());
     }, []);
 
     useEffect(() => {

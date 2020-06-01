@@ -1,6 +1,6 @@
 import { ActionTypes } from '../actions/types';
 import { simulateLife } from '@/utills/algorithm';
-import { randomCells } from '@/utills/helper';
+import { randomCells, getLogIn } from '@/utills/helper';
 
 const y = 15;
 const x = 30;
@@ -12,7 +12,7 @@ const initialState: StateType = {
         isClicked: false
     })),
     gen: 1,
-    name: localStorage.getItem('name') || null,
+    name: getLogIn() || null,
     intervalID: null,
     isPlay: false,
     speed: 1,
@@ -47,6 +47,9 @@ export const GridReducer = (
             return { ...state, randomIndex: action.payload };
         case 'PLAYER:SET_SPEED_INDEX':
             return { ...state, speed: action.payload };
+        	case 'PLAYER:GET_NAME':
+                return { ...state, name: getLogIn()}
+        
         case 'AXIS:DECREASE_Y':
             return {
                 ...state,
@@ -114,9 +117,6 @@ export const GridReducer = (
                 ),
                 gen: state.gen + 1
             };
-        case 'GREETINGFORM:SET_NAME':
-            return { ...state, name: localStorage.getItem('name') };
-
         case 'GREETINGFORM:START':
             return {
                 ...state,
@@ -129,6 +129,8 @@ export const GridReducer = (
                 isPlay: true
             };
         default:
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
+            const exhaustiveCheck: never = action;
             return state;
     }
 };
