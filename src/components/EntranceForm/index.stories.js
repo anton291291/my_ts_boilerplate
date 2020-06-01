@@ -1,7 +1,6 @@
 import React from 'react';
 import { withKnobs } from '@storybook/addon-knobs';
 import { EntranceForm } from './index';
-import { BrowserRouter } from 'react-router-dom';
 
 export default {
     title: '/Forms',
@@ -9,8 +8,4 @@ export default {
     decorators: [withKnobs]
 };
 
-export const Storybook_EntranceForm = () => (
-    <BrowserRouter>
-        <EntranceForm />
-    </BrowserRouter>
-);
+export const Storybook_EntranceForm = () => <EntranceForm />;

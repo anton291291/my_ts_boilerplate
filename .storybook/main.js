@@ -10,7 +10,6 @@ module.exports = {
         '@storybook/addon-viewport/register',
         '@storybook/addon-links/register',
         '@storybook/addon-backgrounds/register',
-        '@storybook/addon-contexts/register'
     ],
 
     webpackFinal: async (config, { configType }) => {
