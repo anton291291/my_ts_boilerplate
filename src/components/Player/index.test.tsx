@@ -1,15 +1,16 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import 'jest-styled-components';
-import { GridProvider } from '../../hooks/contextHooks';
 import { Player } from '.';
 import { mountToJson } from 'enzyme-to-json';
+import store from '@/store/store';
+import { Provider } from 'react-redux';
 
 describe('Player', () => {
     const output = mount(
-        <GridProvider>
+        <Provider store={store}>
             <Player />
-        </GridProvider>
+        </Provider>
     );
 
     test('should render correctly', () => {

@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test actions should create an action play 1`] = `
+Array [
+  Object {
+    "payload": true,
+    "type": "PLAYER:PLAY",
+  },
+]
+`;

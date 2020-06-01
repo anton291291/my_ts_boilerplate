@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import { Slider, TextField } from '@material-ui/core';
 
 export const StyledBtn = styled.div`
+    max-width: 200px;
+    text-align: center;
     background-color: #52af77;
     border-radius: 10px;
     color: white;
@@ -11,8 +13,7 @@ export const StyledBtn = styled.div`
     transition: all 0.5s;
     cursor: pointer;
     text-transform: uppercase;
-    user-select:none;
-    
+    user-select: none;
 
     &:hover {
         transform: translateY(3px);

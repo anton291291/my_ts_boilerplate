@@ -30,8 +30,6 @@ type Props = {
 export const Cell: React.FC<Props> = memo(function Cell(props) {
     const { index, isClicked } = props;
 
-    console.log('rerender');
-
     const dispatch = useDispatch();
 
     const handleClick = useCallback(

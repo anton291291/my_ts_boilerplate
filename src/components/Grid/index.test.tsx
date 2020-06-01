@@ -1,17 +1,18 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import toJson from 'enzyme-to-json';
+import toJson, { mountToJson } from 'enzyme-to-json';
 
 import 'jest-styled-components';
 
 import { Grid } from './index';
-import { GridProvider } from '../../hooks/contextHooks';
+import { Provider } from 'react-redux';
+import store from '@/store/store';
 
 describe('Grid', () => {
     const output = mount(
-        <GridProvider>
+        <Provider store={store}>
             <Grid />
-        </GridProvider>
+        </Provider>
     );
     test('should render correctly', () => {
         expect(toJson(output)).toMatchSnapshot();
@@ -31,7 +32,7 @@ describe('Grid', () => {
     });
 
     test('Cell component onClick  the isClicked prop value should be true', () => {
-        output.find('Cell').at(0).simulate('click');
+        output.find('Cell').at(0).find('StyledCell').simulate('click');
         expect(output.find('Cell').at(0).prop('isClicked')).toBe(true);
     });
 });

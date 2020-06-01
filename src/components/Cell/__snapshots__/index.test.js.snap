@@ -1,3 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Cell should render correctly 1`] = `<StyledCell />`;
+exports[`Cell should render correctly 1`] = `
+<Provider
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+>
+  <Cell>
+    <StyledCell
+      onClick={[Function]}
+    >
+      <div
+        className="StyledCell-ybaiwl-0 cTvkpX"
+        onClick={[Function]}
+      />
+    </StyledCell>
+  </Cell>
+</Provider>
+`;

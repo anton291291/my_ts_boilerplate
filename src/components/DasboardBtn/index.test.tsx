@@ -4,13 +4,14 @@ import toJson from 'enzyme-to-json';
 import 'jest-styled-components';
 
 import { DasboardBtn } from './index';
-import { GridProvider } from '../../hooks/contextHooks';
+import { Provider } from 'react-redux';
+import store from '@/store/store';
 
 describe('DashboardBtn', () => {
     const output = mount(
-        <GridProvider>
+        <Provider store={store}>
             <DasboardBtn />
-        </GridProvider>
+        </Provider>
     );
 
     test('should render correctly', () => {

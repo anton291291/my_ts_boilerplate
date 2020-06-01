@@ -1,13 +1,19 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import { shallowToJson } from 'enzyme-to-json';
+import { mount } from 'enzyme';
+import { mountToJson } from 'enzyme-to-json';
 
 import { Cell } from './index';
+import { Provider } from 'react-redux';
+import store from '@/store/store';
 
 describe('Cell', () => {
-    const output = shallow(<Cell />);
+    const output = mount(
+        <Provider store={store}>
+            <Cell />
+        </Provider>
+    );
 
     test('should render correctly', () => {
-        expect(shallowToJson(output)).toMatchSnapshot();
+        expect(mountToJson(output)).toMatchSnapshot();
     });
 });
