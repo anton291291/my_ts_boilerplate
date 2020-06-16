@@ -3,8 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Cell } from '../Cell';
 import { RootState } from '@/store/rootReducer';
-import { useSelector} from 'react-redux';
-
+import { useSelector } from 'react-redux';
 
 export const Container = styled.div<{ width: number; height: number }>`
     display: flex;
@@ -22,10 +21,10 @@ type Props = {};
 export const Grid: React.FC<Props> = (props) => {
     const {} = props;
 
-    const cells = useSelector((state: RootState) => state.grid.cells);
-    const y = useSelector((state: RootState) => state.grid.axis.y);
-    const x = useSelector((state: RootState) => state.grid.axis.x);
-
+    const {
+        cells,
+        axis: { x, y }
+    } = useSelector((state: RootState) => state.grid);
 
     return (
         <Container width={x} height={y}>

@@ -10,8 +10,8 @@ import { Box, Typography } from '@material-ui/core';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/store/rootReducer';
-import { isLoggedIn } from '../../utills/helper/index';
-import { PlayerActions, CellsActions, IntervalIDAction } from '@/store/actions';
+import { PlayerActions, CellsActions} from '@/store/actions';
+import { isLoggedIn } from '@/utils/helper';
 
 const Stop = styled(StopIcon)`
     color: white;
@@ -63,12 +63,9 @@ type Props = {};
 export const Player: React.FC<Props> = (props) => {
     const {} = props;
 
-    const cells = useSelector((state: RootState) => state.grid.cells);
-    const intervalID = useSelector((state: RootState) => state.grid.intervalID);
-    const speed = useSelector((state: RootState) => state.grid.speed);
-    const name = useSelector((state: RootState) => state.grid.name);
-    const isPlay = useSelector((state: RootState) => state.grid.isPlay);
-    const gen = useSelector((state: RootState) => state.grid.gen);
+    const { cells, gen, name, isPlay } = useSelector(
+        (state: RootState) => state.grid
+    );
 
     const dispatch = useDispatch();
 
@@ -78,26 +75,17 @@ export const Player: React.FC<Props> = (props) => {
 
     useEffect(() => {
         cells.every((obj) => obj.isClicked === false) &&
-            (clearInterval(intervalID),
-            dispatch(PlayerActions.setIsStop()),
+            (dispatch(PlayerActions.setIsStop()),
             dispatch(PlayerActions.setGen(1)));
     }, [cells]);
 
     const handleReset = useCallback(() => {
-        clearInterval(intervalID);
-
         dispatch(PlayerActions.setReset());
-    }, [dispatch, intervalID]);
+    }, [dispatch]);
 
     const handlePlay = useCallback(() => {
         dispatch(PlayerActions.setIsPlay());
-
-        let startInterval = setInterval(() => {
-            dispatch(CellsActions.simulateLife());
-        }, speed * 100);
-
-        dispatch(IntervalIDAction.setIntervalID(startInterval));
-    }, [dispatch, speed]);
+    }, [dispatch]);
 
     const handleRandom = useCallback(() => {
         handleReset();
@@ -106,8 +94,7 @@ export const Player: React.FC<Props> = (props) => {
 
     const handlePause = useCallback(() => {
         dispatch(PlayerActions.setIsStop());
-        clearInterval(intervalID);
-    }, [dispatch, intervalID]);
+    }, [dispatch]);
 
     return (
         <Box display='flex'>

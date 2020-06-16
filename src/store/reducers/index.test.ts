@@ -17,7 +17,6 @@ describe('INITIAL_STATE', () => {
         })),
         gen: 1,
         name: null,
-        intervalID: null,
         isPlay: false,
         speed: 1,
         randomIndex: 0.1
@@ -34,7 +33,6 @@ describe('INITIAL_STATE', () => {
             })),
             gen: 1,
             name: 'Anton',
-            intervalID: null,
             isPlay: false,
             speed: 1,
             randomIndex: 0.1
@@ -46,7 +44,7 @@ describe('INITIAL_STATE', () => {
     });
 
     
-    test('is correct case "GREETINGFORM:START"', () => {
+    test('is correct case with big index "GREETINGFORM:READY_GREED"', () => {
 
         const mockMath = Object.create(global.Math);
         mockMath.random = () => 0.8;
@@ -60,19 +58,18 @@ describe('INITIAL_STATE', () => {
             })),
             gen: 1,
             name: null,
-            intervalID: null,
             isPlay: true,
             speed: 1,
             randomIndex: 0.1
         };;
 
-        expect(GridReducer(state, GreetingFormActions.setStart())).toEqual(
+        expect(GridReducer(state, GreetingFormActions.setReady())).toEqual(
             expectedState
         );
     });
 
 
-    test('is correct case "GREETINGFORM:START"', () => {
+    test('is correct case with low index "GREETINGFORM:READY_GREED"', () => {
 
         const mockMath = Object.create(global.Math);
         mockMath.random = () => 0.6;
@@ -86,13 +83,12 @@ describe('INITIAL_STATE', () => {
             })),
             gen: 1,
             name: null,
-            intervalID: null,
             isPlay: true,
             speed: 1,
             randomIndex: 0.1
         };;
 
-        expect(GridReducer(state, GreetingFormActions.setStart())).toEqual(
+        expect(GridReducer(state, GreetingFormActions.setReady())).toEqual(
             expectedState
         );
     });

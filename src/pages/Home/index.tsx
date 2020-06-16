@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { Grid, DasboardBtn, Player, LogoutBtn } from '../../components';
 import { Box, Fade } from '@material-ui/core';
 import { useHistory } from 'react-router';
-import { isLoggedIn } from '@/utills/helper';
+import { isLoggedIn } from '@/utils/helper';
 
 type Props = {};
 

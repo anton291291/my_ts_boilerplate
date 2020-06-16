@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import { useHistory } from 'react-router';
-import { logOut } from '@/utills/helper';
+import { logOut } from '@/utils/helper';
 
 const Logout = styled(ExitToAppIcon)`
     position: absolute;

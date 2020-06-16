@@ -1,6 +1,6 @@
 import { ActionTypes } from '../actions/types';
-import { simulateLife } from '@/utills/algorithm';
-import { randomCells, getLogIn } from '@/utills/helper';
+import { getLogIn, randomCells } from '@/utils/helper';
+import { simulateLife } from '@/utils/algorithm';
 
 const y = 15;
 const x = 30;
@@ -13,7 +13,6 @@ const initialState: StateType = {
     })),
     gen: 1,
     name: getLogIn() || null,
-    intervalID: null,
     isPlay: false,
     speed: 1,
     randomIndex: 0.7
@@ -47,9 +46,9 @@ export const GridReducer = (
             return { ...state, randomIndex: action.payload };
         case 'PLAYER:SET_SPEED_INDEX':
             return { ...state, speed: action.payload };
-        	case 'PLAYER:GET_NAME':
-                return { ...state, name: getLogIn()}
-        
+        case 'PLAYER:GET_NAME':
+            return { ...state, name: getLogIn() };
+
         case 'AXIS:DECREASE_Y':
             return {
                 ...state,
@@ -93,8 +92,6 @@ export const GridReducer = (
                 ]
             };
 
-        case 'INTERVALID:SET_VALUE':
-            return { ...state, intervalID: action.payload };
         case 'CELLS:RANDOM':
             return {
                 ...state,
@@ -117,7 +114,7 @@ export const GridReducer = (
                 ),
                 gen: state.gen + 1
             };
-        case 'GREETINGFORM:START':
+        case 'GREETINGFORM:READY_GREED':
             return {
                 ...state,
                 cells: state.cells.map((obj) => {
@@ -126,8 +123,13 @@ export const GridReducer = (
                     }
                     return obj;
                 }),
-                isPlay: true
+                isPlay: true,
+                speed: 1
             };
+
+        case 'GREETINGFORM:START_GAME':
+            return { ...state };
+
         default:
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
             const exhaustiveCheck: never = action;

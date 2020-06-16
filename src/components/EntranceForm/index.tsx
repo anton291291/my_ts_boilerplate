@@ -8,15 +8,13 @@ import { StyledBtn } from '../StyledComponents/index';
 import { useHistory } from 'react-router';
 import { RootState } from '@/store/rootReducer';
 import { useSelector, useDispatch } from 'react-redux';
-import { PlayerActions, IntervalIDAction } from '@/store/actions';
-import { GreetingFormActions, CellsActions } from '../../store/actions/index';
-import { setLogIn } from '@/utills/helper';
+import { PlayerActions } from '@/store/actions';
+import { GreetingFormActions } from '../../store/actions/index';
+import { setLogIn } from '@/utils/helper';
 
 const FormContainer = styled.div`
     width: 600px;
-    margin-top: 10%;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
     background-color: rgba(0, 0, 0, 0.7);
     border: 1px solid white;
     border-radius: 10px;
@@ -50,20 +48,12 @@ export const EntranceForm: React.FC<Props> = (props) => {
     }, [dispatch, state.intervalID]);
 
     const handleStart = () => {
-        handleReset();
         dispatch(GreetingFormActions.setStart());
-
-        let startInterval = setInterval(() => {
-            dispatch(CellsActions.simulateLife());
-        }, state.speed * 100);
-
-        dispatch(IntervalIDAction.setIntervalID(startInterval));
-
         history.push('/game');
     };
 
     const handleForm = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setLogIn(e.target.value)
+        setLogIn(e.target.value);
     };
 
     return (

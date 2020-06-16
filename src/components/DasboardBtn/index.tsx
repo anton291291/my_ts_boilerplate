@@ -3,11 +3,12 @@ import { RootState } from '@/store/rootReducer';
 import { Box, Drawer } from '@material-ui/core';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import React, { useCallback, useState, memo } from 'react';
-import { useDispatch, useSelector, shallowEqual } from 'react-redux';
+import { useDispatch, useSelector,  } from 'react-redux';
 import styled from 'styled-components';
 
-import { checkGridMaxHeight, checkGridMaxWidth } from '../../utills/helper';
+
 import { SizeSlider } from '../SizeSlider';
+import { checkGridMaxHeight, checkGridMaxWidth } from '@/utils/helper';
 
 export const Btn = styled(DashboardIcon)`
     color: white;
@@ -37,27 +38,12 @@ export const DasboardBtn: React.FC<Props> = memo(function DashboardBtn(props) {
     const [isOpen, setIsOpen] = useState(false);
 
     const dispatch = useDispatch();
-    const state = useSelector((state: RootState) => state.grid, shallowEqual);
-    const intervalID = useSelector(
-        (state: RootState) => state.grid.intervalID,
-        shallowEqual
-    );
-    const randomIndex = useSelector(
-        (state: RootState) => state.grid.randomIndex,
-        shallowEqual
-    );
-    const speed = useSelector(
-        (state: RootState) => state.grid.speed,
-        shallowEqual
-    );
-    const y = useSelector(
-        (state: RootState) => state.grid.axis.y,
-        shallowEqual
-    );
-    const x = useSelector(
-        (state: RootState) => state.grid.axis.x,
-        shallowEqual
-    );
+    const {
+        axis: { x, y },
+        speed,
+        randomIndex,
+        intervalID
+    } = useSelector((state: RootState) => state.grid);
 
     let length = x * y;
 

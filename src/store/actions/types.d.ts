@@ -3,8 +3,7 @@ import {
     PlayerActions,
     AxisActions,
     CellsActions,
-    GreetingFormActions,
-    IntervalIDAction
+    GreetingFormActions
 } from './index';
 
 type id = typeof PlayerActions['setGen'];
@@ -30,16 +29,12 @@ type CellsActionsType =
     | ReturnType<typeof CellsActions['simulateLife']>;
 
 type GreetingFormActionsType = ReturnType<
-    typeof GreetingFormActions['setStart']
->;
-
-type IntervalIDActionType = ReturnType<
-    typeof IntervalIDAction['setIntervalID']
+    | typeof GreetingFormActions['setReady']
+    | typeof GreetingFormActions['setStart']
 >;
 
 export type ActionTypes =
     | PlayerActionsType
     | AxisActionsType
     | CellsActionsType
-    | GreetingFormActionsType
-    | IntervalIDActionType;
+    | GreetingFormActionsType;

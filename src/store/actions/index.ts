@@ -40,9 +40,13 @@ export const PlayerActions = {
 };
 
 export const GreetingFormActions = {
+    setReady: () =>
+        ({
+            type: 'GREETINGFORM:READY_GREED'
+        } as const),
     setStart: () =>
         ({
-            type: 'GREETINGFORM:START'
+            type: 'GREETINGFORM:START_GAME'
         } as const)
 };
 
@@ -66,14 +70,6 @@ export const AxisActions = {
         ({
             type: 'AXIS:DECREASE_Y',
             payload: value
-        } as const)
-};
-
-export const IntervalIDAction = {
-    setIntervalID: (id: number) =>
-        ({
-            type: 'INTERVALID:SET_VALUE',
-            payload: id
         } as const)
 };
 

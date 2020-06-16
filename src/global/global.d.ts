@@ -12,10 +12,6 @@ declare namespace GlobalState {
         cells: Array<CellItemType>;
     };
 
-    type IntervalIDType = {
-        intervalID: number;
-    };
-
     type PlayType = {
         isPlay: boolean;
         speed: number;
@@ -30,7 +26,6 @@ declare namespace GlobalState {
 
 type StateType = GlobalState.AxisType &
     GlobalState.CellType &
-    GlobalState.IntervalIDType &
     GlobalState.PlayType &
     GlobalState.FormType;
 
