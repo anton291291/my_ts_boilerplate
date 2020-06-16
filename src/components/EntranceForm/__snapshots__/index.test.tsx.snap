@@ -30,7 +30,7 @@ exports[`EntranceForm should render correctly 1`] = `
         }
       >
         <div
-          className="FormContainer-qvz05a-0 goqguf"
+          className="FormContainer-qvz05a-0 fLNrOt"
           style={
             Object {
               "opacity": 1,
@@ -387,7 +387,7 @@ exports[`EntranceForm should render correctly 1`] = `
             onClick={[Function]}
           >
             <div
-              className="StyledBtn-sc-5skuza-0 gxyPVK"
+              className="StyledBtn-sc-5skuza-0 bsbHWd"
               onClick={[Function]}
             >
               Start

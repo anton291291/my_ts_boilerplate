@@ -3,7 +3,6 @@
 exports[`HelloWorld should render correctly 1`] = `
 <StyledBtn
   onClick={[Function]}
-  width={100}
 >
   Hello World 
 </StyledBtn>
