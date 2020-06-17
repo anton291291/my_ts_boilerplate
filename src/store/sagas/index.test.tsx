@@ -4,11 +4,11 @@ import { watchStartGame, watchStartGameFromForm } from './index';
 import { rootReducer } from '../rootReducer';
 
 describe('sagas', () => {
-    test('sh1', () => {
+    test('check watchStartGame saga', () => {
         return expectSaga(watchStartGame)
             .withReducer(rootReducer)
             .put({ type: 'CELLS:SIMULATE_LIFE' })
-            .dispatch({ type: 'PLAYER:PLAY' })
+            .dispatch({ type: 'PLAYER:PLAY', payload: true })
             .run();
     });
     test('check watchStartGameFromForm saga ', () => {
