@@ -1,7 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Grid should render correctly 1`] = `
-<GridProvider>
+<Provider
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+>
   <Grid>
     <Container
       height={15}
@@ -16,7 +26,6 @@ exports[`Grid should render correctly 1`] = `
           index={0}
           isClicked={false}
           key="0"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -32,7 +41,6 @@ exports[`Grid should render correctly 1`] = `
           index={1}
           isClicked={false}
           key="1"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -48,7 +56,6 @@ exports[`Grid should render correctly 1`] = `
           index={2}
           isClicked={false}
           key="2"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -64,7 +71,6 @@ exports[`Grid should render correctly 1`] = `
           index={3}
           isClicked={false}
           key="3"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -80,7 +86,6 @@ exports[`Grid should render correctly 1`] = `
           index={4}
           isClicked={false}
           key="4"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -96,7 +101,6 @@ exports[`Grid should render correctly 1`] = `
           index={5}
           isClicked={false}
           key="5"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -112,7 +116,6 @@ exports[`Grid should render correctly 1`] = `
           index={6}
           isClicked={false}
           key="6"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -128,7 +131,6 @@ exports[`Grid should render correctly 1`] = `
           index={7}
           isClicked={false}
           key="7"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -144,7 +146,6 @@ exports[`Grid should render correctly 1`] = `
           index={8}
           isClicked={false}
           key="8"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -160,7 +161,6 @@ exports[`Grid should render correctly 1`] = `
           index={9}
           isClicked={false}
           key="9"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -176,7 +176,6 @@ exports[`Grid should render correctly 1`] = `
           index={10}
           isClicked={false}
           key="10"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -192,7 +191,6 @@ exports[`Grid should render correctly 1`] = `
           index={11}
           isClicked={false}
           key="11"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -208,7 +206,6 @@ exports[`Grid should render correctly 1`] = `
           index={12}
           isClicked={false}
           key="12"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -224,7 +221,6 @@ exports[`Grid should render correctly 1`] = `
           index={13}
           isClicked={false}
           key="13"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -240,7 +236,6 @@ exports[`Grid should render correctly 1`] = `
           index={14}
           isClicked={false}
           key="14"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -256,7 +251,6 @@ exports[`Grid should render correctly 1`] = `
           index={15}
           isClicked={false}
           key="15"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -272,7 +266,6 @@ exports[`Grid should render correctly 1`] = `
           index={16}
           isClicked={false}
           key="16"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -288,7 +281,6 @@ exports[`Grid should render correctly 1`] = `
           index={17}
           isClicked={false}
           key="17"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -304,7 +296,6 @@ exports[`Grid should render correctly 1`] = `
           index={18}
           isClicked={false}
           key="18"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -320,7 +311,6 @@ exports[`Grid should render correctly 1`] = `
           index={19}
           isClicked={false}
           key="19"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -336,7 +326,6 @@ exports[`Grid should render correctly 1`] = `
           index={20}
           isClicked={false}
           key="20"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -352,7 +341,6 @@ exports[`Grid should render correctly 1`] = `
           index={21}
           isClicked={false}
           key="21"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -368,7 +356,6 @@ exports[`Grid should render correctly 1`] = `
           index={22}
           isClicked={false}
           key="22"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -384,7 +371,6 @@ exports[`Grid should render correctly 1`] = `
           index={23}
           isClicked={false}
           key="23"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -400,7 +386,6 @@ exports[`Grid should render correctly 1`] = `
           index={24}
           isClicked={false}
           key="24"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -416,7 +401,6 @@ exports[`Grid should render correctly 1`] = `
           index={25}
           isClicked={false}
           key="25"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -432,7 +416,6 @@ exports[`Grid should render correctly 1`] = `
           index={26}
           isClicked={false}
           key="26"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -448,7 +431,6 @@ exports[`Grid should render correctly 1`] = `
           index={27}
           isClicked={false}
           key="27"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -464,7 +446,6 @@ exports[`Grid should render correctly 1`] = `
           index={28}
           isClicked={false}
           key="28"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -480,7 +461,6 @@ exports[`Grid should render correctly 1`] = `
           index={29}
           isClicked={false}
           key="29"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -496,7 +476,6 @@ exports[`Grid should render correctly 1`] = `
           index={30}
           isClicked={false}
           key="30"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -512,7 +491,6 @@ exports[`Grid should render correctly 1`] = `
           index={31}
           isClicked={false}
           key="31"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -528,7 +506,6 @@ exports[`Grid should render correctly 1`] = `
           index={32}
           isClicked={false}
           key="32"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -544,7 +521,6 @@ exports[`Grid should render correctly 1`] = `
           index={33}
           isClicked={false}
           key="33"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -560,7 +536,6 @@ exports[`Grid should render correctly 1`] = `
           index={34}
           isClicked={false}
           key="34"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -576,7 +551,6 @@ exports[`Grid should render correctly 1`] = `
           index={35}
           isClicked={false}
           key="35"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -592,7 +566,6 @@ exports[`Grid should render correctly 1`] = `
           index={36}
           isClicked={false}
           key="36"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -608,7 +581,6 @@ exports[`Grid should render correctly 1`] = `
           index={37}
           isClicked={false}
           key="37"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -624,7 +596,6 @@ exports[`Grid should render correctly 1`] = `
           index={38}
           isClicked={false}
           key="38"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -640,7 +611,6 @@ exports[`Grid should render correctly 1`] = `
           index={39}
           isClicked={false}
           key="39"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -656,7 +626,6 @@ exports[`Grid should render correctly 1`] = `
           index={40}
           isClicked={false}
           key="40"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -672,7 +641,6 @@ exports[`Grid should render correctly 1`] = `
           index={41}
           isClicked={false}
           key="41"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -688,7 +656,6 @@ exports[`Grid should render correctly 1`] = `
           index={42}
           isClicked={false}
           key="42"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -704,7 +671,6 @@ exports[`Grid should render correctly 1`] = `
           index={43}
           isClicked={false}
           key="43"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -720,7 +686,6 @@ exports[`Grid should render correctly 1`] = `
           index={44}
           isClicked={false}
           key="44"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -736,7 +701,6 @@ exports[`Grid should render correctly 1`] = `
           index={45}
           isClicked={false}
           key="45"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -752,7 +716,6 @@ exports[`Grid should render correctly 1`] = `
           index={46}
           isClicked={false}
           key="46"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -768,7 +731,6 @@ exports[`Grid should render correctly 1`] = `
           index={47}
           isClicked={false}
           key="47"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -784,7 +746,6 @@ exports[`Grid should render correctly 1`] = `
           index={48}
           isClicked={false}
           key="48"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -800,7 +761,6 @@ exports[`Grid should render correctly 1`] = `
           index={49}
           isClicked={false}
           key="49"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -816,7 +776,6 @@ exports[`Grid should render correctly 1`] = `
           index={50}
           isClicked={false}
           key="50"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -832,7 +791,6 @@ exports[`Grid should render correctly 1`] = `
           index={51}
           isClicked={false}
           key="51"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -848,7 +806,6 @@ exports[`Grid should render correctly 1`] = `
           index={52}
           isClicked={false}
           key="52"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -864,7 +821,6 @@ exports[`Grid should render correctly 1`] = `
           index={53}
           isClicked={false}
           key="53"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -880,7 +836,6 @@ exports[`Grid should render correctly 1`] = `
           index={54}
           isClicked={false}
           key="54"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -896,7 +851,6 @@ exports[`Grid should render correctly 1`] = `
           index={55}
           isClicked={false}
           key="55"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -912,7 +866,6 @@ exports[`Grid should render correctly 1`] = `
           index={56}
           isClicked={false}
           key="56"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -928,7 +881,6 @@ exports[`Grid should render correctly 1`] = `
           index={57}
           isClicked={false}
           key="57"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -944,7 +896,6 @@ exports[`Grid should render correctly 1`] = `
           index={58}
           isClicked={false}
           key="58"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -960,7 +911,6 @@ exports[`Grid should render correctly 1`] = `
           index={59}
           isClicked={false}
           key="59"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -976,7 +926,6 @@ exports[`Grid should render correctly 1`] = `
           index={60}
           isClicked={false}
           key="60"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -992,7 +941,6 @@ exports[`Grid should render correctly 1`] = `
           index={61}
           isClicked={false}
           key="61"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1008,7 +956,6 @@ exports[`Grid should render correctly 1`] = `
           index={62}
           isClicked={false}
           key="62"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1024,7 +971,6 @@ exports[`Grid should render correctly 1`] = `
           index={63}
           isClicked={false}
           key="63"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1040,7 +986,6 @@ exports[`Grid should render correctly 1`] = `
           index={64}
           isClicked={false}
           key="64"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1056,7 +1001,6 @@ exports[`Grid should render correctly 1`] = `
           index={65}
           isClicked={false}
           key="65"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1072,7 +1016,6 @@ exports[`Grid should render correctly 1`] = `
           index={66}
           isClicked={false}
           key="66"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1088,7 +1031,6 @@ exports[`Grid should render correctly 1`] = `
           index={67}
           isClicked={false}
           key="67"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1104,7 +1046,6 @@ exports[`Grid should render correctly 1`] = `
           index={68}
           isClicked={false}
           key="68"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1120,7 +1061,6 @@ exports[`Grid should render correctly 1`] = `
           index={69}
           isClicked={false}
           key="69"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1136,7 +1076,6 @@ exports[`Grid should render correctly 1`] = `
           index={70}
           isClicked={false}
           key="70"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1152,7 +1091,6 @@ exports[`Grid should render correctly 1`] = `
           index={71}
           isClicked={false}
           key="71"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1168,7 +1106,6 @@ exports[`Grid should render correctly 1`] = `
           index={72}
           isClicked={false}
           key="72"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1184,7 +1121,6 @@ exports[`Grid should render correctly 1`] = `
           index={73}
           isClicked={false}
           key="73"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1200,7 +1136,6 @@ exports[`Grid should render correctly 1`] = `
           index={74}
           isClicked={false}
           key="74"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1216,7 +1151,6 @@ exports[`Grid should render correctly 1`] = `
           index={75}
           isClicked={false}
           key="75"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1232,7 +1166,6 @@ exports[`Grid should render correctly 1`] = `
           index={76}
           isClicked={false}
           key="76"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1248,7 +1181,6 @@ exports[`Grid should render correctly 1`] = `
           index={77}
           isClicked={false}
           key="77"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1264,7 +1196,6 @@ exports[`Grid should render correctly 1`] = `
           index={78}
           isClicked={false}
           key="78"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1280,7 +1211,6 @@ exports[`Grid should render correctly 1`] = `
           index={79}
           isClicked={false}
           key="79"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1296,7 +1226,6 @@ exports[`Grid should render correctly 1`] = `
           index={80}
           isClicked={false}
           key="80"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1312,7 +1241,6 @@ exports[`Grid should render correctly 1`] = `
           index={81}
           isClicked={false}
           key="81"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1328,7 +1256,6 @@ exports[`Grid should render correctly 1`] = `
           index={82}
           isClicked={false}
           key="82"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1344,7 +1271,6 @@ exports[`Grid should render correctly 1`] = `
           index={83}
           isClicked={false}
           key="83"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1360,7 +1286,6 @@ exports[`Grid should render correctly 1`] = `
           index={84}
           isClicked={false}
           key="84"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1376,7 +1301,6 @@ exports[`Grid should render correctly 1`] = `
           index={85}
           isClicked={false}
           key="85"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1392,7 +1316,6 @@ exports[`Grid should render correctly 1`] = `
           index={86}
           isClicked={false}
           key="86"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1408,7 +1331,6 @@ exports[`Grid should render correctly 1`] = `
           index={87}
           isClicked={false}
           key="87"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1424,7 +1346,6 @@ exports[`Grid should render correctly 1`] = `
           index={88}
           isClicked={false}
           key="88"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1440,7 +1361,6 @@ exports[`Grid should render correctly 1`] = `
           index={89}
           isClicked={false}
           key="89"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1456,7 +1376,6 @@ exports[`Grid should render correctly 1`] = `
           index={90}
           isClicked={false}
           key="90"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1472,7 +1391,6 @@ exports[`Grid should render correctly 1`] = `
           index={91}
           isClicked={false}
           key="91"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1488,7 +1406,6 @@ exports[`Grid should render correctly 1`] = `
           index={92}
           isClicked={false}
           key="92"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1504,7 +1421,6 @@ exports[`Grid should render correctly 1`] = `
           index={93}
           isClicked={false}
           key="93"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1520,7 +1436,6 @@ exports[`Grid should render correctly 1`] = `
           index={94}
           isClicked={false}
           key="94"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1536,7 +1451,6 @@ exports[`Grid should render correctly 1`] = `
           index={95}
           isClicked={false}
           key="95"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1552,7 +1466,6 @@ exports[`Grid should render correctly 1`] = `
           index={96}
           isClicked={false}
           key="96"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1568,7 +1481,6 @@ exports[`Grid should render correctly 1`] = `
           index={97}
           isClicked={false}
           key="97"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1584,7 +1496,6 @@ exports[`Grid should render correctly 1`] = `
           index={98}
           isClicked={false}
           key="98"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1600,7 +1511,6 @@ exports[`Grid should render correctly 1`] = `
           index={99}
           isClicked={false}
           key="99"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1616,7 +1526,6 @@ exports[`Grid should render correctly 1`] = `
           index={100}
           isClicked={false}
           key="100"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1632,7 +1541,6 @@ exports[`Grid should render correctly 1`] = `
           index={101}
           isClicked={false}
           key="101"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1648,7 +1556,6 @@ exports[`Grid should render correctly 1`] = `
           index={102}
           isClicked={false}
           key="102"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1664,7 +1571,6 @@ exports[`Grid should render correctly 1`] = `
           index={103}
           isClicked={false}
           key="103"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1680,7 +1586,6 @@ exports[`Grid should render correctly 1`] = `
           index={104}
           isClicked={false}
           key="104"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1696,7 +1601,6 @@ exports[`Grid should render correctly 1`] = `
           index={105}
           isClicked={false}
           key="105"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1712,7 +1616,6 @@ exports[`Grid should render correctly 1`] = `
           index={106}
           isClicked={false}
           key="106"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1728,7 +1631,6 @@ exports[`Grid should render correctly 1`] = `
           index={107}
           isClicked={false}
           key="107"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1744,7 +1646,6 @@ exports[`Grid should render correctly 1`] = `
           index={108}
           isClicked={false}
           key="108"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1760,7 +1661,6 @@ exports[`Grid should render correctly 1`] = `
           index={109}
           isClicked={false}
           key="109"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1776,7 +1676,6 @@ exports[`Grid should render correctly 1`] = `
           index={110}
           isClicked={false}
           key="110"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1792,7 +1691,6 @@ exports[`Grid should render correctly 1`] = `
           index={111}
           isClicked={false}
           key="111"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1808,7 +1706,6 @@ exports[`Grid should render correctly 1`] = `
           index={112}
           isClicked={false}
           key="112"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1824,7 +1721,6 @@ exports[`Grid should render correctly 1`] = `
           index={113}
           isClicked={false}
           key="113"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1840,7 +1736,6 @@ exports[`Grid should render correctly 1`] = `
           index={114}
           isClicked={false}
           key="114"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1856,7 +1751,6 @@ exports[`Grid should render correctly 1`] = `
           index={115}
           isClicked={false}
           key="115"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1872,7 +1766,6 @@ exports[`Grid should render correctly 1`] = `
           index={116}
           isClicked={false}
           key="116"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1888,7 +1781,6 @@ exports[`Grid should render correctly 1`] = `
           index={117}
           isClicked={false}
           key="117"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1904,7 +1796,6 @@ exports[`Grid should render correctly 1`] = `
           index={118}
           isClicked={false}
           key="118"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1920,7 +1811,6 @@ exports[`Grid should render correctly 1`] = `
           index={119}
           isClicked={false}
           key="119"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1936,7 +1826,6 @@ exports[`Grid should render correctly 1`] = `
           index={120}
           isClicked={false}
           key="120"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1952,7 +1841,6 @@ exports[`Grid should render correctly 1`] = `
           index={121}
           isClicked={false}
           key="121"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1968,7 +1856,6 @@ exports[`Grid should render correctly 1`] = `
           index={122}
           isClicked={false}
           key="122"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -1984,7 +1871,6 @@ exports[`Grid should render correctly 1`] = `
           index={123}
           isClicked={false}
           key="123"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2000,7 +1886,6 @@ exports[`Grid should render correctly 1`] = `
           index={124}
           isClicked={false}
           key="124"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2016,7 +1901,6 @@ exports[`Grid should render correctly 1`] = `
           index={125}
           isClicked={false}
           key="125"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2032,7 +1916,6 @@ exports[`Grid should render correctly 1`] = `
           index={126}
           isClicked={false}
           key="126"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2048,7 +1931,6 @@ exports[`Grid should render correctly 1`] = `
           index={127}
           isClicked={false}
           key="127"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2064,7 +1946,6 @@ exports[`Grid should render correctly 1`] = `
           index={128}
           isClicked={false}
           key="128"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2080,7 +1961,6 @@ exports[`Grid should render correctly 1`] = `
           index={129}
           isClicked={false}
           key="129"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2096,7 +1976,6 @@ exports[`Grid should render correctly 1`] = `
           index={130}
           isClicked={false}
           key="130"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2112,7 +1991,6 @@ exports[`Grid should render correctly 1`] = `
           index={131}
           isClicked={false}
           key="131"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2128,7 +2006,6 @@ exports[`Grid should render correctly 1`] = `
           index={132}
           isClicked={false}
           key="132"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2144,7 +2021,6 @@ exports[`Grid should render correctly 1`] = `
           index={133}
           isClicked={false}
           key="133"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2160,7 +2036,6 @@ exports[`Grid should render correctly 1`] = `
           index={134}
           isClicked={false}
           key="134"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2176,7 +2051,6 @@ exports[`Grid should render correctly 1`] = `
           index={135}
           isClicked={false}
           key="135"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2192,7 +2066,6 @@ exports[`Grid should render correctly 1`] = `
           index={136}
           isClicked={false}
           key="136"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2208,7 +2081,6 @@ exports[`Grid should render correctly 1`] = `
           index={137}
           isClicked={false}
           key="137"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2224,7 +2096,6 @@ exports[`Grid should render correctly 1`] = `
           index={138}
           isClicked={false}
           key="138"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2240,7 +2111,6 @@ exports[`Grid should render correctly 1`] = `
           index={139}
           isClicked={false}
           key="139"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2256,7 +2126,6 @@ exports[`Grid should render correctly 1`] = `
           index={140}
           isClicked={false}
           key="140"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2272,7 +2141,6 @@ exports[`Grid should render correctly 1`] = `
           index={141}
           isClicked={false}
           key="141"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2288,7 +2156,6 @@ exports[`Grid should render correctly 1`] = `
           index={142}
           isClicked={false}
           key="142"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2304,7 +2171,6 @@ exports[`Grid should render correctly 1`] = `
           index={143}
           isClicked={false}
           key="143"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2320,7 +2186,6 @@ exports[`Grid should render correctly 1`] = `
           index={144}
           isClicked={false}
           key="144"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2336,7 +2201,6 @@ exports[`Grid should render correctly 1`] = `
           index={145}
           isClicked={false}
           key="145"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2352,7 +2216,6 @@ exports[`Grid should render correctly 1`] = `
           index={146}
           isClicked={false}
           key="146"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2368,7 +2231,6 @@ exports[`Grid should render correctly 1`] = `
           index={147}
           isClicked={false}
           key="147"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2384,7 +2246,6 @@ exports[`Grid should render correctly 1`] = `
           index={148}
           isClicked={false}
           key="148"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2400,7 +2261,6 @@ exports[`Grid should render correctly 1`] = `
           index={149}
           isClicked={false}
           key="149"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2416,7 +2276,6 @@ exports[`Grid should render correctly 1`] = `
           index={150}
           isClicked={false}
           key="150"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2432,7 +2291,6 @@ exports[`Grid should render correctly 1`] = `
           index={151}
           isClicked={false}
           key="151"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2448,7 +2306,6 @@ exports[`Grid should render correctly 1`] = `
           index={152}
           isClicked={false}
           key="152"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2464,7 +2321,6 @@ exports[`Grid should render correctly 1`] = `
           index={153}
           isClicked={false}
           key="153"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2480,7 +2336,6 @@ exports[`Grid should render correctly 1`] = `
           index={154}
           isClicked={false}
           key="154"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2496,7 +2351,6 @@ exports[`Grid should render correctly 1`] = `
           index={155}
           isClicked={false}
           key="155"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2512,7 +2366,6 @@ exports[`Grid should render correctly 1`] = `
           index={156}
           isClicked={false}
           key="156"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2528,7 +2381,6 @@ exports[`Grid should render correctly 1`] = `
           index={157}
           isClicked={false}
           key="157"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2544,7 +2396,6 @@ exports[`Grid should render correctly 1`] = `
           index={158}
           isClicked={false}
           key="158"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2560,7 +2411,6 @@ exports[`Grid should render correctly 1`] = `
           index={159}
           isClicked={false}
           key="159"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2576,7 +2426,6 @@ exports[`Grid should render correctly 1`] = `
           index={160}
           isClicked={false}
           key="160"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2592,7 +2441,6 @@ exports[`Grid should render correctly 1`] = `
           index={161}
           isClicked={false}
           key="161"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2608,7 +2456,6 @@ exports[`Grid should render correctly 1`] = `
           index={162}
           isClicked={false}
           key="162"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2624,7 +2471,6 @@ exports[`Grid should render correctly 1`] = `
           index={163}
           isClicked={false}
           key="163"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2640,7 +2486,6 @@ exports[`Grid should render correctly 1`] = `
           index={164}
           isClicked={false}
           key="164"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2656,7 +2501,6 @@ exports[`Grid should render correctly 1`] = `
           index={165}
           isClicked={false}
           key="165"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2672,7 +2516,6 @@ exports[`Grid should render correctly 1`] = `
           index={166}
           isClicked={false}
           key="166"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2688,7 +2531,6 @@ exports[`Grid should render correctly 1`] = `
           index={167}
           isClicked={false}
           key="167"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2704,7 +2546,6 @@ exports[`Grid should render correctly 1`] = `
           index={168}
           isClicked={false}
           key="168"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2720,7 +2561,6 @@ exports[`Grid should render correctly 1`] = `
           index={169}
           isClicked={false}
           key="169"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2736,7 +2576,6 @@ exports[`Grid should render correctly 1`] = `
           index={170}
           isClicked={false}
           key="170"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2752,7 +2591,6 @@ exports[`Grid should render correctly 1`] = `
           index={171}
           isClicked={false}
           key="171"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2768,7 +2606,6 @@ exports[`Grid should render correctly 1`] = `
           index={172}
           isClicked={false}
           key="172"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2784,7 +2621,6 @@ exports[`Grid should render correctly 1`] = `
           index={173}
           isClicked={false}
           key="173"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2800,7 +2636,6 @@ exports[`Grid should render correctly 1`] = `
           index={174}
           isClicked={false}
           key="174"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2816,7 +2651,6 @@ exports[`Grid should render correctly 1`] = `
           index={175}
           isClicked={false}
           key="175"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2832,7 +2666,6 @@ exports[`Grid should render correctly 1`] = `
           index={176}
           isClicked={false}
           key="176"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2848,7 +2681,6 @@ exports[`Grid should render correctly 1`] = `
           index={177}
           isClicked={false}
           key="177"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2864,7 +2696,6 @@ exports[`Grid should render correctly 1`] = `
           index={178}
           isClicked={false}
           key="178"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2880,7 +2711,6 @@ exports[`Grid should render correctly 1`] = `
           index={179}
           isClicked={false}
           key="179"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2896,7 +2726,6 @@ exports[`Grid should render correctly 1`] = `
           index={180}
           isClicked={false}
           key="180"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2912,7 +2741,6 @@ exports[`Grid should render correctly 1`] = `
           index={181}
           isClicked={false}
           key="181"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2928,7 +2756,6 @@ exports[`Grid should render correctly 1`] = `
           index={182}
           isClicked={false}
           key="182"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2944,7 +2771,6 @@ exports[`Grid should render correctly 1`] = `
           index={183}
           isClicked={false}
           key="183"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2960,7 +2786,6 @@ exports[`Grid should render correctly 1`] = `
           index={184}
           isClicked={false}
           key="184"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2976,7 +2801,6 @@ exports[`Grid should render correctly 1`] = `
           index={185}
           isClicked={false}
           key="185"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -2992,7 +2816,6 @@ exports[`Grid should render correctly 1`] = `
           index={186}
           isClicked={false}
           key="186"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3008,7 +2831,6 @@ exports[`Grid should render correctly 1`] = `
           index={187}
           isClicked={false}
           key="187"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3024,7 +2846,6 @@ exports[`Grid should render correctly 1`] = `
           index={188}
           isClicked={false}
           key="188"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3040,7 +2861,6 @@ exports[`Grid should render correctly 1`] = `
           index={189}
           isClicked={false}
           key="189"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3056,7 +2876,6 @@ exports[`Grid should render correctly 1`] = `
           index={190}
           isClicked={false}
           key="190"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3072,7 +2891,6 @@ exports[`Grid should render correctly 1`] = `
           index={191}
           isClicked={false}
           key="191"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3088,7 +2906,6 @@ exports[`Grid should render correctly 1`] = `
           index={192}
           isClicked={false}
           key="192"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3104,7 +2921,6 @@ exports[`Grid should render correctly 1`] = `
           index={193}
           isClicked={false}
           key="193"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3120,7 +2936,6 @@ exports[`Grid should render correctly 1`] = `
           index={194}
           isClicked={false}
           key="194"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3136,7 +2951,6 @@ exports[`Grid should render correctly 1`] = `
           index={195}
           isClicked={false}
           key="195"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3152,7 +2966,6 @@ exports[`Grid should render correctly 1`] = `
           index={196}
           isClicked={false}
           key="196"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3168,7 +2981,6 @@ exports[`Grid should render correctly 1`] = `
           index={197}
           isClicked={false}
           key="197"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3184,7 +2996,6 @@ exports[`Grid should render correctly 1`] = `
           index={198}
           isClicked={false}
           key="198"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3200,7 +3011,6 @@ exports[`Grid should render correctly 1`] = `
           index={199}
           isClicked={false}
           key="199"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3216,7 +3026,6 @@ exports[`Grid should render correctly 1`] = `
           index={200}
           isClicked={false}
           key="200"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3232,7 +3041,6 @@ exports[`Grid should render correctly 1`] = `
           index={201}
           isClicked={false}
           key="201"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3248,7 +3056,6 @@ exports[`Grid should render correctly 1`] = `
           index={202}
           isClicked={false}
           key="202"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3264,7 +3071,6 @@ exports[`Grid should render correctly 1`] = `
           index={203}
           isClicked={false}
           key="203"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3280,7 +3086,6 @@ exports[`Grid should render correctly 1`] = `
           index={204}
           isClicked={false}
           key="204"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3296,7 +3101,6 @@ exports[`Grid should render correctly 1`] = `
           index={205}
           isClicked={false}
           key="205"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3312,7 +3116,6 @@ exports[`Grid should render correctly 1`] = `
           index={206}
           isClicked={false}
           key="206"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3328,7 +3131,6 @@ exports[`Grid should render correctly 1`] = `
           index={207}
           isClicked={false}
           key="207"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3344,7 +3146,6 @@ exports[`Grid should render correctly 1`] = `
           index={208}
           isClicked={false}
           key="208"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3360,7 +3161,6 @@ exports[`Grid should render correctly 1`] = `
           index={209}
           isClicked={false}
           key="209"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3376,7 +3176,6 @@ exports[`Grid should render correctly 1`] = `
           index={210}
           isClicked={false}
           key="210"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3392,7 +3191,6 @@ exports[`Grid should render correctly 1`] = `
           index={211}
           isClicked={false}
           key="211"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3408,7 +3206,6 @@ exports[`Grid should render correctly 1`] = `
           index={212}
           isClicked={false}
           key="212"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3424,7 +3221,6 @@ exports[`Grid should render correctly 1`] = `
           index={213}
           isClicked={false}
           key="213"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3440,7 +3236,6 @@ exports[`Grid should render correctly 1`] = `
           index={214}
           isClicked={false}
           key="214"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3456,7 +3251,6 @@ exports[`Grid should render correctly 1`] = `
           index={215}
           isClicked={false}
           key="215"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3472,7 +3266,6 @@ exports[`Grid should render correctly 1`] = `
           index={216}
           isClicked={false}
           key="216"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3488,7 +3281,6 @@ exports[`Grid should render correctly 1`] = `
           index={217}
           isClicked={false}
           key="217"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3504,7 +3296,6 @@ exports[`Grid should render correctly 1`] = `
           index={218}
           isClicked={false}
           key="218"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3520,7 +3311,6 @@ exports[`Grid should render correctly 1`] = `
           index={219}
           isClicked={false}
           key="219"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3536,7 +3326,6 @@ exports[`Grid should render correctly 1`] = `
           index={220}
           isClicked={false}
           key="220"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3552,7 +3341,6 @@ exports[`Grid should render correctly 1`] = `
           index={221}
           isClicked={false}
           key="221"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3568,7 +3356,6 @@ exports[`Grid should render correctly 1`] = `
           index={222}
           isClicked={false}
           key="222"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3584,7 +3371,6 @@ exports[`Grid should render correctly 1`] = `
           index={223}
           isClicked={false}
           key="223"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3600,7 +3386,6 @@ exports[`Grid should render correctly 1`] = `
           index={224}
           isClicked={false}
           key="224"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3616,7 +3401,6 @@ exports[`Grid should render correctly 1`] = `
           index={225}
           isClicked={false}
           key="225"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3632,7 +3416,6 @@ exports[`Grid should render correctly 1`] = `
           index={226}
           isClicked={false}
           key="226"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3648,7 +3431,6 @@ exports[`Grid should render correctly 1`] = `
           index={227}
           isClicked={false}
           key="227"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3664,7 +3446,6 @@ exports[`Grid should render correctly 1`] = `
           index={228}
           isClicked={false}
           key="228"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3680,7 +3461,6 @@ exports[`Grid should render correctly 1`] = `
           index={229}
           isClicked={false}
           key="229"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3696,7 +3476,6 @@ exports[`Grid should render correctly 1`] = `
           index={230}
           isClicked={false}
           key="230"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3712,7 +3491,6 @@ exports[`Grid should render correctly 1`] = `
           index={231}
           isClicked={false}
           key="231"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3728,7 +3506,6 @@ exports[`Grid should render correctly 1`] = `
           index={232}
           isClicked={false}
           key="232"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3744,7 +3521,6 @@ exports[`Grid should render correctly 1`] = `
           index={233}
           isClicked={false}
           key="233"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3760,7 +3536,6 @@ exports[`Grid should render correctly 1`] = `
           index={234}
           isClicked={false}
           key="234"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3776,7 +3551,6 @@ exports[`Grid should render correctly 1`] = `
           index={235}
           isClicked={false}
           key="235"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3792,7 +3566,6 @@ exports[`Grid should render correctly 1`] = `
           index={236}
           isClicked={false}
           key="236"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3808,7 +3581,6 @@ exports[`Grid should render correctly 1`] = `
           index={237}
           isClicked={false}
           key="237"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3824,7 +3596,6 @@ exports[`Grid should render correctly 1`] = `
           index={238}
           isClicked={false}
           key="238"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3840,7 +3611,6 @@ exports[`Grid should render correctly 1`] = `
           index={239}
           isClicked={false}
           key="239"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3856,7 +3626,6 @@ exports[`Grid should render correctly 1`] = `
           index={240}
           isClicked={false}
           key="240"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3872,7 +3641,6 @@ exports[`Grid should render correctly 1`] = `
           index={241}
           isClicked={false}
           key="241"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3888,7 +3656,6 @@ exports[`Grid should render correctly 1`] = `
           index={242}
           isClicked={false}
           key="242"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3904,7 +3671,6 @@ exports[`Grid should render correctly 1`] = `
           index={243}
           isClicked={false}
           key="243"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3920,7 +3686,6 @@ exports[`Grid should render correctly 1`] = `
           index={244}
           isClicked={false}
           key="244"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3936,7 +3701,6 @@ exports[`Grid should render correctly 1`] = `
           index={245}
           isClicked={false}
           key="245"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3952,7 +3716,6 @@ exports[`Grid should render correctly 1`] = `
           index={246}
           isClicked={false}
           key="246"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3968,7 +3731,6 @@ exports[`Grid should render correctly 1`] = `
           index={247}
           isClicked={false}
           key="247"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -3984,7 +3746,6 @@ exports[`Grid should render correctly 1`] = `
           index={248}
           isClicked={false}
           key="248"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4000,7 +3761,6 @@ exports[`Grid should render correctly 1`] = `
           index={249}
           isClicked={false}
           key="249"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4016,7 +3776,6 @@ exports[`Grid should render correctly 1`] = `
           index={250}
           isClicked={false}
           key="250"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4032,7 +3791,6 @@ exports[`Grid should render correctly 1`] = `
           index={251}
           isClicked={false}
           key="251"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4048,7 +3806,6 @@ exports[`Grid should render correctly 1`] = `
           index={252}
           isClicked={false}
           key="252"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4064,7 +3821,6 @@ exports[`Grid should render correctly 1`] = `
           index={253}
           isClicked={false}
           key="253"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4080,7 +3836,6 @@ exports[`Grid should render correctly 1`] = `
           index={254}
           isClicked={false}
           key="254"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4096,7 +3851,6 @@ exports[`Grid should render correctly 1`] = `
           index={255}
           isClicked={false}
           key="255"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4112,7 +3866,6 @@ exports[`Grid should render correctly 1`] = `
           index={256}
           isClicked={false}
           key="256"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4128,7 +3881,6 @@ exports[`Grid should render correctly 1`] = `
           index={257}
           isClicked={false}
           key="257"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4144,7 +3896,6 @@ exports[`Grid should render correctly 1`] = `
           index={258}
           isClicked={false}
           key="258"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4160,7 +3911,6 @@ exports[`Grid should render correctly 1`] = `
           index={259}
           isClicked={false}
           key="259"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4176,7 +3926,6 @@ exports[`Grid should render correctly 1`] = `
           index={260}
           isClicked={false}
           key="260"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4192,7 +3941,6 @@ exports[`Grid should render correctly 1`] = `
           index={261}
           isClicked={false}
           key="261"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4208,7 +3956,6 @@ exports[`Grid should render correctly 1`] = `
           index={262}
           isClicked={false}
           key="262"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4224,7 +3971,6 @@ exports[`Grid should render correctly 1`] = `
           index={263}
           isClicked={false}
           key="263"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4240,7 +3986,6 @@ exports[`Grid should render correctly 1`] = `
           index={264}
           isClicked={false}
           key="264"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4256,7 +4001,6 @@ exports[`Grid should render correctly 1`] = `
           index={265}
           isClicked={false}
           key="265"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4272,7 +4016,6 @@ exports[`Grid should render correctly 1`] = `
           index={266}
           isClicked={false}
           key="266"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4288,7 +4031,6 @@ exports[`Grid should render correctly 1`] = `
           index={267}
           isClicked={false}
           key="267"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4304,7 +4046,6 @@ exports[`Grid should render correctly 1`] = `
           index={268}
           isClicked={false}
           key="268"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4320,7 +4061,6 @@ exports[`Grid should render correctly 1`] = `
           index={269}
           isClicked={false}
           key="269"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4336,7 +4076,6 @@ exports[`Grid should render correctly 1`] = `
           index={270}
           isClicked={false}
           key="270"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4352,7 +4091,6 @@ exports[`Grid should render correctly 1`] = `
           index={271}
           isClicked={false}
           key="271"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4368,7 +4106,6 @@ exports[`Grid should render correctly 1`] = `
           index={272}
           isClicked={false}
           key="272"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4384,7 +4121,6 @@ exports[`Grid should render correctly 1`] = `
           index={273}
           isClicked={false}
           key="273"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4400,7 +4136,6 @@ exports[`Grid should render correctly 1`] = `
           index={274}
           isClicked={false}
           key="274"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4416,7 +4151,6 @@ exports[`Grid should render correctly 1`] = `
           index={275}
           isClicked={false}
           key="275"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4432,7 +4166,6 @@ exports[`Grid should render correctly 1`] = `
           index={276}
           isClicked={false}
           key="276"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4448,7 +4181,6 @@ exports[`Grid should render correctly 1`] = `
           index={277}
           isClicked={false}
           key="277"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4464,7 +4196,6 @@ exports[`Grid should render correctly 1`] = `
           index={278}
           isClicked={false}
           key="278"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4480,7 +4211,6 @@ exports[`Grid should render correctly 1`] = `
           index={279}
           isClicked={false}
           key="279"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4496,7 +4226,6 @@ exports[`Grid should render correctly 1`] = `
           index={280}
           isClicked={false}
           key="280"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4512,7 +4241,6 @@ exports[`Grid should render correctly 1`] = `
           index={281}
           isClicked={false}
           key="281"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4528,7 +4256,6 @@ exports[`Grid should render correctly 1`] = `
           index={282}
           isClicked={false}
           key="282"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4544,7 +4271,6 @@ exports[`Grid should render correctly 1`] = `
           index={283}
           isClicked={false}
           key="283"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4560,7 +4286,6 @@ exports[`Grid should render correctly 1`] = `
           index={284}
           isClicked={false}
           key="284"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4576,7 +4301,6 @@ exports[`Grid should render correctly 1`] = `
           index={285}
           isClicked={false}
           key="285"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4592,7 +4316,6 @@ exports[`Grid should render correctly 1`] = `
           index={286}
           isClicked={false}
           key="286"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4608,7 +4331,6 @@ exports[`Grid should render correctly 1`] = `
           index={287}
           isClicked={false}
           key="287"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4624,7 +4346,6 @@ exports[`Grid should render correctly 1`] = `
           index={288}
           isClicked={false}
           key="288"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4640,7 +4361,6 @@ exports[`Grid should render correctly 1`] = `
           index={289}
           isClicked={false}
           key="289"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4656,7 +4376,6 @@ exports[`Grid should render correctly 1`] = `
           index={290}
           isClicked={false}
           key="290"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4672,7 +4391,6 @@ exports[`Grid should render correctly 1`] = `
           index={291}
           isClicked={false}
           key="291"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4688,7 +4406,6 @@ exports[`Grid should render correctly 1`] = `
           index={292}
           isClicked={false}
           key="292"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4704,7 +4421,6 @@ exports[`Grid should render correctly 1`] = `
           index={293}
           isClicked={false}
           key="293"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4720,7 +4436,6 @@ exports[`Grid should render correctly 1`] = `
           index={294}
           isClicked={false}
           key="294"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4736,7 +4451,6 @@ exports[`Grid should render correctly 1`] = `
           index={295}
           isClicked={false}
           key="295"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4752,7 +4466,6 @@ exports[`Grid should render correctly 1`] = `
           index={296}
           isClicked={false}
           key="296"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4768,7 +4481,6 @@ exports[`Grid should render correctly 1`] = `
           index={297}
           isClicked={false}
           key="297"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4784,7 +4496,6 @@ exports[`Grid should render correctly 1`] = `
           index={298}
           isClicked={false}
           key="298"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4800,7 +4511,6 @@ exports[`Grid should render correctly 1`] = `
           index={299}
           isClicked={false}
           key="299"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4816,7 +4526,6 @@ exports[`Grid should render correctly 1`] = `
           index={300}
           isClicked={false}
           key="300"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4832,7 +4541,6 @@ exports[`Grid should render correctly 1`] = `
           index={301}
           isClicked={false}
           key="301"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4848,7 +4556,6 @@ exports[`Grid should render correctly 1`] = `
           index={302}
           isClicked={false}
           key="302"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4864,7 +4571,6 @@ exports[`Grid should render correctly 1`] = `
           index={303}
           isClicked={false}
           key="303"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4880,7 +4586,6 @@ exports[`Grid should render correctly 1`] = `
           index={304}
           isClicked={false}
           key="304"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4896,7 +4601,6 @@ exports[`Grid should render correctly 1`] = `
           index={305}
           isClicked={false}
           key="305"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4912,7 +4616,6 @@ exports[`Grid should render correctly 1`] = `
           index={306}
           isClicked={false}
           key="306"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4928,7 +4631,6 @@ exports[`Grid should render correctly 1`] = `
           index={307}
           isClicked={false}
           key="307"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4944,7 +4646,6 @@ exports[`Grid should render correctly 1`] = `
           index={308}
           isClicked={false}
           key="308"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4960,7 +4661,6 @@ exports[`Grid should render correctly 1`] = `
           index={309}
           isClicked={false}
           key="309"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4976,7 +4676,6 @@ exports[`Grid should render correctly 1`] = `
           index={310}
           isClicked={false}
           key="310"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -4992,7 +4691,6 @@ exports[`Grid should render correctly 1`] = `
           index={311}
           isClicked={false}
           key="311"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5008,7 +4706,6 @@ exports[`Grid should render correctly 1`] = `
           index={312}
           isClicked={false}
           key="312"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5024,7 +4721,6 @@ exports[`Grid should render correctly 1`] = `
           index={313}
           isClicked={false}
           key="313"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5040,7 +4736,6 @@ exports[`Grid should render correctly 1`] = `
           index={314}
           isClicked={false}
           key="314"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5056,7 +4751,6 @@ exports[`Grid should render correctly 1`] = `
           index={315}
           isClicked={false}
           key="315"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5072,7 +4766,6 @@ exports[`Grid should render correctly 1`] = `
           index={316}
           isClicked={false}
           key="316"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5088,7 +4781,6 @@ exports[`Grid should render correctly 1`] = `
           index={317}
           isClicked={false}
           key="317"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5104,7 +4796,6 @@ exports[`Grid should render correctly 1`] = `
           index={318}
           isClicked={false}
           key="318"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5120,7 +4811,6 @@ exports[`Grid should render correctly 1`] = `
           index={319}
           isClicked={false}
           key="319"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5136,7 +4826,6 @@ exports[`Grid should render correctly 1`] = `
           index={320}
           isClicked={false}
           key="320"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5152,7 +4841,6 @@ exports[`Grid should render correctly 1`] = `
           index={321}
           isClicked={false}
           key="321"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5168,7 +4856,6 @@ exports[`Grid should render correctly 1`] = `
           index={322}
           isClicked={false}
           key="322"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5184,7 +4871,6 @@ exports[`Grid should render correctly 1`] = `
           index={323}
           isClicked={false}
           key="323"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5200,7 +4886,6 @@ exports[`Grid should render correctly 1`] = `
           index={324}
           isClicked={false}
           key="324"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5216,7 +4901,6 @@ exports[`Grid should render correctly 1`] = `
           index={325}
           isClicked={false}
           key="325"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5232,7 +4916,6 @@ exports[`Grid should render correctly 1`] = `
           index={326}
           isClicked={false}
           key="326"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5248,7 +4931,6 @@ exports[`Grid should render correctly 1`] = `
           index={327}
           isClicked={false}
           key="327"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5264,7 +4946,6 @@ exports[`Grid should render correctly 1`] = `
           index={328}
           isClicked={false}
           key="328"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5280,7 +4961,6 @@ exports[`Grid should render correctly 1`] = `
           index={329}
           isClicked={false}
           key="329"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5296,7 +4976,6 @@ exports[`Grid should render correctly 1`] = `
           index={330}
           isClicked={false}
           key="330"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5312,7 +4991,6 @@ exports[`Grid should render correctly 1`] = `
           index={331}
           isClicked={false}
           key="331"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5328,7 +5006,6 @@ exports[`Grid should render correctly 1`] = `
           index={332}
           isClicked={false}
           key="332"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5344,7 +5021,6 @@ exports[`Grid should render correctly 1`] = `
           index={333}
           isClicked={false}
           key="333"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5360,7 +5036,6 @@ exports[`Grid should render correctly 1`] = `
           index={334}
           isClicked={false}
           key="334"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5376,7 +5051,6 @@ exports[`Grid should render correctly 1`] = `
           index={335}
           isClicked={false}
           key="335"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5392,7 +5066,6 @@ exports[`Grid should render correctly 1`] = `
           index={336}
           isClicked={false}
           key="336"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5408,7 +5081,6 @@ exports[`Grid should render correctly 1`] = `
           index={337}
           isClicked={false}
           key="337"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5424,7 +5096,6 @@ exports[`Grid should render correctly 1`] = `
           index={338}
           isClicked={false}
           key="338"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5440,7 +5111,6 @@ exports[`Grid should render correctly 1`] = `
           index={339}
           isClicked={false}
           key="339"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5456,7 +5126,6 @@ exports[`Grid should render correctly 1`] = `
           index={340}
           isClicked={false}
           key="340"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5472,7 +5141,6 @@ exports[`Grid should render correctly 1`] = `
           index={341}
           isClicked={false}
           key="341"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5488,7 +5156,6 @@ exports[`Grid should render correctly 1`] = `
           index={342}
           isClicked={false}
           key="342"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5504,7 +5171,6 @@ exports[`Grid should render correctly 1`] = `
           index={343}
           isClicked={false}
           key="343"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5520,7 +5186,6 @@ exports[`Grid should render correctly 1`] = `
           index={344}
           isClicked={false}
           key="344"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5536,7 +5201,6 @@ exports[`Grid should render correctly 1`] = `
           index={345}
           isClicked={false}
           key="345"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5552,7 +5216,6 @@ exports[`Grid should render correctly 1`] = `
           index={346}
           isClicked={false}
           key="346"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5568,7 +5231,6 @@ exports[`Grid should render correctly 1`] = `
           index={347}
           isClicked={false}
           key="347"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5584,7 +5246,6 @@ exports[`Grid should render correctly 1`] = `
           index={348}
           isClicked={false}
           key="348"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5600,7 +5261,6 @@ exports[`Grid should render correctly 1`] = `
           index={349}
           isClicked={false}
           key="349"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5616,7 +5276,6 @@ exports[`Grid should render correctly 1`] = `
           index={350}
           isClicked={false}
           key="350"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5632,7 +5291,6 @@ exports[`Grid should render correctly 1`] = `
           index={351}
           isClicked={false}
           key="351"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5648,7 +5306,6 @@ exports[`Grid should render correctly 1`] = `
           index={352}
           isClicked={false}
           key="352"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5664,7 +5321,6 @@ exports[`Grid should render correctly 1`] = `
           index={353}
           isClicked={false}
           key="353"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5680,7 +5336,6 @@ exports[`Grid should render correctly 1`] = `
           index={354}
           isClicked={false}
           key="354"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5696,7 +5351,6 @@ exports[`Grid should render correctly 1`] = `
           index={355}
           isClicked={false}
           key="355"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5712,7 +5366,6 @@ exports[`Grid should render correctly 1`] = `
           index={356}
           isClicked={false}
           key="356"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5728,7 +5381,6 @@ exports[`Grid should render correctly 1`] = `
           index={357}
           isClicked={false}
           key="357"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5744,7 +5396,6 @@ exports[`Grid should render correctly 1`] = `
           index={358}
           isClicked={false}
           key="358"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5760,7 +5411,6 @@ exports[`Grid should render correctly 1`] = `
           index={359}
           isClicked={false}
           key="359"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5776,7 +5426,6 @@ exports[`Grid should render correctly 1`] = `
           index={360}
           isClicked={false}
           key="360"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5792,7 +5441,6 @@ exports[`Grid should render correctly 1`] = `
           index={361}
           isClicked={false}
           key="361"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5808,7 +5456,6 @@ exports[`Grid should render correctly 1`] = `
           index={362}
           isClicked={false}
           key="362"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5824,7 +5471,6 @@ exports[`Grid should render correctly 1`] = `
           index={363}
           isClicked={false}
           key="363"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5840,7 +5486,6 @@ exports[`Grid should render correctly 1`] = `
           index={364}
           isClicked={false}
           key="364"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5856,7 +5501,6 @@ exports[`Grid should render correctly 1`] = `
           index={365}
           isClicked={false}
           key="365"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5872,7 +5516,6 @@ exports[`Grid should render correctly 1`] = `
           index={366}
           isClicked={false}
           key="366"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5888,7 +5531,6 @@ exports[`Grid should render correctly 1`] = `
           index={367}
           isClicked={false}
           key="367"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5904,7 +5546,6 @@ exports[`Grid should render correctly 1`] = `
           index={368}
           isClicked={false}
           key="368"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5920,7 +5561,6 @@ exports[`Grid should render correctly 1`] = `
           index={369}
           isClicked={false}
           key="369"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5936,7 +5576,6 @@ exports[`Grid should render correctly 1`] = `
           index={370}
           isClicked={false}
           key="370"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5952,7 +5591,6 @@ exports[`Grid should render correctly 1`] = `
           index={371}
           isClicked={false}
           key="371"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5968,7 +5606,6 @@ exports[`Grid should render correctly 1`] = `
           index={372}
           isClicked={false}
           key="372"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -5984,7 +5621,6 @@ exports[`Grid should render correctly 1`] = `
           index={373}
           isClicked={false}
           key="373"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6000,7 +5636,6 @@ exports[`Grid should render correctly 1`] = `
           index={374}
           isClicked={false}
           key="374"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6016,7 +5651,6 @@ exports[`Grid should render correctly 1`] = `
           index={375}
           isClicked={false}
           key="375"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6032,7 +5666,6 @@ exports[`Grid should render correctly 1`] = `
           index={376}
           isClicked={false}
           key="376"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6048,7 +5681,6 @@ exports[`Grid should render correctly 1`] = `
           index={377}
           isClicked={false}
           key="377"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6064,7 +5696,6 @@ exports[`Grid should render correctly 1`] = `
           index={378}
           isClicked={false}
           key="378"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6080,7 +5711,6 @@ exports[`Grid should render correctly 1`] = `
           index={379}
           isClicked={false}
           key="379"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6096,7 +5726,6 @@ exports[`Grid should render correctly 1`] = `
           index={380}
           isClicked={false}
           key="380"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6112,7 +5741,6 @@ exports[`Grid should render correctly 1`] = `
           index={381}
           isClicked={false}
           key="381"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6128,7 +5756,6 @@ exports[`Grid should render correctly 1`] = `
           index={382}
           isClicked={false}
           key="382"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6144,7 +5771,6 @@ exports[`Grid should render correctly 1`] = `
           index={383}
           isClicked={false}
           key="383"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6160,7 +5786,6 @@ exports[`Grid should render correctly 1`] = `
           index={384}
           isClicked={false}
           key="384"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6176,7 +5801,6 @@ exports[`Grid should render correctly 1`] = `
           index={385}
           isClicked={false}
           key="385"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6192,7 +5816,6 @@ exports[`Grid should render correctly 1`] = `
           index={386}
           isClicked={false}
           key="386"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6208,7 +5831,6 @@ exports[`Grid should render correctly 1`] = `
           index={387}
           isClicked={false}
           key="387"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6224,7 +5846,6 @@ exports[`Grid should render correctly 1`] = `
           index={388}
           isClicked={false}
           key="388"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6240,7 +5861,6 @@ exports[`Grid should render correctly 1`] = `
           index={389}
           isClicked={false}
           key="389"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6256,7 +5876,6 @@ exports[`Grid should render correctly 1`] = `
           index={390}
           isClicked={false}
           key="390"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6272,7 +5891,6 @@ exports[`Grid should render correctly 1`] = `
           index={391}
           isClicked={false}
           key="391"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6288,7 +5906,6 @@ exports[`Grid should render correctly 1`] = `
           index={392}
           isClicked={false}
           key="392"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6304,7 +5921,6 @@ exports[`Grid should render correctly 1`] = `
           index={393}
           isClicked={false}
           key="393"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6320,7 +5936,6 @@ exports[`Grid should render correctly 1`] = `
           index={394}
           isClicked={false}
           key="394"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6336,7 +5951,6 @@ exports[`Grid should render correctly 1`] = `
           index={395}
           isClicked={false}
           key="395"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6352,7 +5966,6 @@ exports[`Grid should render correctly 1`] = `
           index={396}
           isClicked={false}
           key="396"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6368,7 +5981,6 @@ exports[`Grid should render correctly 1`] = `
           index={397}
           isClicked={false}
           key="397"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6384,7 +5996,6 @@ exports[`Grid should render correctly 1`] = `
           index={398}
           isClicked={false}
           key="398"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6400,7 +6011,6 @@ exports[`Grid should render correctly 1`] = `
           index={399}
           isClicked={false}
           key="399"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6416,7 +6026,6 @@ exports[`Grid should render correctly 1`] = `
           index={400}
           isClicked={false}
           key="400"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6432,7 +6041,6 @@ exports[`Grid should render correctly 1`] = `
           index={401}
           isClicked={false}
           key="401"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6448,7 +6056,6 @@ exports[`Grid should render correctly 1`] = `
           index={402}
           isClicked={false}
           key="402"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6464,7 +6071,6 @@ exports[`Grid should render correctly 1`] = `
           index={403}
           isClicked={false}
           key="403"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6480,7 +6086,6 @@ exports[`Grid should render correctly 1`] = `
           index={404}
           isClicked={false}
           key="404"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6496,7 +6101,6 @@ exports[`Grid should render correctly 1`] = `
           index={405}
           isClicked={false}
           key="405"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6512,7 +6116,6 @@ exports[`Grid should render correctly 1`] = `
           index={406}
           isClicked={false}
           key="406"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6528,7 +6131,6 @@ exports[`Grid should render correctly 1`] = `
           index={407}
           isClicked={false}
           key="407"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6544,7 +6146,6 @@ exports[`Grid should render correctly 1`] = `
           index={408}
           isClicked={false}
           key="408"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6560,7 +6161,6 @@ exports[`Grid should render correctly 1`] = `
           index={409}
           isClicked={false}
           key="409"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6576,7 +6176,6 @@ exports[`Grid should render correctly 1`] = `
           index={410}
           isClicked={false}
           key="410"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6592,7 +6191,6 @@ exports[`Grid should render correctly 1`] = `
           index={411}
           isClicked={false}
           key="411"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6608,7 +6206,6 @@ exports[`Grid should render correctly 1`] = `
           index={412}
           isClicked={false}
           key="412"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6624,7 +6221,6 @@ exports[`Grid should render correctly 1`] = `
           index={413}
           isClicked={false}
           key="413"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6640,7 +6236,6 @@ exports[`Grid should render correctly 1`] = `
           index={414}
           isClicked={false}
           key="414"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6656,7 +6251,6 @@ exports[`Grid should render correctly 1`] = `
           index={415}
           isClicked={false}
           key="415"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6672,7 +6266,6 @@ exports[`Grid should render correctly 1`] = `
           index={416}
           isClicked={false}
           key="416"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6688,7 +6281,6 @@ exports[`Grid should render correctly 1`] = `
           index={417}
           isClicked={false}
           key="417"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6704,7 +6296,6 @@ exports[`Grid should render correctly 1`] = `
           index={418}
           isClicked={false}
           key="418"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6720,7 +6311,6 @@ exports[`Grid should render correctly 1`] = `
           index={419}
           isClicked={false}
           key="419"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6736,7 +6326,6 @@ exports[`Grid should render correctly 1`] = `
           index={420}
           isClicked={false}
           key="420"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6752,7 +6341,6 @@ exports[`Grid should render correctly 1`] = `
           index={421}
           isClicked={false}
           key="421"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6768,7 +6356,6 @@ exports[`Grid should render correctly 1`] = `
           index={422}
           isClicked={false}
           key="422"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6784,7 +6371,6 @@ exports[`Grid should render correctly 1`] = `
           index={423}
           isClicked={false}
           key="423"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6800,7 +6386,6 @@ exports[`Grid should render correctly 1`] = `
           index={424}
           isClicked={false}
           key="424"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6816,7 +6401,6 @@ exports[`Grid should render correctly 1`] = `
           index={425}
           isClicked={false}
           key="425"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6832,7 +6416,6 @@ exports[`Grid should render correctly 1`] = `
           index={426}
           isClicked={false}
           key="426"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6848,7 +6431,6 @@ exports[`Grid should render correctly 1`] = `
           index={427}
           isClicked={false}
           key="427"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6864,7 +6446,6 @@ exports[`Grid should render correctly 1`] = `
           index={428}
           isClicked={false}
           key="428"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6880,7 +6461,6 @@ exports[`Grid should render correctly 1`] = `
           index={429}
           isClicked={false}
           key="429"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6896,7 +6476,6 @@ exports[`Grid should render correctly 1`] = `
           index={430}
           isClicked={false}
           key="430"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6912,7 +6491,6 @@ exports[`Grid should render correctly 1`] = `
           index={431}
           isClicked={false}
           key="431"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6928,7 +6506,6 @@ exports[`Grid should render correctly 1`] = `
           index={432}
           isClicked={false}
           key="432"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6944,7 +6521,6 @@ exports[`Grid should render correctly 1`] = `
           index={433}
           isClicked={false}
           key="433"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6960,7 +6536,6 @@ exports[`Grid should render correctly 1`] = `
           index={434}
           isClicked={false}
           key="434"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6976,7 +6551,6 @@ exports[`Grid should render correctly 1`] = `
           index={435}
           isClicked={false}
           key="435"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -6992,7 +6566,6 @@ exports[`Grid should render correctly 1`] = `
           index={436}
           isClicked={false}
           key="436"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -7008,7 +6581,6 @@ exports[`Grid should render correctly 1`] = `
           index={437}
           isClicked={false}
           key="437"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -7024,7 +6596,6 @@ exports[`Grid should render correctly 1`] = `
           index={438}
           isClicked={false}
           key="438"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -7040,7 +6611,6 @@ exports[`Grid should render correctly 1`] = `
           index={439}
           isClicked={false}
           key="439"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -7056,7 +6626,6 @@ exports[`Grid should render correctly 1`] = `
           index={440}
           isClicked={false}
           key="440"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -7072,7 +6641,6 @@ exports[`Grid should render correctly 1`] = `
           index={441}
           isClicked={false}
           key="441"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -7088,7 +6656,6 @@ exports[`Grid should render correctly 1`] = `
           index={442}
           isClicked={false}
           key="442"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -7104,7 +6671,6 @@ exports[`Grid should render correctly 1`] = `
           index={443}
           isClicked={false}
           key="443"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -7120,7 +6686,6 @@ exports[`Grid should render correctly 1`] = `
           index={444}
           isClicked={false}
           key="444"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -7136,7 +6701,6 @@ exports[`Grid should render correctly 1`] = `
           index={445}
           isClicked={false}
           key="445"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -7152,7 +6716,6 @@ exports[`Grid should render correctly 1`] = `
           index={446}
           isClicked={false}
           key="446"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -7168,7 +6731,6 @@ exports[`Grid should render correctly 1`] = `
           index={447}
           isClicked={false}
           key="447"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -7184,7 +6746,6 @@ exports[`Grid should render correctly 1`] = `
           index={448}
           isClicked={false}
           key="448"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -7200,7 +6761,6 @@ exports[`Grid should render correctly 1`] = `
           index={449}
           isClicked={false}
           key="449"
-          onClick={[Function]}
         >
           <StyledCell
             isClicked={false}
@@ -7215,5 +6775,5 @@ exports[`Grid should render correctly 1`] = `
       </div>
     </Container>
   </Grid>
-</GridProvider>
+</Provider>
 `;

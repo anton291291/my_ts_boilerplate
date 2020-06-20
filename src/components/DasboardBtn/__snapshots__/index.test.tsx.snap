@@ -1,68 +1,60 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DashboardBtn should render correctly 1`] = `
-<GridProvider>
-  <DasboardBtn>
+<Provider
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+>
+  <DashboardBtn>
     <Btn
       onClick={[Function]}
     >
-      <div
-        className="Btn-sc-1wy4hl4-0 lDuDf"
+      <ForwardRef
+        className="Btn-sc-1wy4hl4-0 dKxJQA"
         onClick={[Function]}
       >
-        <ForwardRef
-          style={
-            Object {
-              "color": "white",
-            }
-          }
+        <WithStyles(ForwardRef(SvgIcon))
+          className="Btn-sc-1wy4hl4-0 dKxJQA"
+          onClick={[Function]}
         >
-          <WithStyles(ForwardRef(SvgIcon))
-            style={
+          <ForwardRef(SvgIcon)
+            className="Btn-sc-1wy4hl4-0 dKxJQA"
+            classes={
               Object {
-                "color": "white",
+                "colorAction": "MuiSvgIcon-colorAction",
+                "colorDisabled": "MuiSvgIcon-colorDisabled",
+                "colorError": "MuiSvgIcon-colorError",
+                "colorPrimary": "MuiSvgIcon-colorPrimary",
+                "colorSecondary": "MuiSvgIcon-colorSecondary",
+                "fontSizeInherit": "MuiSvgIcon-fontSizeInherit",
+                "fontSizeLarge": "MuiSvgIcon-fontSizeLarge",
+                "fontSizeSmall": "MuiSvgIcon-fontSizeSmall",
+                "root": "MuiSvgIcon-root",
               }
             }
+            onClick={[Function]}
           >
-            <ForwardRef(SvgIcon)
-              classes={
-                Object {
-                  "colorAction": "MuiSvgIcon-colorAction",
-                  "colorDisabled": "MuiSvgIcon-colorDisabled",
-                  "colorError": "MuiSvgIcon-colorError",
-                  "colorPrimary": "MuiSvgIcon-colorPrimary",
-                  "colorSecondary": "MuiSvgIcon-colorSecondary",
-                  "fontSizeInherit": "MuiSvgIcon-fontSizeInherit",
-                  "fontSizeLarge": "MuiSvgIcon-fontSizeLarge",
-                  "fontSizeSmall": "MuiSvgIcon-fontSizeSmall",
-                  "root": "MuiSvgIcon-root",
-                }
-              }
-              style={
-                Object {
-                  "color": "white",
-                }
-              }
+            <svg
+              aria-hidden="true"
+              className="MuiSvgIcon-root Btn-sc-1wy4hl4-0 dKxJQA"
+              focusable="false"
+              onClick={[Function]}
+              viewBox="0 0 24 24"
             >
-              <svg
-                aria-hidden="true"
-                className="MuiSvgIcon-root"
-                focusable="false"
-                style={
-                  Object {
-                    "color": "white",
-                  }
-                }
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"
-                />
-              </svg>
-            </ForwardRef(SvgIcon)>
-          </WithStyles(ForwardRef(SvgIcon))>
-        </ForwardRef>
-      </div>
+              <path
+                d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"
+              />
+            </svg>
+          </ForwardRef(SvgIcon)>
+        </WithStyles(ForwardRef(SvgIcon))>
+      </ForwardRef>
     </Btn>
     <StyledDrawer
       anchor="bottom"
@@ -428,6 +420,6 @@ exports[`DashboardBtn should render correctly 1`] = `
         </ForwardRef(Drawer)>
       </WithStyles(ForwardRef(Drawer))>
     </StyledDrawer>
-  </DasboardBtn>
-</GridProvider>
+  </DashboardBtn>
+</Provider>
 `;

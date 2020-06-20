@@ -3,25 +3,30 @@ import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import Dotenv from 'dotenv-webpack';
+import babelLoaderExcludeNodeModulesExcept from 'babel-loader-exclude-node-modules-except';
 
 module.exports = {
     entry: path.join(__dirname, 'src', 'index.tsx'),
     output: {
         path: path.join(__dirname, 'build'),
-        filename: 'index.bundle.js',
-    }, 
+        filename: 'index.bundle.js'
+    },
     resolve: {
         modules: [path.resolve(__dirname, 'src'), 'node_modules'],
         extensions: ['.ts', '.tsx', '.js', 'jsx'],
         alias: {
-            '@': path.resolve(__dirname, 'src')
+            '@': path.resolve(__dirname, 'src'),
+            'react-redux': (process.env.NODE_ENV = 'development'
+                ? 'react-redux/lib'
+                : 'react-redux'),
+            'react-dom': '@hot-loader/react-dom'
         }
     },
     module: {
         rules: [
             {
                 test: /\.(js|jsx|ts|tsx)$/,
-                exclude: /node_modules/,
+                exclude: babelLoaderExcludeNodeModulesExcept([]),
                 use: ['babel-loader', 'eslint-loader']
             },
             {

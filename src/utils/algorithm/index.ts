@@ -1,5 +1,3 @@
-import { StateType, GlobalState } from '../../hooks/contextHooks';
-
 type ArgsType = (
     obj: GlobalState.CellItemType,
     index: number,

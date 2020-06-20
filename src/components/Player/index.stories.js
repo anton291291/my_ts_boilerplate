@@ -1,11 +1,11 @@
 import React from 'react';
 import { withKnobs } from '@storybook/addon-knobs';
-import { Pleer } from './index';
+import { Player } from './index';
 
 export default {
-    title: 'Pleer',
-    component: Pleer,
+    title: 'Player',
+    component: Player,
     decorators: [withKnobs]
 };
 
-export const Storybook_Pleer = () => <Pleer />;
+export const Storybook_Player = () => <Player />;

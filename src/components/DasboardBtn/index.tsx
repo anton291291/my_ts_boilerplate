@@ -1,12 +1,17 @@
-import React, { useState, useContext, useCallback } from 'react';
-
-import styled from 'styled-components';
-import { Drawer, Typography, Box } from '@material-ui/core';
+import { AxisActions, PlayerActions } from '@/store/actions';
+import { RootState } from '@/store/rootReducer';
+import { Box, Drawer } from '@material-ui/core';
 import DashboardIcon from '@material-ui/icons/Dashboard';
-import { SizeSlider } from '../SizeSlider';
-import { GridContext } from '../../hooks/contextHooks';
+import React, { useCallback, useState, memo } from 'react';
+import { useDispatch, useSelector,  } from 'react-redux';
+import styled from 'styled-components';
 
-export const Btn = styled.div`
+
+import { SizeSlider } from '../SizeSlider';
+import { checkGridMaxHeight, checkGridMaxWidth } from '@/utils/helper';
+
+export const Btn = styled(DashboardIcon)`
+    color: white;
     cursor: pointer;
     position: absolute;
     left: 2px;
@@ -27,112 +32,87 @@ export const StyledDrawer = styled(Drawer)`
 
 type Props = {};
 
-export const DasboardBtn: React.FC<Props> = (props) => {
+export const DasboardBtn: React.FC<Props> = memo(function DashboardBtn(props) {
     const {} = props;
 
     const [isOpen, setIsOpen] = useState(false);
-    const { state, setState } = useContext(GridContext);
 
-    const handleOpen = () => {
-        clearInterval(state.intervalID);
-        setState((state) => ({ ...state, isPlay: false }));
+    const dispatch = useDispatch();
+    const {
+        axis: { x, y },
+        speed,
+        randomIndex,
+        intervalID
+    } = useSelector((state: RootState) => state.grid);
+
+    let length = x * y;
+
+    const handleOpen = useCallback(() => {
+        clearInterval(intervalID);
+        dispatch(PlayerActions.setIsStop());
         setIsOpen(!isOpen);
-    };
+    }, [dispatch]);
 
     const handleClose = () => {
         setIsOpen(false);
     };
 
-    const y = state.axis.y;
-    const x = state.axis.x;
-    let length = x * y - 1;
+    const handleChangeY = useCallback(
+        (event: React.SyntheticEvent, newValue: number) => {
+            if (newValue * x > length) {
+                dispatch(AxisActions.increaseYaxis(newValue));
+            } else if (newValue * x < length) {
+                dispatch(AxisActions.decreaseYaxis(newValue));
+            }
+        },
+        [y]
+    );
 
-    const handleChangeY = (event: React.SyntheticEvent, newValue: number) => {
-        if (newValue * x > x * y) {
-            setState((state) => ({
-                ...state,
-                axis: { ...state.axis, y: newValue },
-                cells: [
-                    ...state.cells,
-                    ...Array.from({ length: newValue * x - x * y }, (item) => ({
-                        index: ++length,
-                        isClicked: false
-                    }))
-                ]
-            }));
-        } else if (newValue * x < x * y) {
-            setState((state) => ({
-                ...state,
-                axis: { ...state.axis, y: newValue },
-                cells: state.cells.slice(0, newValue * x)
-            }));
-        }
-    };
-    const handleChangeX = (event: React.SyntheticEvent, newValue: number) => {
-        if (newValue * y > x * y) {
-            setState((state) => ({
-                ...state,
-                axis: { ...state.axis, x: newValue },
-                cells: [
-                    ...state.cells,
-                    ...Array.from({ length: newValue * y - x * y }, (item) => ({
-                        index: ++length,
-                        isClicked: false
-                    }))
-                ]
-            }));
-        } else if (newValue * y < x * y) {
-            setState((state) => ({
-                ...state,
-                axis: { ...state.axis, x: newValue },
-                cells: state.cells.slice(0, newValue * y)
-            }));
-        }
-    };
+    const handleChangeX = useCallback(
+        (event: React.SyntheticEvent, newValue: number) => {
+            if (newValue * y > length) {
+                dispatch(AxisActions.increaseXaxis(newValue));
+            } else if (newValue * y < length) {
+                dispatch(AxisActions.decreaseXaxis(newValue));
+            }
+        },
+        [x]
+    );
 
     const handleChangeSpeed = useCallback(
         (event: React.SyntheticEvent, newValue: number) => {
-            setState((state) => ({
-                ...state,
-                speed: newValue
-            }));
+            dispatch(PlayerActions.setSpeed(newValue));
         },
-        [setState]
+        [dispatch]
     );
 
     const handleChangeRandomIndex = useCallback(
         (event: React.SyntheticEvent, newValue: number) => {
-            setState((state) => ({
-                ...state,
-                randomIndex: newValue
-            }));
+            dispatch(PlayerActions.setRandomIndex(newValue));
         },
-        [setState]
+        [dispatch]
     );
+
+    const maxHeight = checkGridMaxHeight();
+    const maxWidth = checkGridMaxWidth();
 
     return (
         <>
-            <Btn onClick={handleOpen}>
-                <DashboardIcon style={{ color: 'white' }} />
-            </Btn>
+            <Btn onClick={handleOpen} />
             <StyledDrawer anchor='bottom' open={isOpen} onClose={handleClose}>
                 <Box display='flex'>
                     <Box pl='20px' display='flex' flexDirection='column'>
                         <SizeSlider
                             label='Y-axis'
                             min={5}
-                            max={Math.floor(
-                                document.documentElement.clientHeight / 26 - 2
-                            )}
+                            max={maxHeight}
                             value={y}
                             onChange={handleChangeY}
                         />
                         <SizeSlider
                             label='X-axis'
                             min={5}
-                            max={Math.floor(
-                                document.documentElement.clientWidth / 26
-                            )}
+                            max={maxWidth}
                             value={x}
                             onChange={handleChangeX}
                         />
@@ -148,7 +128,7 @@ export const DasboardBtn: React.FC<Props> = (props) => {
                             label='Speed'
                             min={1}
                             max={30}
-                            value={state.speed}
+                            value={speed}
                             onChange={handleChangeSpeed}
                         />
                         <SizeSlider
@@ -156,7 +136,7 @@ export const DasboardBtn: React.FC<Props> = (props) => {
                             step={0.1}
                             min={0.1}
                             max={0.9}
-                            value={state.randomIndex}
+                            value={randomIndex}
                             onChange={handleChangeRandomIndex}
                         />
                     </Box>
@@ -164,4 +144,6 @@ export const DasboardBtn: React.FC<Props> = (props) => {
             </StyledDrawer>
         </>
     );
-};
+});
+
+DasboardBtn.displayName = 'DashboardBtn';

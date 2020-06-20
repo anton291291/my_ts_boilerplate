@@ -1,20 +1,16 @@
 import React from 'react';
 import { StyledBtn } from '../StyledComponents';
 
-type Props = { username?: string; width?: number };
+type Props = { username?: string };
 
 const HelloWorld: React.FC<Props> = (props) => {
-    const { username, width = 100 } = props;
+    const { username } = props;
 
     const handleClick = () => {
         alert('Click!');
     };
 
-    return (
-        <StyledBtn onClick={handleClick} width={width}>
-            Hello World {username}
-        </StyledBtn>
-    );
+    return <StyledBtn onClick={handleClick}>Hello World {username}</StyledBtn>;
 };
 
 export default HelloWorld;

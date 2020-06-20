@@ -1,8 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Pleer should render correctly 1`] = `
-<GridProvider>
-  <Pleer>
+exports[`Player should render correctly 1`] = `
+<Provider
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+>
+  <Player>
     <Styled(MuiBox)
       display="flex"
     >
@@ -11,10 +21,10 @@ exports[`Pleer should render correctly 1`] = `
       >
         <GenField>
           <WithStyles(ForwardRef(Typography))
-            className="GenField-sc-9snjga-5 jDxALd"
+            className="GenField-sc-19bymjj-5 gMGtnD"
           >
             <ForwardRef(Typography)
-              className="GenField-sc-9snjga-5 jDxALd"
+              className="GenField-sc-19bymjj-5 gMGtnD"
               classes={
                 Object {
                   "alignCenter": "MuiTypography-alignCenter",
@@ -51,7 +61,7 @@ exports[`Pleer should render correctly 1`] = `
               }
             >
               <p
-                className="MuiTypography-root GenField-sc-9snjga-5 jDxALd MuiTypography-body1"
+                className="MuiTypography-root GenField-sc-19bymjj-5 gMGtnD MuiTypography-body1"
               >
                 Generation: 
                 1
@@ -63,15 +73,15 @@ exports[`Pleer should render correctly 1`] = `
           onClick={[Function]}
         >
           <ForwardRef
-            className="Play-sc-9snjga-2 iXLphk"
+            className="Play-sc-19bymjj-2 dMvZRK"
             onClick={[Function]}
           >
             <WithStyles(ForwardRef(SvgIcon))
-              className="Play-sc-9snjga-2 iXLphk"
+              className="Play-sc-19bymjj-2 dMvZRK"
               onClick={[Function]}
             >
               <ForwardRef(SvgIcon)
-                className="Play-sc-9snjga-2 iXLphk"
+                className="Play-sc-19bymjj-2 dMvZRK"
                 classes={
                   Object {
                     "colorAction": "MuiSvgIcon-colorAction",
@@ -89,7 +99,7 @@ exports[`Pleer should render correctly 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  className="MuiSvgIcon-root Play-sc-9snjga-2 iXLphk"
+                  className="MuiSvgIcon-root Play-sc-19bymjj-2 dMvZRK"
                   focusable="false"
                   onClick={[Function]}
                   viewBox="0 0 24 24"
@@ -104,21 +114,21 @@ exports[`Pleer should render correctly 1`] = `
         </Play>
         <IconContainer>
           <div
-            className="IconContainer-sc-9snjga-4 TBJdr"
+            className="IconContainer-sc-19bymjj-4 fnwpgd"
           >
             <Stop
               onClick={[Function]}
             >
               <ForwardRef
-                className="Stop-sc-9snjga-0 bggHgt"
+                className="Stop-sc-19bymjj-0 klAAVb"
                 onClick={[Function]}
               >
                 <WithStyles(ForwardRef(SvgIcon))
-                  className="Stop-sc-9snjga-0 bggHgt"
+                  className="Stop-sc-19bymjj-0 klAAVb"
                   onClick={[Function]}
                 >
                   <ForwardRef(SvgIcon)
-                    className="Stop-sc-9snjga-0 bggHgt"
+                    className="Stop-sc-19bymjj-0 klAAVb"
                     classes={
                       Object {
                         "colorAction": "MuiSvgIcon-colorAction",
@@ -136,7 +146,7 @@ exports[`Pleer should render correctly 1`] = `
                   >
                     <svg
                       aria-hidden="true"
-                      className="MuiSvgIcon-root Stop-sc-9snjga-0 bggHgt"
+                      className="MuiSvgIcon-root Stop-sc-19bymjj-0 klAAVb"
                       focusable="false"
                       onClick={[Function]}
                       viewBox="0 0 24 24"
@@ -155,15 +165,15 @@ exports[`Pleer should render correctly 1`] = `
           onClick={[Function]}
         >
           <ForwardRef
-            className="Random-sc-9snjga-1 kNTVjD"
+            className="Random-sc-19bymjj-1 bpsEYV"
             onClick={[Function]}
           >
             <WithStyles(ForwardRef(SvgIcon))
-              className="Random-sc-9snjga-1 kNTVjD"
+              className="Random-sc-19bymjj-1 bpsEYV"
               onClick={[Function]}
             >
               <ForwardRef(SvgIcon)
-                className="Random-sc-9snjga-1 kNTVjD"
+                className="Random-sc-19bymjj-1 bpsEYV"
                 classes={
                   Object {
                     "colorAction": "MuiSvgIcon-colorAction",
@@ -181,7 +191,7 @@ exports[`Pleer should render correctly 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  className="MuiSvgIcon-root Random-sc-9snjga-1 kNTVjD"
+                  className="MuiSvgIcon-root Random-sc-19bymjj-1 bpsEYV"
                   focusable="false"
                   onClick={[Function]}
                   viewBox="0 0 24 24"
@@ -196,10 +206,10 @@ exports[`Pleer should render correctly 1`] = `
         </Random>
         <NameField>
           <WithStyles(ForwardRef(Typography))
-            className="NameField-sc-9snjga-6 gkgXIB"
+            className="NameField-sc-19bymjj-6 cMoRnr"
           >
             <ForwardRef(Typography)
-              className="NameField-sc-9snjga-6 gkgXIB"
+              className="NameField-sc-19bymjj-6 cMoRnr"
               classes={
                 Object {
                   "alignCenter": "MuiTypography-alignCenter",
@@ -236,13 +246,13 @@ exports[`Pleer should render correctly 1`] = `
               }
             >
               <p
-                className="MuiTypography-root NameField-sc-9snjga-6 gkgXIB MuiTypography-body1"
+                className="MuiTypography-root NameField-sc-19bymjj-6 cMoRnr MuiTypography-body1"
               />
             </ForwardRef(Typography)>
           </WithStyles(ForwardRef(Typography))>
         </NameField>
       </div>
     </Styled(MuiBox)>
-  </Pleer>
-</GridProvider>
+  </Player>
+</Provider>
 `;

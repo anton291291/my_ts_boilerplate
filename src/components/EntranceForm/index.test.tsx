@@ -1,46 +1,28 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
-import { mountToJson, shallowToJson } from 'enzyme-to-json';
+import { mount } from 'enzyme';
+import { mountToJson } from 'enzyme-to-json';
 import 'jest-styled-components';
 import { EntranceForm } from '.';
-import { GridContext } from '../../hooks/contextHooks';
 import { Router } from 'react-router-dom';
-import { createMemoryHistory } from "history";
+import { Provider } from 'react-redux';
+import store from '@/store/store';
 describe('EntranceForm', () => {
-    const y = 15;
-    const x = 30;
 
-    const setState = jest.fn();
 
-    const value = {
-        state: {
-            axis: { x: x, y: y },
-            cells: Array.from({ length: y * x }, (item, index) => ({
-                index: index,
-                isClicked: false
-            })),
-            gen: 1,
-            name: '',
-            intervalID: null,
-            isPlay: false,
-            speed: 1,
-            randomIndex: null
-        },
-        setState: setState
-    };
+    const mockPush = jest.fn();
 
-    const history = createMemoryHistory();
+    const historyMock = { push: mockPush, location: {}, listen: jest.fn() };
 
     const output = mount(
-        <GridContext.Provider value={value}>
-            <Router history={history}>
+        <Provider store={store}>
+            <Router history={historyMock}>
                 <EntranceForm />
             </Router>
-        </GridContext.Provider>
+        </Provider>
     );
 
     test('should render correctly', () => {
-        expect(mountToJson(output)).toMatchSnapshot();
+        expect(mountToJson(output.find('EntranceForm'))).toMatchSnapshot();
     });
 
     test('test handleForm should save to localStorage', () => {
@@ -49,12 +31,8 @@ describe('EntranceForm', () => {
         });
         expect(localStorage.setItem).toHaveBeenCalledWith('name', 'Anton');
     });
-
-
-    test('test handleStart', () => {     
-        output.find('StyledBtn').simulate('click');
-        expect(setState).toHaveBeenCalled();
-        expect(setState).toHaveBeenCalledTimes(3);
-
+    test('test handleStart push route', () => {
+        output.find('StyledBtn').invoke('onClick')();
+        expect(mockPush).toHaveBeenCalledWith('/game');
     });
 });

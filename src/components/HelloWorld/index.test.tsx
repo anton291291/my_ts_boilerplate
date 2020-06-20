@@ -16,9 +16,4 @@ describe('HelloWorld', () => {
         output.simulate('click');
         expect(window.alert).toHaveBeenCalledWith('Click!');
     });
-
-    it('testing props', () => {
-        const output = shallow(<HelloWorld username='Peter' />);
-        expect(output.find("StyledBtn").prop('width')).toBe(100);
-    });
 });

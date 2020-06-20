@@ -2,7 +2,6 @@ import React from 'react';
 import { DasboardBtn } from './index';
 import { withKnobs } from '@storybook/addon-knobs';
 import { Box } from '@material-ui/core';
-import { GridProvider } from '../../hooks/contextHooks';
 
 export default {
     title: '/Dashboard',
@@ -18,8 +17,6 @@ export const DashboardButton = () => (
         justifyContent='center'
         alignItems='center'
     >
-        <GridProvider>
-            <DasboardBtn />
-        </GridProvider>
+        <DasboardBtn />
     </Box>
 );

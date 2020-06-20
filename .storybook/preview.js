@@ -1,6 +1,11 @@
 import 'loki/configure-react';
+import React from 'react';
+import { addParameters, addDecorator } from '@storybook/react';
+import { GlobalProvider } from './GlobalProvider';
 
-import { addParameters } from '@storybook/react'; // <- or your storybook framework
+addDecorator((storyFn) => {
+    return <GlobalProvider>{storyFn()}</GlobalProvider>;
+});
 
 addParameters({
     backgrounds: [

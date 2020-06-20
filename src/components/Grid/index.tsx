@@ -1,8 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
 import styled from 'styled-components';
 import { Cell } from '../Cell';
-import { GridContext } from '../../hooks/contextHooks';
+import { RootState } from '@/store/rootReducer';
+import { useSelector } from 'react-redux';
 
 export const Container = styled.div<{ width: number; height: number }>`
     display: flex;
@@ -20,30 +21,18 @@ type Props = {};
 export const Grid: React.FC<Props> = (props) => {
     const {} = props;
 
-    const { state, setState } = useContext(GridContext);
-
-    const x = state.axis.x;
-    const y = state.axis.y;
-
-    const handleClick = (index: number) => {
-        setState((state) => ({
-            ...state,
-            cells: state.cells.map((obj) => {
-                if (obj.index === index)
-                    return { ...obj, isClicked: !obj.isClicked };
-                return obj;
-            })
-        }));
-    };
+    const {
+        cells,
+        axis: { x, y }
+    } = useSelector((state: RootState) => state.grid);
 
     return (
         <Container width={x} height={y}>
-            {state.cells.map((item) => (
+            {cells.map((item) => (
                 <Cell
                     isClicked={item.isClicked}
                     key={item.index}
                     index={item.index}
-                    onClick={() => handleClick(item.index)}
                 />
             ))}
         </Container>

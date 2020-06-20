@@ -1,19 +1,20 @@
-import React, { useState, useContext, useCallback, useEffect } from 'react';
+import React, { useCallback } from 'react';
 
 import styled from 'styled-components';
 
 import { StyledInput } from '../StyledComponents';
-import { GridContext } from '@/hooks/contextHooks';
-import { simulateLife } from '@/utills/algorithm';
 import { Fade, Typography } from '@material-ui/core';
 import { StyledBtn } from '../StyledComponents/index';
 import { useHistory } from 'react-router';
+import { RootState } from '@/store/rootReducer';
+import { useSelector, useDispatch } from 'react-redux';
+import { PlayerActions } from '@/store/actions';
+import { GreetingFormActions } from '../../store/actions/index';
+import { setLogIn } from '@/utils/helper';
 
 const FormContainer = styled.div`
     width: 600px;
-    margin-top: 10%;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
     background-color: rgba(0, 0, 0, 0.7);
     border: 1px solid white;
     border-radius: 10px;
@@ -35,56 +36,24 @@ type Props = {};
 export const EntranceForm: React.FC<Props> = (props) => {
     const {} = props;
 
-    const { state, setState } = useContext(GridContext);
+    const state = useSelector((state: RootState) => state.grid);
+    const dispatch = useDispatch();
 
     let history = useHistory();
 
     const handleReset = useCallback(() => {
         clearInterval(state.intervalID);
 
-        setState((state) => ({
-            ...state,
-            cells: state.cells.map((obj) => {
-                return { ...obj, isClicked: false };
-            }),
-            isPlay: false,
-            gen: 1
-        }));
-    }, [setState, state.intervalID]);
+        dispatch(PlayerActions.setIsPlay());
+    }, [dispatch, state.intervalID]);
 
     const handleStart = () => {
-        handleReset();
-        setState((state) => ({
-            ...state,
-            cells: state.cells.map((obj) => {
-                if (Math.random() > 0.7) {
-                    return { ...obj, isClicked: true };
-                }
-                return obj;
-            }),
-            isPlay: true
-        }));
-
-        let startInterval = setInterval(() => {
-            setState((state) => ({
-                ...state,
-                cells: state.cells.map((obj, index, arr) =>
-                    simulateLife(obj, index, arr, state)
-                ),
-                gen: state.gen + 1
-            }));
-        }, state.speed * 100);
-
-        setState((state) => ({
-            ...state,
-            intervalID: startInterval
-        }));
-
+        dispatch(GreetingFormActions.setStart());
         history.push('/game');
     };
 
     const handleForm = (e: React.ChangeEvent<HTMLInputElement>) => {
-        localStorage.setItem('name', e.target.value);
+        setLogIn(e.target.value);
     };
 
     return (

@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { memo, useCallback } from 'react';
 
 import styled from 'styled-components';
+import { CellsActions } from '@/store/actions';
+import { useDispatch } from 'react-redux';
 
 export const StyledCell = styled.div<{ isClicked: boolean }>`
     background: ${({ isClicked }) =>
@@ -22,12 +24,24 @@ export const StyledCell = styled.div<{ isClicked: boolean }>`
 
 type Props = {
     index: number;
-    onClick: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
     isClicked: boolean;
 };
 
-export const Cell: React.FC<Props> = (props) => {
-    const { index, onClick, isClicked } = props;
+export const Cell: React.FC<Props> = memo(function Cell(props) {
+    const { index, isClicked } = props;
 
-    return <StyledCell onClick={onClick} isClicked={isClicked}></StyledCell>;
-};
+    const dispatch = useDispatch();
+
+    const handleClick = useCallback(
+        (index: number) => {
+            dispatch(CellsActions.clickCell(index));
+        },
+        [dispatch]
+    );
+
+    return (
+        <StyledCell onClick={() => handleClick(index)} isClicked={isClicked}></StyledCell>
+    );
+});
+
+Cell.displayName = 'Cell';
