@@ -2,10 +2,9 @@ import { AxisActions, PlayerActions } from '@/store/actions';
 import { RootState } from '@/store/rootReducer';
 import { Box, Drawer } from '@material-ui/core';
 import DashboardIcon from '@material-ui/icons/Dashboard';
-import React, { useCallback, useState, memo } from 'react';
-import { useDispatch, useSelector,  } from 'react-redux';
+import React, { useCallback, useState, memo, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
-
 
 import { SizeSlider } from '../SizeSlider';
 import { checkGridMaxHeight, checkGridMaxWidth } from '@/utils/helper';
@@ -41,14 +40,12 @@ export const DasboardBtn: React.FC<Props> = memo(function DashboardBtn(props) {
     const {
         axis: { x, y },
         speed,
-        randomIndex,
-        intervalID
+        randomIndex
     } = useSelector((state: RootState) => state.grid);
 
     let length = x * y;
 
     const handleOpen = useCallback(() => {
-        clearInterval(intervalID);
         dispatch(PlayerActions.setIsStop());
         setIsOpen(!isOpen);
     }, [dispatch]);
@@ -93,8 +90,13 @@ export const DasboardBtn: React.FC<Props> = memo(function DashboardBtn(props) {
         [dispatch]
     );
 
-    const maxHeight = checkGridMaxHeight();
-    const maxWidth = checkGridMaxWidth();
+    const [maxWidth, setMaxWidth] = useState(null);
+    const [maxHeight, setMaxHeight] = useState(null);
+
+    useEffect(() => {
+        setMaxHeight(checkGridMaxHeight());
+        setMaxWidth(checkGridMaxWidth());
+    });
 
     return (
         <>

@@ -12,7 +12,7 @@ const initialState: StateType = {
         isClicked: false
     })),
     gen: 1,
-    name: getLogIn() || null,
+    name: null,
     isPlay: false,
     speed: 1,
     randomIndex: 0.7

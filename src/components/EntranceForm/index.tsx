@@ -42,10 +42,8 @@ export const EntranceForm: React.FC<Props> = (props) => {
     let history = useHistory();
 
     const handleReset = useCallback(() => {
-        clearInterval(state.intervalID);
-
         dispatch(PlayerActions.setIsPlay());
-    }, [dispatch, state.intervalID]);
+    }, [dispatch]);
 
     const handleStart = () => {
         dispatch(GreetingFormActions.setStart());

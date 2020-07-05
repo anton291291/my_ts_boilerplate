@@ -1,16 +1,15 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 import { Home, Greetings } from '../pages';
 
 const AppRoutes = () => {
     return (
-        <Router>
-            <Switch>
-                <Route component={Greetings} path='/' exact />
-                <Route component={Home} path='/game' />
-            </Switch>
-        </Router>
+        <Switch>
+            <Route component={Greetings} path='/hello' exact />
+            <Route component={Home} path='/game' />
+            <Redirect from='*' to='/hello' />
+        </Switch>
     );
 };
 
