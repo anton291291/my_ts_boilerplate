@@ -13,8 +13,8 @@
         "build-storybook": "build-storybook",
         "loki-update": "npx loki update",
         "loki-test": "npx loki test",
-        "dev:build-server": "npx  webpack --config webpack.server.js --mode=development -w",
-        "dev:start": "nodemon ./server-build/index.js"
+        "ssr:build-server": "npm run build && npx  webpack --config webpack.server.babel.js -w",
+        "ssr:start": "nodemon ./server-build/index.js"
     },
     "keywords": [],
     "author": "Anton Sokolov",

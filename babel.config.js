@@ -43,7 +43,7 @@ if (process.env.NODE_ENV === 'test') {
     ];
     plugins.push(styledComponents);
 } else {
-    plugins.push('babel-plugin-styled-components');
+    plugins.push(['babel-plugin-styled-components', { ssr: true }]);
 }
 
 module.exports = {

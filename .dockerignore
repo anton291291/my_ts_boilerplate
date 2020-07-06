@@ -22,4 +22,5 @@
 **/values.dev.yaml
 **/_tests_
 **/coverage
+**/server-build
 README.md
