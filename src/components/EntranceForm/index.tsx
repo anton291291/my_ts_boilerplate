@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 
 import styled from 'styled-components';
 
@@ -6,9 +6,7 @@ import { StyledInput } from '../StyledComponents';
 import { Fade, Typography } from '@material-ui/core';
 import { StyledBtn } from '../StyledComponents/index';
 import { useHistory } from 'react-router';
-import { RootState } from '@/store/rootReducer';
-import { useSelector, useDispatch } from 'react-redux';
-import { PlayerActions } from '@/store/actions';
+import { useDispatch } from 'react-redux';
 import { GreetingFormActions } from '../../store/actions/index';
 import { setLogIn } from '@/utils/helper';
 
@@ -36,14 +34,9 @@ type Props = {};
 export const EntranceForm: React.FC<Props> = (props) => {
     const {} = props;
 
-    const state = useSelector((state: RootState) => state.grid);
     const dispatch = useDispatch();
 
     let history = useHistory();
-
-    const handleReset = useCallback(() => {
-        dispatch(PlayerActions.setIsPlay());
-    }, [dispatch]);
 
     const handleStart = () => {
         dispatch(GreetingFormActions.setStart());
@@ -67,7 +60,9 @@ export const EntranceForm: React.FC<Props> = (props) => {
                         variant='outlined'
                         onChange={handleForm}
                     />
-                    <StyledBtn onClick={handleStart}>Start</StyledBtn>
+                    <StyledBtn id='sbm-btn' onClick={handleStart}>
+                        Start
+                    </StyledBtn>
                 </FormContainer>
             </Fade>
         </>

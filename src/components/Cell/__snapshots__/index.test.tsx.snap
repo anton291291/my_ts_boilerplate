@@ -12,8 +12,12 @@ exports[`Cell should render correctly 1`] = `
     }
   }
 >
-  <Cell>
+  <Cell
+    index={0}
+    isClicked={false}
+  >
     <StyledCell
+      isClicked={false}
       onClick={[Function]}
     >
       <div

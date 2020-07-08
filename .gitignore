@@ -5,3 +5,6 @@
 /storybook-static/
 /coverage 
 /server-build
+
+# stryker temp files
+.stryker-tmp

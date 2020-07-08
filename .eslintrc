@@ -7,9 +7,10 @@
     "extends": [
         "plugin:@typescript-eslint/recommended",
         "plugin:react/recommended",
-        "prettier"
+        "prettier",
+        "plugin:jest/recommended"
     ],
-    "plugins": ["@typescript-eslint", "react-hooks"],
+    "plugins": ["@typescript-eslint", "react-hooks", "jest"],
     "rules": {
         "@typescript-eslint/explicit-function-return-type": "off",
         "react-hooks/rules-of-hooks": "error",
@@ -20,6 +21,20 @@
         "@typescript-eslint/no-empty-function": "off",
         "@typescript-eslint/no-use-before-define": "warn",
         "@typescript-eslint/no-namespace": "off",
-        "prefer-const": "off"
+        "prefer-const": "off",
+        "jest/no-disabled-tests": "warn",
+        "jest/no-focused-tests": "error",
+        "jest/no-identical-title": "error",
+        "jest/prefer-to-have-length": "warn",
+        "jest/valid-expect": "error"
+    },
+    "env": {
+        "jest": true
+    },
+    "globals": {
+        "page": true,
+        "browser": true,
+        "context": true,
+        "jestPuppeteer": true
     }
 }

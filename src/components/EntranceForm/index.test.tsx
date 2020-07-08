@@ -7,11 +7,13 @@ import { Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from '@/store/store';
 describe('EntranceForm', () => {
-
-
     const mockPush = jest.fn();
 
-    const historyMock = { push: mockPush, location: {}, listen: jest.fn() };
+    const historyMock: any = {
+        push: mockPush,
+        location: {},
+        listen: jest.fn()
+    };
 
     const output = mount(
         <Provider store={store}>

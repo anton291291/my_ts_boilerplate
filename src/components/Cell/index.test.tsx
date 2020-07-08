@@ -3,13 +3,13 @@ import { mount } from 'enzyme';
 import { mountToJson } from 'enzyme-to-json';
 
 import { Cell } from './index';
-import { Provider } from 'react-redux';
 import store from '@/store/store';
+import { Provider } from 'react-redux';
 
 describe('Cell', () => {
     const output = mount(
         <Provider store={store}>
-            <Cell />
+            <Cell index={0} isClicked={false} />
         </Provider>
     );
 

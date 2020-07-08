@@ -8,7 +8,11 @@ import { LogoutBtn } from '.';
 describe('LogoutBtn', () => {
     const mockPush = jest.fn();
 
-    const historyMock = { push: mockPush, location: {}, listen: jest.fn() };
+    const historyMock: any = {
+        push: mockPush,
+        location: {},
+        listen: jest.fn()
+    };
 
     const output = mount(
         <Router history={historyMock}>
