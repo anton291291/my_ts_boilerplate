@@ -8,12 +8,6 @@ describe('test actions', () => {
         store.clearActions();
     });
     it('should create an action play', () => {
-        const expectedAction = [
-            {
-                payload: true,
-                type: 'PLAYER:PLAY'
-            }
-        ];
 
         store.dispatch(PlayerActions.setIsPlay());
         expect(store.getActions()).toMatchSnapshot();

@@ -1,11 +1,12 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { mountToJson } from 'enzyme-to-json';
-import 'jest-styled-components';
 import { EntranceForm } from '.';
 import { Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from '@/store/store';
+
+
 describe('EntranceForm', () => {
     const mockPush = jest.fn();
 

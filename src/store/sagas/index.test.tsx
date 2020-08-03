@@ -1,5 +1,5 @@
+/* eslint-disable jest/expect-expect */
 import { expectSaga } from 'redux-saga-test-plan';
-import { put, select, take } from 'redux-saga/effects';
 import { watchStartGame, watchStartGameFromForm } from './index';
 import { rootReducer } from '../rootReducer';
 

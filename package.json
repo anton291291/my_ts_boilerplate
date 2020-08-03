@@ -14,6 +14,7 @@
         "build-storybook": "build-storybook",
         "loki-update": "npx loki update",
         "loki-test": "npx loki test",
+        "stryker": "npx stryker run",
         "ssr:build-server": "npm run build && npx  webpack --config webpack.server.babel.js -w",
         "ssr:start": "nodemon ./server-build/index.js"
     },
@@ -135,6 +136,13 @@
     },
     "jest": {
         "collectCoverage": true,
+        "testPathIgnorePatterns": [
+            "e2e"
+        ],
+        "moduleDirectories": [
+            "node_modules",
+            "src"
+        ],
         "setupFilesAfterEnv": [
             "<rootDir>/jest.setup.js",
             "jest-localstorage-mock"
@@ -147,8 +155,7 @@
             "^.+\\.[t|j]sx?$": "babel-jest"
         },
         "moduleNameMapper": {
-            "@/(.*)": "<rootDir>/src/$1",
-            "database": "<rootDir>/src/lib/database"
+            "@/(.*)": "<rootDir>/src/$1"
         }
     },
     "browserslist": [

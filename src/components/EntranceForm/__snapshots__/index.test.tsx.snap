@@ -384,10 +384,12 @@ exports[`EntranceForm should render correctly 1`] = `
             </WithStyles(ForwardRef(TextField))>
           </StyledInput>
           <StyledBtn
+            id="sbm-btn"
             onClick={[Function]}
           >
             <div
               className="StyledBtn-sc-5skuza-0 bsbHWd"
+              id="sbm-btn"
               onClick={[Function]}
             >
               Start
